@@ -217,7 +217,14 @@ public class Sc2sa extends DepthFirstAdapter {
     @Override
     public void caseAPlusExpression3(APlusExpression3 node) {
         // TODO Auto-generated method stub
-        super.caseAPlusExpression3(node);
+       //super.caseAPlusExpression3(node);
+        SaExp op1 = null;
+        SaExp op2 = null;
+        node.getExp3().apply(this);
+        op1 = (SaExp) this.returnValue;
+        node.getExp4().apply(this);
+        op2 = (SaExp) this.returnValue;
+        this.returnValue = new SaExpAdd(op1, op2);
     }
 
     @Override

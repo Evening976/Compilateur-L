@@ -399,127 +399,127 @@ public class Parser
                 push(goTo(12), list);
             }
             break;
-            case 35: /* reduce AExpression1Expression */
+            case 35: /* reduce AExp1Expression */
             {
                 ArrayList<Object> list = new35();
                 push(goTo(12), list);
             }
             break;
-            case 36: /* reduce AEtExpression1 */
+            case 36: /* reduce AEtExp1 */
             {
                 ArrayList<Object> list = new36();
                 push(goTo(13), list);
             }
             break;
-            case 37: /* reduce AExpression2Expression1 */
+            case 37: /* reduce AExp2Exp1 */
             {
                 ArrayList<Object> list = new37();
                 push(goTo(13), list);
             }
             break;
-            case 38: /* reduce AEgalExpression2 */
+            case 38: /* reduce AEgalExp2 */
             {
                 ArrayList<Object> list = new38();
                 push(goTo(14), list);
             }
             break;
-            case 39: /* reduce AInfExpression2 */
+            case 39: /* reduce AInfExp2 */
             {
                 ArrayList<Object> list = new39();
                 push(goTo(14), list);
             }
             break;
-            case 40: /* reduce AExpression3Expression2 */
+            case 40: /* reduce AExp3Exp2 */
             {
                 ArrayList<Object> list = new40();
                 push(goTo(14), list);
             }
             break;
-            case 41: /* reduce APlusExpression3 */
+            case 41: /* reduce APlusExp3 */
             {
                 ArrayList<Object> list = new41();
                 push(goTo(15), list);
             }
             break;
-            case 42: /* reduce AMoinsExpression3 */
+            case 42: /* reduce AMoinsExp3 */
             {
                 ArrayList<Object> list = new42();
                 push(goTo(15), list);
             }
             break;
-            case 43: /* reduce AExpression5Expression3 */
+            case 43: /* reduce AExp5Exp3 */
             {
                 ArrayList<Object> list = new43();
                 push(goTo(15), list);
             }
             break;
-            case 44: /* reduce AMultExpression4 */
+            case 44: /* reduce AMultExp4 */
             {
                 ArrayList<Object> list = new44();
                 push(goTo(16), list);
             }
             break;
-            case 45: /* reduce ADivExpression4 */
+            case 45: /* reduce ADivExp4 */
             {
                 ArrayList<Object> list = new45();
                 push(goTo(16), list);
             }
             break;
-            case 46: /* reduce AExpression5Expression4 */
+            case 46: /* reduce AExp5Exp4 */
             {
                 ArrayList<Object> list = new46();
                 push(goTo(16), list);
             }
             break;
-            case 47: /* reduce ANonExpression5 */
+            case 47: /* reduce ANonExp5 */
             {
                 ArrayList<Object> list = new47();
                 push(goTo(17), list);
             }
             break;
-            case 48: /* reduce AExpression6Expression5 */
+            case 48: /* reduce AExp6Exp5 */
             {
                 ArrayList<Object> list = new48();
                 push(goTo(17), list);
             }
             break;
-            case 49: /* reduce AParenthesesExpression6 */
+            case 49: /* reduce AParenthesesExp6 */
             {
                 ArrayList<Object> list = new49();
                 push(goTo(18), list);
             }
             break;
-            case 50: /* reduce AVarExpression6 */
+            case 50: /* reduce AVarExp6 */
             {
                 ArrayList<Object> list = new50();
                 push(goTo(18), list);
             }
             break;
-            case 51: /* reduce ANombreExpression6 */
+            case 51: /* reduce ANombreExp6 */
             {
                 ArrayList<Object> list = new51();
                 push(goTo(18), list);
             }
             break;
-            case 52: /* reduce AAppelfonction2Expression6 */
+            case 52: /* reduce AAppelfonction2Exp6 */
             {
                 ArrayList<Object> list = new52();
                 push(goTo(18), list);
             }
             break;
-            case 53: /* reduce ALireExpression6 */
+            case 53: /* reduce ALireExp6 */
             {
                 ArrayList<Object> list = new53();
                 push(goTo(18), list);
             }
             break;
-            case 54: /* reduce AVraiExpression6 */
+            case 54: /* reduce AVraiExp6 */
             {
                 ArrayList<Object> list = new54();
                 push(goTo(18), list);
             }
             break;
-            case 55: /* reduce AFauxExpression6 */
+            case 55: /* reduce AFauxExp6 */
             {
                 ArrayList<Object> list = new55();
                 push(goTo(18), list);
@@ -1625,12 +1625,12 @@ public class Parser
             // Block
         PExpression pexpressionNode2;
         TOu touNode3;
-        PExpression1 pexpression1Node4;
+        PExp1 pexp1Node4;
         pexpressionNode2 = (PExpression)nodeArrayList1.get(0);
         touNode3 = (TOu)nodeArrayList2.get(0);
-        pexpression1Node4 = (PExpression1)nodeArrayList3.get(0);
+        pexp1Node4 = (PExp1)nodeArrayList3.get(0);
 
-        pexpressionNode1 = new AOuExpression(pexpressionNode2, touNode3, pexpression1Node4);
+        pexpressionNode1 = new AOuExpression(pexpressionNode2, touNode3, pexp1Node4);
         }
 	nodeList.add(pexpressionNode1);
         return nodeList;
@@ -1639,7 +1639,7 @@ public class Parser
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new35() /* reduce AExpression1Expression */
+    ArrayList<Object> new35() /* reduce AExp1Expression */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
@@ -1647,10 +1647,10 @@ public class Parser
         PExpression pexpressionNode1;
         {
             // Block
-        PExpression1 pexpression1Node2;
-        pexpression1Node2 = (PExpression1)nodeArrayList1.get(0);
+        PExp1 pexp1Node2;
+        pexp1Node2 = (PExp1)nodeArrayList1.get(0);
 
-        pexpressionNode1 = new AExpression1Expression(pexpression1Node2);
+        pexpressionNode1 = new AExp1Expression(pexp1Node2);
         }
 	nodeList.add(pexpressionNode1);
         return nodeList;
@@ -1659,319 +1659,319 @@ public class Parser
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new36() /* reduce AEtExpression1 */
+    ArrayList<Object> new36() /* reduce AEtExp1 */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList3 = pop();
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList2 = pop();
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList1 = pop();
-        PExpression1 pexpression1Node1;
+        PExp1 pexp1Node1;
         {
             // Block
-        PExpression1 pexpression1Node2;
+        PExp1 pexp1Node2;
         TEt tetNode3;
-        PExpression2 pexpression2Node4;
-        pexpression1Node2 = (PExpression1)nodeArrayList1.get(0);
+        PExp2 pexp2Node4;
+        pexp1Node2 = (PExp1)nodeArrayList1.get(0);
         tetNode3 = (TEt)nodeArrayList2.get(0);
-        pexpression2Node4 = (PExpression2)nodeArrayList3.get(0);
+        pexp2Node4 = (PExp2)nodeArrayList3.get(0);
 
-        pexpression1Node1 = new AEtExpression1(pexpression1Node2, tetNode3, pexpression2Node4);
+        pexp1Node1 = new AEtExp1(pexp1Node2, tetNode3, pexp2Node4);
         }
-	nodeList.add(pexpression1Node1);
+	nodeList.add(pexp1Node1);
         return nodeList;
     }
 
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new37() /* reduce AExpression2Expression1 */
+    ArrayList<Object> new37() /* reduce AExp2Exp1 */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList1 = pop();
-        PExpression1 pexpression1Node1;
+        PExp1 pexp1Node1;
         {
             // Block
-        PExpression2 pexpression2Node2;
-        pexpression2Node2 = (PExpression2)nodeArrayList1.get(0);
+        PExp2 pexp2Node2;
+        pexp2Node2 = (PExp2)nodeArrayList1.get(0);
 
-        pexpression1Node1 = new AExpression2Expression1(pexpression2Node2);
+        pexp1Node1 = new AExp2Exp1(pexp2Node2);
         }
-	nodeList.add(pexpression1Node1);
+	nodeList.add(pexp1Node1);
         return nodeList;
     }
 
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new38() /* reduce AEgalExpression2 */
+    ArrayList<Object> new38() /* reduce AEgalExp2 */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList3 = pop();
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList2 = pop();
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList1 = pop();
-        PExpression2 pexpression2Node1;
+        PExp2 pexp2Node1;
         {
             // Block
-        PExpression2 pexpression2Node2;
+        PExp2 pexp2Node2;
         TEgal tegalNode3;
-        PExpression3 pexpression3Node4;
-        pexpression2Node2 = (PExpression2)nodeArrayList1.get(0);
+        PExp3 pexp3Node4;
+        pexp2Node2 = (PExp2)nodeArrayList1.get(0);
         tegalNode3 = (TEgal)nodeArrayList2.get(0);
-        pexpression3Node4 = (PExpression3)nodeArrayList3.get(0);
+        pexp3Node4 = (PExp3)nodeArrayList3.get(0);
 
-        pexpression2Node1 = new AEgalExpression2(pexpression2Node2, tegalNode3, pexpression3Node4);
+        pexp2Node1 = new AEgalExp2(pexp2Node2, tegalNode3, pexp3Node4);
         }
-	nodeList.add(pexpression2Node1);
+	nodeList.add(pexp2Node1);
         return nodeList;
     }
 
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new39() /* reduce AInfExpression2 */
+    ArrayList<Object> new39() /* reduce AInfExp2 */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList3 = pop();
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList2 = pop();
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList1 = pop();
-        PExpression2 pexpression2Node1;
+        PExp2 pexp2Node1;
         {
             // Block
-        PExpression2 pexpression2Node2;
+        PExp2 pexp2Node2;
         TInf tinfNode3;
-        PExpression3 pexpression3Node4;
-        pexpression2Node2 = (PExpression2)nodeArrayList1.get(0);
+        PExp3 pexp3Node4;
+        pexp2Node2 = (PExp2)nodeArrayList1.get(0);
         tinfNode3 = (TInf)nodeArrayList2.get(0);
-        pexpression3Node4 = (PExpression3)nodeArrayList3.get(0);
+        pexp3Node4 = (PExp3)nodeArrayList3.get(0);
 
-        pexpression2Node1 = new AInfExpression2(pexpression2Node2, tinfNode3, pexpression3Node4);
+        pexp2Node1 = new AInfExp2(pexp2Node2, tinfNode3, pexp3Node4);
         }
-	nodeList.add(pexpression2Node1);
+	nodeList.add(pexp2Node1);
         return nodeList;
     }
 
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new40() /* reduce AExpression3Expression2 */
+    ArrayList<Object> new40() /* reduce AExp3Exp2 */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList1 = pop();
-        PExpression2 pexpression2Node1;
+        PExp2 pexp2Node1;
         {
             // Block
-        PExpression3 pexpression3Node2;
-        pexpression3Node2 = (PExpression3)nodeArrayList1.get(0);
+        PExp3 pexp3Node2;
+        pexp3Node2 = (PExp3)nodeArrayList1.get(0);
 
-        pexpression2Node1 = new AExpression3Expression2(pexpression3Node2);
+        pexp2Node1 = new AExp3Exp2(pexp3Node2);
         }
-	nodeList.add(pexpression2Node1);
+	nodeList.add(pexp2Node1);
         return nodeList;
     }
 
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new41() /* reduce APlusExpression3 */
+    ArrayList<Object> new41() /* reduce APlusExp3 */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList3 = pop();
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList2 = pop();
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList1 = pop();
-        PExpression3 pexpression3Node1;
+        PExp3 pexp3Node1;
         {
             // Block
-        PExpression3 pexpression3Node2;
+        PExp3 pexp3Node2;
         TPlus tplusNode3;
-        PExpression4 pexpression4Node4;
-        pexpression3Node2 = (PExpression3)nodeArrayList1.get(0);
+        PExp4 pexp4Node4;
+        pexp3Node2 = (PExp3)nodeArrayList1.get(0);
         tplusNode3 = (TPlus)nodeArrayList2.get(0);
-        pexpression4Node4 = (PExpression4)nodeArrayList3.get(0);
+        pexp4Node4 = (PExp4)nodeArrayList3.get(0);
 
-        pexpression3Node1 = new APlusExpression3(pexpression3Node2, tplusNode3, pexpression4Node4);
+        pexp3Node1 = new APlusExp3(pexp3Node2, tplusNode3, pexp4Node4);
         }
-	nodeList.add(pexpression3Node1);
+	nodeList.add(pexp3Node1);
         return nodeList;
     }
 
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new42() /* reduce AMoinsExpression3 */
+    ArrayList<Object> new42() /* reduce AMoinsExp3 */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList3 = pop();
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList2 = pop();
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList1 = pop();
-        PExpression3 pexpression3Node1;
+        PExp3 pexp3Node1;
         {
             // Block
-        PExpression3 pexpression3Node2;
+        PExp3 pexp3Node2;
         TMoins tmoinsNode3;
-        PExpression4 pexpression4Node4;
-        pexpression3Node2 = (PExpression3)nodeArrayList1.get(0);
+        PExp4 pexp4Node4;
+        pexp3Node2 = (PExp3)nodeArrayList1.get(0);
         tmoinsNode3 = (TMoins)nodeArrayList2.get(0);
-        pexpression4Node4 = (PExpression4)nodeArrayList3.get(0);
+        pexp4Node4 = (PExp4)nodeArrayList3.get(0);
 
-        pexpression3Node1 = new AMoinsExpression3(pexpression3Node2, tmoinsNode3, pexpression4Node4);
+        pexp3Node1 = new AMoinsExp3(pexp3Node2, tmoinsNode3, pexp4Node4);
         }
-	nodeList.add(pexpression3Node1);
+	nodeList.add(pexp3Node1);
         return nodeList;
     }
 
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new43() /* reduce AExpression5Expression3 */
+    ArrayList<Object> new43() /* reduce AExp5Exp3 */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList1 = pop();
-        PExpression3 pexpression3Node1;
+        PExp3 pexp3Node1;
         {
             // Block
-        PExpression4 pexpression4Node2;
-        pexpression4Node2 = (PExpression4)nodeArrayList1.get(0);
+        PExp4 pexp4Node2;
+        pexp4Node2 = (PExp4)nodeArrayList1.get(0);
 
-        pexpression3Node1 = new AExpression5Expression3(pexpression4Node2);
+        pexp3Node1 = new AExp5Exp3(pexp4Node2);
         }
-	nodeList.add(pexpression3Node1);
+	nodeList.add(pexp3Node1);
         return nodeList;
     }
 
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new44() /* reduce AMultExpression4 */
+    ArrayList<Object> new44() /* reduce AMultExp4 */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList3 = pop();
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList2 = pop();
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList1 = pop();
-        PExpression4 pexpression4Node1;
+        PExp4 pexp4Node1;
         {
             // Block
-        PExpression4 pexpression4Node2;
+        PExp4 pexp4Node2;
         TMult tmultNode3;
-        PExpression5 pexpression5Node4;
-        pexpression4Node2 = (PExpression4)nodeArrayList1.get(0);
+        PExp5 pexp5Node4;
+        pexp4Node2 = (PExp4)nodeArrayList1.get(0);
         tmultNode3 = (TMult)nodeArrayList2.get(0);
-        pexpression5Node4 = (PExpression5)nodeArrayList3.get(0);
+        pexp5Node4 = (PExp5)nodeArrayList3.get(0);
 
-        pexpression4Node1 = new AMultExpression4(pexpression4Node2, tmultNode3, pexpression5Node4);
+        pexp4Node1 = new AMultExp4(pexp4Node2, tmultNode3, pexp5Node4);
         }
-	nodeList.add(pexpression4Node1);
+	nodeList.add(pexp4Node1);
         return nodeList;
     }
 
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new45() /* reduce ADivExpression4 */
+    ArrayList<Object> new45() /* reduce ADivExp4 */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList3 = pop();
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList2 = pop();
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList1 = pop();
-        PExpression4 pexpression4Node1;
+        PExp4 pexp4Node1;
         {
             // Block
-        PExpression4 pexpression4Node2;
+        PExp4 pexp4Node2;
         TDiv tdivNode3;
-        PExpression5 pexpression5Node4;
-        pexpression4Node2 = (PExpression4)nodeArrayList1.get(0);
+        PExp5 pexp5Node4;
+        pexp4Node2 = (PExp4)nodeArrayList1.get(0);
         tdivNode3 = (TDiv)nodeArrayList2.get(0);
-        pexpression5Node4 = (PExpression5)nodeArrayList3.get(0);
+        pexp5Node4 = (PExp5)nodeArrayList3.get(0);
 
-        pexpression4Node1 = new ADivExpression4(pexpression4Node2, tdivNode3, pexpression5Node4);
+        pexp4Node1 = new ADivExp4(pexp4Node2, tdivNode3, pexp5Node4);
         }
-	nodeList.add(pexpression4Node1);
+	nodeList.add(pexp4Node1);
         return nodeList;
     }
 
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new46() /* reduce AExpression5Expression4 */
+    ArrayList<Object> new46() /* reduce AExp5Exp4 */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList1 = pop();
-        PExpression4 pexpression4Node1;
+        PExp4 pexp4Node1;
         {
             // Block
-        PExpression5 pexpression5Node2;
-        pexpression5Node2 = (PExpression5)nodeArrayList1.get(0);
+        PExp5 pexp5Node2;
+        pexp5Node2 = (PExp5)nodeArrayList1.get(0);
 
-        pexpression4Node1 = new AExpression5Expression4(pexpression5Node2);
+        pexp4Node1 = new AExp5Exp4(pexp5Node2);
         }
-	nodeList.add(pexpression4Node1);
+	nodeList.add(pexp4Node1);
         return nodeList;
     }
 
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new47() /* reduce ANonExpression5 */
+    ArrayList<Object> new47() /* reduce ANonExp5 */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList2 = pop();
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList1 = pop();
-        PExpression5 pexpression5Node1;
+        PExp5 pexp5Node1;
         {
             // Block
         TNon tnonNode2;
-        PExpression5 pexpression5Node3;
+        PExp5 pexp5Node3;
         tnonNode2 = (TNon)nodeArrayList1.get(0);
-        pexpression5Node3 = (PExpression5)nodeArrayList2.get(0);
+        pexp5Node3 = (PExp5)nodeArrayList2.get(0);
 
-        pexpression5Node1 = new ANonExpression5(tnonNode2, pexpression5Node3);
+        pexp5Node1 = new ANonExp5(tnonNode2, pexp5Node3);
         }
-	nodeList.add(pexpression5Node1);
+	nodeList.add(pexp5Node1);
         return nodeList;
     }
 
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new48() /* reduce AExpression6Expression5 */
+    ArrayList<Object> new48() /* reduce AExp6Exp5 */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList1 = pop();
-        PExpression5 pexpression5Node1;
+        PExp5 pexp5Node1;
         {
             // Block
-        PExpression6 pexpression6Node2;
-        pexpression6Node2 = (PExpression6)nodeArrayList1.get(0);
+        PExp6 pexp6Node2;
+        pexp6Node2 = (PExp6)nodeArrayList1.get(0);
 
-        pexpression5Node1 = new AExpression6Expression5(pexpression6Node2);
+        pexp5Node1 = new AExp6Exp5(pexp6Node2);
         }
-	nodeList.add(pexpression5Node1);
+	nodeList.add(pexp5Node1);
         return nodeList;
     }
 
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new49() /* reduce AParenthesesExpression6 */
+    ArrayList<Object> new49() /* reduce AParenthesesExp6 */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList3 = pop();
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList2 = pop();
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList1 = pop();
-        PExpression6 pexpression6Node1;
+        PExp6 pexp6Node1;
         {
             // Block
         TParG tpargNode2;
@@ -1981,56 +1981,56 @@ public class Parser
         pexpressionNode3 = (PExpression)nodeArrayList2.get(0);
         tpardNode4 = (TParD)nodeArrayList3.get(0);
 
-        pexpression6Node1 = new AParenthesesExpression6(tpargNode2, pexpressionNode3, tpardNode4);
+        pexp6Node1 = new AParenthesesExp6(tpargNode2, pexpressionNode3, tpardNode4);
         }
-	nodeList.add(pexpression6Node1);
+	nodeList.add(pexp6Node1);
         return nodeList;
     }
 
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new50() /* reduce AVarExpression6 */
+    ArrayList<Object> new50() /* reduce AVarExp6 */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList1 = pop();
-        PExpression6 pexpression6Node1;
+        PExp6 pexp6Node1;
         {
             // Block
         PVar pvarNode2;
         pvarNode2 = (PVar)nodeArrayList1.get(0);
 
-        pexpression6Node1 = new AVarExpression6(pvarNode2);
+        pexp6Node1 = new AVarExp6(pvarNode2);
         }
-	nodeList.add(pexpression6Node1);
+	nodeList.add(pexp6Node1);
         return nodeList;
     }
 
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new51() /* reduce ANombreExpression6 */
+    ArrayList<Object> new51() /* reduce ANombreExp6 */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList1 = pop();
-        PExpression6 pexpression6Node1;
+        PExp6 pexp6Node1;
         {
             // Block
         TNombre tnombreNode2;
         tnombreNode2 = (TNombre)nodeArrayList1.get(0);
 
-        pexpression6Node1 = new ANombreExpression6(tnombreNode2);
+        pexp6Node1 = new ANombreExp6(tnombreNode2);
         }
-	nodeList.add(pexpression6Node1);
+	nodeList.add(pexp6Node1);
         return nodeList;
     }
 
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new52() /* reduce AAppelfonction2Expression6 */
+    ArrayList<Object> new52() /* reduce AAppelfonction2Exp6 */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
@@ -2038,7 +2038,7 @@ public class Parser
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList3 = pop();
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList2 = pop();
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList1 = pop();
-        PExpression6 pexpression6Node1;
+        PExp6 pexp6Node1;
         {
             // Block
         TId tidNode2;
@@ -2050,23 +2050,23 @@ public class Parser
         plisteexpressionsNode4 = (PListeexpressions)nodeArrayList3.get(0);
         tpardNode5 = (TParD)nodeArrayList4.get(0);
 
-        pexpression6Node1 = new AAppelfonction2Expression6(tidNode2, tpargNode3, plisteexpressionsNode4, tpardNode5);
+        pexp6Node1 = new AAppelfonction2Exp6(tidNode2, tpargNode3, plisteexpressionsNode4, tpardNode5);
         }
-	nodeList.add(pexpression6Node1);
+	nodeList.add(pexp6Node1);
         return nodeList;
     }
 
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new53() /* reduce ALireExpression6 */
+    ArrayList<Object> new53() /* reduce ALireExp6 */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList3 = pop();
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList2 = pop();
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList1 = pop();
-        PExpression6 pexpression6Node1;
+        PExp6 pexp6Node1;
         {
             // Block
         TLire tlireNode2;
@@ -2076,49 +2076,49 @@ public class Parser
         tpargNode3 = (TParG)nodeArrayList2.get(0);
         tpardNode4 = (TParD)nodeArrayList3.get(0);
 
-        pexpression6Node1 = new ALireExpression6(tlireNode2, tpargNode3, tpardNode4);
+        pexp6Node1 = new ALireExp6(tlireNode2, tpargNode3, tpardNode4);
         }
-	nodeList.add(pexpression6Node1);
+	nodeList.add(pexp6Node1);
         return nodeList;
     }
 
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new54() /* reduce AVraiExpression6 */
+    ArrayList<Object> new54() /* reduce AVraiExp6 */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList1 = pop();
-        PExpression6 pexpression6Node1;
+        PExp6 pexp6Node1;
         {
             // Block
         TVrai tvraiNode2;
         tvraiNode2 = (TVrai)nodeArrayList1.get(0);
 
-        pexpression6Node1 = new AVraiExpression6(tvraiNode2);
+        pexp6Node1 = new AVraiExp6(tvraiNode2);
         }
-	nodeList.add(pexpression6Node1);
+	nodeList.add(pexp6Node1);
         return nodeList;
     }
 
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new55() /* reduce AFauxExpression6 */
+    ArrayList<Object> new55() /* reduce AFauxExp6 */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
         @SuppressWarnings("unused") ArrayList<Object> nodeArrayList1 = pop();
-        PExpression6 pexpression6Node1;
+        PExp6 pexp6Node1;
         {
             // Block
         TFaux tfauxNode2;
         tfauxNode2 = (TFaux)nodeArrayList1.get(0);
 
-        pexpression6Node1 = new AFauxExpression6(tfauxNode2);
+        pexp6Node1 = new AFauxExp6(tfauxNode2);
         }
-	nodeList.add(pexpression6Node1);
+	nodeList.add(pexp6Node1);
         return nodeList;
     }
 

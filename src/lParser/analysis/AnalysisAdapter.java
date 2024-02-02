@@ -261,127 +261,127 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseAExpression1Expression(AExpression1Expression node)
+    public void caseAExp1Expression(AExp1Expression node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAEtExpression1(AEtExpression1 node)
+    public void caseAEtExp1(AEtExp1 node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAExpression2Expression1(AExpression2Expression1 node)
+    public void caseAExp2Exp1(AExp2Exp1 node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAEgalExpression2(AEgalExpression2 node)
+    public void caseAEgalExp2(AEgalExp2 node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAInfExpression2(AInfExpression2 node)
+    public void caseAInfExp2(AInfExp2 node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAExpression3Expression2(AExpression3Expression2 node)
+    public void caseAExp3Exp2(AExp3Exp2 node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAPlusExpression3(APlusExpression3 node)
+    public void caseAPlusExp3(APlusExp3 node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAMoinsExpression3(AMoinsExpression3 node)
+    public void caseAMoinsExp3(AMoinsExp3 node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAExpression5Expression3(AExpression5Expression3 node)
+    public void caseAExp5Exp3(AExp5Exp3 node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAMultExpression4(AMultExpression4 node)
+    public void caseAMultExp4(AMultExp4 node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseADivExpression4(ADivExpression4 node)
+    public void caseADivExp4(ADivExp4 node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAExpression5Expression4(AExpression5Expression4 node)
+    public void caseAExp5Exp4(AExp5Exp4 node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseANonExpression5(ANonExpression5 node)
+    public void caseANonExp5(ANonExp5 node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAExpression6Expression5(AExpression6Expression5 node)
+    public void caseAExp6Exp5(AExp6Exp5 node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAParenthesesExpression6(AParenthesesExpression6 node)
+    public void caseAParenthesesExp6(AParenthesesExp6 node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAVarExpression6(AVarExpression6 node)
+    public void caseAVarExp6(AVarExp6 node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseANombreExpression6(ANombreExpression6 node)
+    public void caseANombreExp6(ANombreExp6 node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAAppelfonction2Expression6(AAppelfonction2Expression6 node)
+    public void caseAAppelfonction2Exp6(AAppelfonction2Exp6 node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseALireExpression6(ALireExpression6 node)
+    public void caseALireExp6(ALireExp6 node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAVraiExpression6(AVraiExpression6 node)
+    public void caseAVraiExp6(AVraiExp6 node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAFauxExpression6(AFauxExpression6 node)
+    public void caseAFauxExp6(AFauxExp6 node)
     {
         defaultCase(node);
     }
