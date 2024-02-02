@@ -31,6 +31,8 @@ public class Compiler
 		processCommandLine(args);
 		System.out.println("[BUILD SC] ");
 		buildSc();
+		
+		Sc2Xml sc2Xml = new Sc2Xml(baseName);
 		/*		System.out.println("[BUILD SA] ");
 		buildSa();
 		System.out.println("[BUILD TS] ");
