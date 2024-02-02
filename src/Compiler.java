@@ -31,11 +31,9 @@ public class Compiler
 		processCommandLine(args);
 		System.out.println("[BUILD SC] ");
 		buildSc();
-		
-		Sc2Xml sc2Xml = new Sc2Xml(baseName);
-		/*		System.out.println("[BUILD SA] ");
+				System.out.println("[BUILD SA] ");
 		buildSa();
-		System.out.println("[BUILD TS] ");
+		/*System.out.println("[BUILD TS] ");
 		buildTs();
 		System.out.println("[TYPE CHECKING]");
 		typeCheck();
@@ -105,8 +103,7 @@ public class Compiler
 			Sc2sa sc2sa = new Sc2sa();
 			scRoot.apply(sc2sa);
 			saRoot = sc2sa.getRoot();
-		} catch (Exception ignored) {
-		}
+		} catch (Exception ignored) {}
 		PrintStream out = System.out;
 		if (verboseLevel > 1) {
 			System.out.println("[PRINT SA]");
