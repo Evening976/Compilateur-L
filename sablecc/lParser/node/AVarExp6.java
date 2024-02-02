@@ -5,46 +5,46 @@ package lParser.node;
 import lParser.analysis.*;
 
 @SuppressWarnings("nls")
-public final class AExpression6Expression5 extends PExpression5
+public final class AVarExp6 extends PExp6
 {
-    private PExpression6 _expression6_;
+    private PVar _var_;
 
-    public AExpression6Expression5()
+    public AVarExp6()
     {
         // Constructor
     }
 
-    public AExpression6Expression5(
-        @SuppressWarnings("hiding") PExpression6 _expression6_)
+    public AVarExp6(
+        @SuppressWarnings("hiding") PVar _var_)
     {
         // Constructor
-        setExpression6(_expression6_);
+        setVar(_var_);
 
     }
 
     @Override
     public Object clone()
     {
-        return new AExpression6Expression5(
-            cloneNode(this._expression6_));
+        return new AVarExp6(
+            cloneNode(this._var_));
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseAExpression6Expression5(this);
+        ((Analysis) sw).caseAVarExp6(this);
     }
 
-    public PExpression6 getExpression6()
+    public PVar getVar()
     {
-        return this._expression6_;
+        return this._var_;
     }
 
-    public void setExpression6(PExpression6 node)
+    public void setVar(PVar node)
     {
-        if(this._expression6_ != null)
+        if(this._var_ != null)
         {
-            this._expression6_.parent(null);
+            this._var_.parent(null);
         }
 
         if(node != null)
@@ -57,23 +57,23 @@ public final class AExpression6Expression5 extends PExpression5
             node.parent(this);
         }
 
-        this._expression6_ = node;
+        this._var_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._expression6_);
+            + toString(this._var_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._expression6_ == child)
+        if(this._var_ == child)
         {
-            this._expression6_ = null;
+            this._var_ = null;
             return;
         }
 
@@ -84,9 +84,9 @@ public final class AExpression6Expression5 extends PExpression5
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._expression6_ == oldChild)
+        if(this._var_ == oldChild)
         {
-            setExpression6((PExpression6) newChild);
+            setVar((PVar) newChild);
             return;
         }
 

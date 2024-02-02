@@ -5,56 +5,56 @@ package lParser.node;
 import lParser.analysis.*;
 
 @SuppressWarnings("nls")
-public final class ALireExpression6 extends PExpression6
+public final class AEgalExp2 extends PExp2
 {
-    private TLire _lire_;
-    private TParG _parG_;
-    private TParD _parD_;
+    private PExp2 _exp2_;
+    private TEgal _egal_;
+    private PExp3 _exp3_;
 
-    public ALireExpression6()
+    public AEgalExp2()
     {
         // Constructor
     }
 
-    public ALireExpression6(
-        @SuppressWarnings("hiding") TLire _lire_,
-        @SuppressWarnings("hiding") TParG _parG_,
-        @SuppressWarnings("hiding") TParD _parD_)
+    public AEgalExp2(
+        @SuppressWarnings("hiding") PExp2 _exp2_,
+        @SuppressWarnings("hiding") TEgal _egal_,
+        @SuppressWarnings("hiding") PExp3 _exp3_)
     {
         // Constructor
-        setLire(_lire_);
+        setExp2(_exp2_);
 
-        setParG(_parG_);
+        setEgal(_egal_);
 
-        setParD(_parD_);
+        setExp3(_exp3_);
 
     }
 
     @Override
     public Object clone()
     {
-        return new ALireExpression6(
-            cloneNode(this._lire_),
-            cloneNode(this._parG_),
-            cloneNode(this._parD_));
+        return new AEgalExp2(
+            cloneNode(this._exp2_),
+            cloneNode(this._egal_),
+            cloneNode(this._exp3_));
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseALireExpression6(this);
+        ((Analysis) sw).caseAEgalExp2(this);
     }
 
-    public TLire getLire()
+    public PExp2 getExp2()
     {
-        return this._lire_;
+        return this._exp2_;
     }
 
-    public void setLire(TLire node)
+    public void setExp2(PExp2 node)
     {
-        if(this._lire_ != null)
+        if(this._exp2_ != null)
         {
-            this._lire_.parent(null);
+            this._exp2_.parent(null);
         }
 
         if(node != null)
@@ -67,19 +67,19 @@ public final class ALireExpression6 extends PExpression6
             node.parent(this);
         }
 
-        this._lire_ = node;
+        this._exp2_ = node;
     }
 
-    public TParG getParG()
+    public TEgal getEgal()
     {
-        return this._parG_;
+        return this._egal_;
     }
 
-    public void setParG(TParG node)
+    public void setEgal(TEgal node)
     {
-        if(this._parG_ != null)
+        if(this._egal_ != null)
         {
-            this._parG_.parent(null);
+            this._egal_.parent(null);
         }
 
         if(node != null)
@@ -92,19 +92,19 @@ public final class ALireExpression6 extends PExpression6
             node.parent(this);
         }
 
-        this._parG_ = node;
+        this._egal_ = node;
     }
 
-    public TParD getParD()
+    public PExp3 getExp3()
     {
-        return this._parD_;
+        return this._exp3_;
     }
 
-    public void setParD(TParD node)
+    public void setExp3(PExp3 node)
     {
-        if(this._parD_ != null)
+        if(this._exp3_ != null)
         {
-            this._parD_.parent(null);
+            this._exp3_.parent(null);
         }
 
         if(node != null)
@@ -117,37 +117,37 @@ public final class ALireExpression6 extends PExpression6
             node.parent(this);
         }
 
-        this._parD_ = node;
+        this._exp3_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._lire_)
-            + toString(this._parG_)
-            + toString(this._parD_);
+            + toString(this._exp2_)
+            + toString(this._egal_)
+            + toString(this._exp3_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._lire_ == child)
+        if(this._exp2_ == child)
         {
-            this._lire_ = null;
+            this._exp2_ = null;
             return;
         }
 
-        if(this._parG_ == child)
+        if(this._egal_ == child)
         {
-            this._parG_ = null;
+            this._egal_ = null;
             return;
         }
 
-        if(this._parD_ == child)
+        if(this._exp3_ == child)
         {
-            this._parD_ = null;
+            this._exp3_ = null;
             return;
         }
 
@@ -158,21 +158,21 @@ public final class ALireExpression6 extends PExpression6
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._lire_ == oldChild)
+        if(this._exp2_ == oldChild)
         {
-            setLire((TLire) newChild);
+            setExp2((PExp2) newChild);
             return;
         }
 
-        if(this._parG_ == oldChild)
+        if(this._egal_ == oldChild)
         {
-            setParG((TParG) newChild);
+            setEgal((TEgal) newChild);
             return;
         }
 
-        if(this._parD_ == oldChild)
+        if(this._exp3_ == oldChild)
         {
-            setParD((TParD) newChild);
+            setExp3((PExp3) newChild);
             return;
         }
 

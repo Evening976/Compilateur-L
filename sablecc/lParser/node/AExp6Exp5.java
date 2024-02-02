@@ -5,46 +5,46 @@ package lParser.node;
 import lParser.analysis.*;
 
 @SuppressWarnings("nls")
-public final class AVarExpression6 extends PExpression6
+public final class AExp6Exp5 extends PExp5
 {
-    private PVar _var_;
+    private PExp6 _exp6_;
 
-    public AVarExpression6()
+    public AExp6Exp5()
     {
         // Constructor
     }
 
-    public AVarExpression6(
-        @SuppressWarnings("hiding") PVar _var_)
+    public AExp6Exp5(
+        @SuppressWarnings("hiding") PExp6 _exp6_)
     {
         // Constructor
-        setVar(_var_);
+        setExp6(_exp6_);
 
     }
 
     @Override
     public Object clone()
     {
-        return new AVarExpression6(
-            cloneNode(this._var_));
+        return new AExp6Exp5(
+            cloneNode(this._exp6_));
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseAVarExpression6(this);
+        ((Analysis) sw).caseAExp6Exp5(this);
     }
 
-    public PVar getVar()
+    public PExp6 getExp6()
     {
-        return this._var_;
+        return this._exp6_;
     }
 
-    public void setVar(PVar node)
+    public void setExp6(PExp6 node)
     {
-        if(this._var_ != null)
+        if(this._exp6_ != null)
         {
-            this._var_.parent(null);
+            this._exp6_.parent(null);
         }
 
         if(node != null)
@@ -57,23 +57,23 @@ public final class AVarExpression6 extends PExpression6
             node.parent(this);
         }
 
-        this._var_ = node;
+        this._exp6_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._var_);
+            + toString(this._exp6_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._var_ == child)
+        if(this._exp6_ == child)
         {
-            this._var_ = null;
+            this._exp6_ = null;
             return;
         }
 
@@ -84,9 +84,9 @@ public final class AVarExpression6 extends PExpression6
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._var_ == oldChild)
+        if(this._exp6_ == oldChild)
         {
-            setVar((PVar) newChild);
+            setExp6((PExp6) newChild);
             return;
         }
 

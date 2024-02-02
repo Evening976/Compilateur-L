@@ -2,7 +2,7 @@
 
 package lParser.node;
 
-public abstract class PExpression6 extends Node
+public abstract class PExp1 extends Node
 {
     // Empty body
 }

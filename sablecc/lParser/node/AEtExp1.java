@@ -5,56 +5,56 @@ package lParser.node;
 import lParser.analysis.*;
 
 @SuppressWarnings("nls")
-public final class AEtExpression1 extends PExpression1
+public final class AEtExp1 extends PExp1
 {
-    private PExpression1 _expression1_;
+    private PExp1 _exp1_;
     private TEt _et_;
-    private PExpression2 _expression2_;
+    private PExp2 _exp2_;
 
-    public AEtExpression1()
+    public AEtExp1()
     {
         // Constructor
     }
 
-    public AEtExpression1(
-        @SuppressWarnings("hiding") PExpression1 _expression1_,
+    public AEtExp1(
+        @SuppressWarnings("hiding") PExp1 _exp1_,
         @SuppressWarnings("hiding") TEt _et_,
-        @SuppressWarnings("hiding") PExpression2 _expression2_)
+        @SuppressWarnings("hiding") PExp2 _exp2_)
     {
         // Constructor
-        setExpression1(_expression1_);
+        setExp1(_exp1_);
 
         setEt(_et_);
 
-        setExpression2(_expression2_);
+        setExp2(_exp2_);
 
     }
 
     @Override
     public Object clone()
     {
-        return new AEtExpression1(
-            cloneNode(this._expression1_),
+        return new AEtExp1(
+            cloneNode(this._exp1_),
             cloneNode(this._et_),
-            cloneNode(this._expression2_));
+            cloneNode(this._exp2_));
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseAEtExpression1(this);
+        ((Analysis) sw).caseAEtExp1(this);
     }
 
-    public PExpression1 getExpression1()
+    public PExp1 getExp1()
     {
-        return this._expression1_;
+        return this._exp1_;
     }
 
-    public void setExpression1(PExpression1 node)
+    public void setExp1(PExp1 node)
     {
-        if(this._expression1_ != null)
+        if(this._exp1_ != null)
         {
-            this._expression1_.parent(null);
+            this._exp1_.parent(null);
         }
 
         if(node != null)
@@ -67,7 +67,7 @@ public final class AEtExpression1 extends PExpression1
             node.parent(this);
         }
 
-        this._expression1_ = node;
+        this._exp1_ = node;
     }
 
     public TEt getEt()
@@ -95,16 +95,16 @@ public final class AEtExpression1 extends PExpression1
         this._et_ = node;
     }
 
-    public PExpression2 getExpression2()
+    public PExp2 getExp2()
     {
-        return this._expression2_;
+        return this._exp2_;
     }
 
-    public void setExpression2(PExpression2 node)
+    public void setExp2(PExp2 node)
     {
-        if(this._expression2_ != null)
+        if(this._exp2_ != null)
         {
-            this._expression2_.parent(null);
+            this._exp2_.parent(null);
         }
 
         if(node != null)
@@ -117,25 +117,25 @@ public final class AEtExpression1 extends PExpression1
             node.parent(this);
         }
 
-        this._expression2_ = node;
+        this._exp2_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._expression1_)
+            + toString(this._exp1_)
             + toString(this._et_)
-            + toString(this._expression2_);
+            + toString(this._exp2_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._expression1_ == child)
+        if(this._exp1_ == child)
         {
-            this._expression1_ = null;
+            this._exp1_ = null;
             return;
         }
 
@@ -145,9 +145,9 @@ public final class AEtExpression1 extends PExpression1
             return;
         }
 
-        if(this._expression2_ == child)
+        if(this._exp2_ == child)
         {
-            this._expression2_ = null;
+            this._exp2_ = null;
             return;
         }
 
@@ -158,9 +158,9 @@ public final class AEtExpression1 extends PExpression1
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._expression1_ == oldChild)
+        if(this._exp1_ == oldChild)
         {
-            setExpression1((PExpression1) newChild);
+            setExp1((PExp1) newChild);
             return;
         }
 
@@ -170,9 +170,9 @@ public final class AEtExpression1 extends PExpression1
             return;
         }
 
-        if(this._expression2_ == oldChild)
+        if(this._exp2_ == oldChild)
         {
-            setExpression2((PExpression2) newChild);
+            setExp2((PExp2) newChild);
             return;
         }
 

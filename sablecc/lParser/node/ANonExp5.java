@@ -5,39 +5,39 @@ package lParser.node;
 import lParser.analysis.*;
 
 @SuppressWarnings("nls")
-public final class ANonExpression5 extends PExpression5
+public final class ANonExp5 extends PExp5
 {
     private TNon _non_;
-    private PExpression5 _expression5_;
+    private PExp5 _exp5_;
 
-    public ANonExpression5()
+    public ANonExp5()
     {
         // Constructor
     }
 
-    public ANonExpression5(
+    public ANonExp5(
         @SuppressWarnings("hiding") TNon _non_,
-        @SuppressWarnings("hiding") PExpression5 _expression5_)
+        @SuppressWarnings("hiding") PExp5 _exp5_)
     {
         // Constructor
         setNon(_non_);
 
-        setExpression5(_expression5_);
+        setExp5(_exp5_);
 
     }
 
     @Override
     public Object clone()
     {
-        return new ANonExpression5(
+        return new ANonExp5(
             cloneNode(this._non_),
-            cloneNode(this._expression5_));
+            cloneNode(this._exp5_));
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseANonExpression5(this);
+        ((Analysis) sw).caseANonExp5(this);
     }
 
     public TNon getNon()
@@ -65,16 +65,16 @@ public final class ANonExpression5 extends PExpression5
         this._non_ = node;
     }
 
-    public PExpression5 getExpression5()
+    public PExp5 getExp5()
     {
-        return this._expression5_;
+        return this._exp5_;
     }
 
-    public void setExpression5(PExpression5 node)
+    public void setExp5(PExp5 node)
     {
-        if(this._expression5_ != null)
+        if(this._exp5_ != null)
         {
-            this._expression5_.parent(null);
+            this._exp5_.parent(null);
         }
 
         if(node != null)
@@ -87,7 +87,7 @@ public final class ANonExpression5 extends PExpression5
             node.parent(this);
         }
 
-        this._expression5_ = node;
+        this._exp5_ = node;
     }
 
     @Override
@@ -95,7 +95,7 @@ public final class ANonExpression5 extends PExpression5
     {
         return ""
             + toString(this._non_)
-            + toString(this._expression5_);
+            + toString(this._exp5_);
     }
 
     @Override
@@ -108,9 +108,9 @@ public final class ANonExpression5 extends PExpression5
             return;
         }
 
-        if(this._expression5_ == child)
+        if(this._exp5_ == child)
         {
-            this._expression5_ = null;
+            this._exp5_ = null;
             return;
         }
 
@@ -127,9 +127,9 @@ public final class ANonExpression5 extends PExpression5
             return;
         }
 
-        if(this._expression5_ == oldChild)
+        if(this._exp5_ == oldChild)
         {
-            setExpression5((PExpression5) newChild);
+            setExp5((PExp5) newChild);
             return;
         }
 

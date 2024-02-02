@@ -5,46 +5,46 @@ package lParser.node;
 import lParser.analysis.*;
 
 @SuppressWarnings("nls")
-public final class AVraiExpression6 extends PExpression6
+public final class AFauxExp6 extends PExp6
 {
-    private TVrai _vrai_;
+    private TFaux _faux_;
 
-    public AVraiExpression6()
+    public AFauxExp6()
     {
         // Constructor
     }
 
-    public AVraiExpression6(
-        @SuppressWarnings("hiding") TVrai _vrai_)
+    public AFauxExp6(
+        @SuppressWarnings("hiding") TFaux _faux_)
     {
         // Constructor
-        setVrai(_vrai_);
+        setFaux(_faux_);
 
     }
 
     @Override
     public Object clone()
     {
-        return new AVraiExpression6(
-            cloneNode(this._vrai_));
+        return new AFauxExp6(
+            cloneNode(this._faux_));
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseAVraiExpression6(this);
+        ((Analysis) sw).caseAFauxExp6(this);
     }
 
-    public TVrai getVrai()
+    public TFaux getFaux()
     {
-        return this._vrai_;
+        return this._faux_;
     }
 
-    public void setVrai(TVrai node)
+    public void setFaux(TFaux node)
     {
-        if(this._vrai_ != null)
+        if(this._faux_ != null)
         {
-            this._vrai_.parent(null);
+            this._faux_.parent(null);
         }
 
         if(node != null)
@@ -57,23 +57,23 @@ public final class AVraiExpression6 extends PExpression6
             node.parent(this);
         }
 
-        this._vrai_ = node;
+        this._faux_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._vrai_);
+            + toString(this._faux_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._vrai_ == child)
+        if(this._faux_ == child)
         {
-            this._vrai_ = null;
+            this._faux_ = null;
             return;
         }
 
@@ -84,9 +84,9 @@ public final class AVraiExpression6 extends PExpression6
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._vrai_ == oldChild)
+        if(this._faux_ == oldChild)
         {
-            setVrai((TVrai) newChild);
+            setFaux((TFaux) newChild);
             return;
         }
 

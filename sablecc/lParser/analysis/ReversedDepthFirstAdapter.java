@@ -848,9 +848,9 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
     public void caseAOuExpression(AOuExpression node)
     {
         inAOuExpression(node);
-        if(node.getExpression1() != null)
+        if(node.getExp1() != null)
         {
-            node.getExpression1().apply(this);
+            node.getExp1().apply(this);
         }
         if(node.getOu() != null)
         {
@@ -863,374 +863,374 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         outAOuExpression(node);
     }
 
-    public void inAExpression1Expression(AExpression1Expression node)
+    public void inAExp1Expression(AExp1Expression node)
     {
         defaultIn(node);
     }
 
-    public void outAExpression1Expression(AExpression1Expression node)
+    public void outAExp1Expression(AExp1Expression node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAExpression1Expression(AExpression1Expression node)
+    public void caseAExp1Expression(AExp1Expression node)
     {
-        inAExpression1Expression(node);
-        if(node.getExpression1() != null)
+        inAExp1Expression(node);
+        if(node.getExp1() != null)
         {
-            node.getExpression1().apply(this);
+            node.getExp1().apply(this);
         }
-        outAExpression1Expression(node);
+        outAExp1Expression(node);
     }
 
-    public void inAEtExpression1(AEtExpression1 node)
+    public void inAEtExp1(AEtExp1 node)
     {
         defaultIn(node);
     }
 
-    public void outAEtExpression1(AEtExpression1 node)
+    public void outAEtExp1(AEtExp1 node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAEtExpression1(AEtExpression1 node)
+    public void caseAEtExp1(AEtExp1 node)
     {
-        inAEtExpression1(node);
-        if(node.getExpression2() != null)
+        inAEtExp1(node);
+        if(node.getExp2() != null)
         {
-            node.getExpression2().apply(this);
+            node.getExp2().apply(this);
         }
         if(node.getEt() != null)
         {
             node.getEt().apply(this);
         }
-        if(node.getExpression1() != null)
+        if(node.getExp1() != null)
         {
-            node.getExpression1().apply(this);
+            node.getExp1().apply(this);
         }
-        outAEtExpression1(node);
+        outAEtExp1(node);
     }
 
-    public void inAExpression2Expression1(AExpression2Expression1 node)
+    public void inAExp2Exp1(AExp2Exp1 node)
     {
         defaultIn(node);
     }
 
-    public void outAExpression2Expression1(AExpression2Expression1 node)
+    public void outAExp2Exp1(AExp2Exp1 node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAExpression2Expression1(AExpression2Expression1 node)
+    public void caseAExp2Exp1(AExp2Exp1 node)
     {
-        inAExpression2Expression1(node);
-        if(node.getExpression2() != null)
+        inAExp2Exp1(node);
+        if(node.getExp2() != null)
         {
-            node.getExpression2().apply(this);
+            node.getExp2().apply(this);
         }
-        outAExpression2Expression1(node);
+        outAExp2Exp1(node);
     }
 
-    public void inAEgalExpression2(AEgalExpression2 node)
+    public void inAEgalExp2(AEgalExp2 node)
     {
         defaultIn(node);
     }
 
-    public void outAEgalExpression2(AEgalExpression2 node)
+    public void outAEgalExp2(AEgalExp2 node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAEgalExpression2(AEgalExpression2 node)
+    public void caseAEgalExp2(AEgalExp2 node)
     {
-        inAEgalExpression2(node);
-        if(node.getExpression3() != null)
+        inAEgalExp2(node);
+        if(node.getExp3() != null)
         {
-            node.getExpression3().apply(this);
+            node.getExp3().apply(this);
         }
         if(node.getEgal() != null)
         {
             node.getEgal().apply(this);
         }
-        if(node.getExpression2() != null)
+        if(node.getExp2() != null)
         {
-            node.getExpression2().apply(this);
+            node.getExp2().apply(this);
         }
-        outAEgalExpression2(node);
+        outAEgalExp2(node);
     }
 
-    public void inAInfExpression2(AInfExpression2 node)
+    public void inAInfExp2(AInfExp2 node)
     {
         defaultIn(node);
     }
 
-    public void outAInfExpression2(AInfExpression2 node)
+    public void outAInfExp2(AInfExp2 node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAInfExpression2(AInfExpression2 node)
+    public void caseAInfExp2(AInfExp2 node)
     {
-        inAInfExpression2(node);
-        if(node.getExpression3() != null)
+        inAInfExp2(node);
+        if(node.getExp3() != null)
         {
-            node.getExpression3().apply(this);
+            node.getExp3().apply(this);
         }
         if(node.getInf() != null)
         {
             node.getInf().apply(this);
         }
-        if(node.getExpression2() != null)
+        if(node.getExp2() != null)
         {
-            node.getExpression2().apply(this);
+            node.getExp2().apply(this);
         }
-        outAInfExpression2(node);
+        outAInfExp2(node);
     }
 
-    public void inAExpression3Expression2(AExpression3Expression2 node)
+    public void inAExp3Exp2(AExp3Exp2 node)
     {
         defaultIn(node);
     }
 
-    public void outAExpression3Expression2(AExpression3Expression2 node)
+    public void outAExp3Exp2(AExp3Exp2 node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAExpression3Expression2(AExpression3Expression2 node)
+    public void caseAExp3Exp2(AExp3Exp2 node)
     {
-        inAExpression3Expression2(node);
-        if(node.getExpression3() != null)
+        inAExp3Exp2(node);
+        if(node.getExp3() != null)
         {
-            node.getExpression3().apply(this);
+            node.getExp3().apply(this);
         }
-        outAExpression3Expression2(node);
+        outAExp3Exp2(node);
     }
 
-    public void inAPlusExpression3(APlusExpression3 node)
+    public void inAPlusExp3(APlusExp3 node)
     {
         defaultIn(node);
     }
 
-    public void outAPlusExpression3(APlusExpression3 node)
+    public void outAPlusExp3(APlusExp3 node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAPlusExpression3(APlusExpression3 node)
+    public void caseAPlusExp3(APlusExp3 node)
     {
-        inAPlusExpression3(node);
-        if(node.getExpression4() != null)
+        inAPlusExp3(node);
+        if(node.getExp4() != null)
         {
-            node.getExpression4().apply(this);
+            node.getExp4().apply(this);
         }
         if(node.getPlus() != null)
         {
             node.getPlus().apply(this);
         }
-        if(node.getExpression3() != null)
+        if(node.getExp3() != null)
         {
-            node.getExpression3().apply(this);
+            node.getExp3().apply(this);
         }
-        outAPlusExpression3(node);
+        outAPlusExp3(node);
     }
 
-    public void inAMoinsExpression3(AMoinsExpression3 node)
+    public void inAMoinsExp3(AMoinsExp3 node)
     {
         defaultIn(node);
     }
 
-    public void outAMoinsExpression3(AMoinsExpression3 node)
+    public void outAMoinsExp3(AMoinsExp3 node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAMoinsExpression3(AMoinsExpression3 node)
+    public void caseAMoinsExp3(AMoinsExp3 node)
     {
-        inAMoinsExpression3(node);
-        if(node.getExpression4() != null)
+        inAMoinsExp3(node);
+        if(node.getExp4() != null)
         {
-            node.getExpression4().apply(this);
+            node.getExp4().apply(this);
         }
         if(node.getMoins() != null)
         {
             node.getMoins().apply(this);
         }
-        if(node.getExpression3() != null)
+        if(node.getExp3() != null)
         {
-            node.getExpression3().apply(this);
+            node.getExp3().apply(this);
         }
-        outAMoinsExpression3(node);
+        outAMoinsExp3(node);
     }
 
-    public void inAExpression5Expression3(AExpression5Expression3 node)
+    public void inAExp5Exp3(AExp5Exp3 node)
     {
         defaultIn(node);
     }
 
-    public void outAExpression5Expression3(AExpression5Expression3 node)
+    public void outAExp5Exp3(AExp5Exp3 node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAExpression5Expression3(AExpression5Expression3 node)
+    public void caseAExp5Exp3(AExp5Exp3 node)
     {
-        inAExpression5Expression3(node);
-        if(node.getExpression4() != null)
+        inAExp5Exp3(node);
+        if(node.getExp4() != null)
         {
-            node.getExpression4().apply(this);
+            node.getExp4().apply(this);
         }
-        outAExpression5Expression3(node);
+        outAExp5Exp3(node);
     }
 
-    public void inAMultExpression4(AMultExpression4 node)
+    public void inAMultExp4(AMultExp4 node)
     {
         defaultIn(node);
     }
 
-    public void outAMultExpression4(AMultExpression4 node)
+    public void outAMultExp4(AMultExp4 node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAMultExpression4(AMultExpression4 node)
+    public void caseAMultExp4(AMultExp4 node)
     {
-        inAMultExpression4(node);
-        if(node.getExpression5() != null)
+        inAMultExp4(node);
+        if(node.getExp5() != null)
         {
-            node.getExpression5().apply(this);
+            node.getExp5().apply(this);
         }
         if(node.getMult() != null)
         {
             node.getMult().apply(this);
         }
-        if(node.getExpression4() != null)
+        if(node.getExp4() != null)
         {
-            node.getExpression4().apply(this);
+            node.getExp4().apply(this);
         }
-        outAMultExpression4(node);
+        outAMultExp4(node);
     }
 
-    public void inADivExpression4(ADivExpression4 node)
+    public void inADivExp4(ADivExp4 node)
     {
         defaultIn(node);
     }
 
-    public void outADivExpression4(ADivExpression4 node)
+    public void outADivExp4(ADivExp4 node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseADivExpression4(ADivExpression4 node)
+    public void caseADivExp4(ADivExp4 node)
     {
-        inADivExpression4(node);
-        if(node.getExpression5() != null)
+        inADivExp4(node);
+        if(node.getExp5() != null)
         {
-            node.getExpression5().apply(this);
+            node.getExp5().apply(this);
         }
         if(node.getDiv() != null)
         {
             node.getDiv().apply(this);
         }
-        if(node.getExpression4() != null)
+        if(node.getExp4() != null)
         {
-            node.getExpression4().apply(this);
+            node.getExp4().apply(this);
         }
-        outADivExpression4(node);
+        outADivExp4(node);
     }
 
-    public void inAExpression5Expression4(AExpression5Expression4 node)
+    public void inAExp5Exp4(AExp5Exp4 node)
     {
         defaultIn(node);
     }
 
-    public void outAExpression5Expression4(AExpression5Expression4 node)
+    public void outAExp5Exp4(AExp5Exp4 node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAExpression5Expression4(AExpression5Expression4 node)
+    public void caseAExp5Exp4(AExp5Exp4 node)
     {
-        inAExpression5Expression4(node);
-        if(node.getExpression5() != null)
+        inAExp5Exp4(node);
+        if(node.getExp5() != null)
         {
-            node.getExpression5().apply(this);
+            node.getExp5().apply(this);
         }
-        outAExpression5Expression4(node);
+        outAExp5Exp4(node);
     }
 
-    public void inANonExpression5(ANonExpression5 node)
+    public void inANonExp5(ANonExp5 node)
     {
         defaultIn(node);
     }
 
-    public void outANonExpression5(ANonExpression5 node)
+    public void outANonExp5(ANonExp5 node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseANonExpression5(ANonExpression5 node)
+    public void caseANonExp5(ANonExp5 node)
     {
-        inANonExpression5(node);
-        if(node.getExpression5() != null)
+        inANonExp5(node);
+        if(node.getExp5() != null)
         {
-            node.getExpression5().apply(this);
+            node.getExp5().apply(this);
         }
         if(node.getNon() != null)
         {
             node.getNon().apply(this);
         }
-        outANonExpression5(node);
+        outANonExp5(node);
     }
 
-    public void inAExpression6Expression5(AExpression6Expression5 node)
+    public void inAExp6Exp5(AExp6Exp5 node)
     {
         defaultIn(node);
     }
 
-    public void outAExpression6Expression5(AExpression6Expression5 node)
+    public void outAExp6Exp5(AExp6Exp5 node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAExpression6Expression5(AExpression6Expression5 node)
+    public void caseAExp6Exp5(AExp6Exp5 node)
     {
-        inAExpression6Expression5(node);
-        if(node.getExpression6() != null)
+        inAExp6Exp5(node);
+        if(node.getExp6() != null)
         {
-            node.getExpression6().apply(this);
+            node.getExp6().apply(this);
         }
-        outAExpression6Expression5(node);
+        outAExp6Exp5(node);
     }
 
-    public void inAParenthesesExpression6(AParenthesesExpression6 node)
+    public void inAParenthesesExp6(AParenthesesExp6 node)
     {
         defaultIn(node);
     }
 
-    public void outAParenthesesExpression6(AParenthesesExpression6 node)
+    public void outAParenthesesExp6(AParenthesesExp6 node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAParenthesesExpression6(AParenthesesExpression6 node)
+    public void caseAParenthesesExp6(AParenthesesExp6 node)
     {
-        inAParenthesesExpression6(node);
+        inAParenthesesExp6(node);
         if(node.getParD() != null)
         {
             node.getParD().apply(this);
@@ -1243,65 +1243,65 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         {
             node.getParG().apply(this);
         }
-        outAParenthesesExpression6(node);
+        outAParenthesesExp6(node);
     }
 
-    public void inAVarExpression6(AVarExpression6 node)
+    public void inAVarExp6(AVarExp6 node)
     {
         defaultIn(node);
     }
 
-    public void outAVarExpression6(AVarExpression6 node)
+    public void outAVarExp6(AVarExp6 node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAVarExpression6(AVarExpression6 node)
+    public void caseAVarExp6(AVarExp6 node)
     {
-        inAVarExpression6(node);
+        inAVarExp6(node);
         if(node.getVar() != null)
         {
             node.getVar().apply(this);
         }
-        outAVarExpression6(node);
+        outAVarExp6(node);
     }
 
-    public void inANombreExpression6(ANombreExpression6 node)
+    public void inANombreExp6(ANombreExp6 node)
     {
         defaultIn(node);
     }
 
-    public void outANombreExpression6(ANombreExpression6 node)
+    public void outANombreExp6(ANombreExp6 node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseANombreExpression6(ANombreExpression6 node)
+    public void caseANombreExp6(ANombreExp6 node)
     {
-        inANombreExpression6(node);
+        inANombreExp6(node);
         if(node.getNombre() != null)
         {
             node.getNombre().apply(this);
         }
-        outANombreExpression6(node);
+        outANombreExp6(node);
     }
 
-    public void inAAppelfonction2Expression6(AAppelfonction2Expression6 node)
+    public void inAAppelfonction2Exp6(AAppelfonction2Exp6 node)
     {
         defaultIn(node);
     }
 
-    public void outAAppelfonction2Expression6(AAppelfonction2Expression6 node)
+    public void outAAppelfonction2Exp6(AAppelfonction2Exp6 node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAAppelfonction2Expression6(AAppelfonction2Expression6 node)
+    public void caseAAppelfonction2Exp6(AAppelfonction2Exp6 node)
     {
-        inAAppelfonction2Expression6(node);
+        inAAppelfonction2Exp6(node);
         if(node.getParD() != null)
         {
             node.getParD().apply(this);
@@ -1318,23 +1318,23 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         {
             node.getId().apply(this);
         }
-        outAAppelfonction2Expression6(node);
+        outAAppelfonction2Exp6(node);
     }
 
-    public void inALireExpression6(ALireExpression6 node)
+    public void inALireExp6(ALireExp6 node)
     {
         defaultIn(node);
     }
 
-    public void outALireExpression6(ALireExpression6 node)
+    public void outALireExp6(ALireExp6 node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseALireExpression6(ALireExpression6 node)
+    public void caseALireExp6(ALireExp6 node)
     {
-        inALireExpression6(node);
+        inALireExp6(node);
         if(node.getParD() != null)
         {
             node.getParD().apply(this);
@@ -1347,48 +1347,48 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         {
             node.getLire().apply(this);
         }
-        outALireExpression6(node);
+        outALireExp6(node);
     }
 
-    public void inAVraiExpression6(AVraiExpression6 node)
+    public void inAVraiExp6(AVraiExp6 node)
     {
         defaultIn(node);
     }
 
-    public void outAVraiExpression6(AVraiExpression6 node)
+    public void outAVraiExp6(AVraiExp6 node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAVraiExpression6(AVraiExpression6 node)
+    public void caseAVraiExp6(AVraiExp6 node)
     {
-        inAVraiExpression6(node);
+        inAVraiExp6(node);
         if(node.getVrai() != null)
         {
             node.getVrai().apply(this);
         }
-        outAVraiExpression6(node);
+        outAVraiExp6(node);
     }
 
-    public void inAFauxExpression6(AFauxExpression6 node)
+    public void inAFauxExp6(AFauxExp6 node)
     {
         defaultIn(node);
     }
 
-    public void outAFauxExpression6(AFauxExpression6 node)
+    public void outAFauxExp6(AFauxExp6 node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAFauxExpression6(AFauxExpression6 node)
+    public void caseAFauxExp6(AFauxExp6 node)
     {
-        inAFauxExpression6(node);
+        inAFauxExp6(node);
         if(node.getFaux() != null)
         {
             node.getFaux().apply(this);
         }
-        outAFauxExpression6(node);
+        outAFauxExp6(node);
     }
 }

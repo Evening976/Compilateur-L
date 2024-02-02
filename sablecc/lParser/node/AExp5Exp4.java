@@ -5,46 +5,46 @@ package lParser.node;
 import lParser.analysis.*;
 
 @SuppressWarnings("nls")
-public final class AExpression1Expression extends PExpression
+public final class AExp5Exp4 extends PExp4
 {
-    private PExpression1 _expression1_;
+    private PExp5 _exp5_;
 
-    public AExpression1Expression()
+    public AExp5Exp4()
     {
         // Constructor
     }
 
-    public AExpression1Expression(
-        @SuppressWarnings("hiding") PExpression1 _expression1_)
+    public AExp5Exp4(
+        @SuppressWarnings("hiding") PExp5 _exp5_)
     {
         // Constructor
-        setExpression1(_expression1_);
+        setExp5(_exp5_);
 
     }
 
     @Override
     public Object clone()
     {
-        return new AExpression1Expression(
-            cloneNode(this._expression1_));
+        return new AExp5Exp4(
+            cloneNode(this._exp5_));
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseAExpression1Expression(this);
+        ((Analysis) sw).caseAExp5Exp4(this);
     }
 
-    public PExpression1 getExpression1()
+    public PExp5 getExp5()
     {
-        return this._expression1_;
+        return this._exp5_;
     }
 
-    public void setExpression1(PExpression1 node)
+    public void setExp5(PExp5 node)
     {
-        if(this._expression1_ != null)
+        if(this._exp5_ != null)
         {
-            this._expression1_.parent(null);
+            this._exp5_.parent(null);
         }
 
         if(node != null)
@@ -57,23 +57,23 @@ public final class AExpression1Expression extends PExpression
             node.parent(this);
         }
 
-        this._expression1_ = node;
+        this._exp5_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._expression1_);
+            + toString(this._exp5_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._expression1_ == child)
+        if(this._exp5_ == child)
         {
-            this._expression1_ = null;
+            this._exp5_ = null;
             return;
         }
 
@@ -84,9 +84,9 @@ public final class AExpression1Expression extends PExpression
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._expression1_ == oldChild)
+        if(this._exp5_ == oldChild)
         {
-            setExpression1((PExpression1) newChild);
+            setExp5((PExp5) newChild);
             return;
         }
 

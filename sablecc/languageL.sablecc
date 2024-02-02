@@ -71,7 +71,7 @@ type = {entier} entier |
 
 listedecfonc = {decfonction} fonction listedecfonc |
                {vide} ;
-               
+
 fonction = typeoptionnel id par_g [premier]:listedecvar par_d [second]:listedecvar blocinstructions ;
 
 typeoptionnel = {typevar} type |
@@ -99,28 +99,28 @@ listeexpressions = {listeparametres} expression listeexpressions1 |
 listeexpressions1 = {resteparametrescommencantvirgule} virgule expression listeexpressions1 |
                     {vide} ;
 
-expression = {ou} expression ou expression1 |
-             {expression1} expression1 ;
+expression = {ou} expression ou exp1 |
+             {exp1} exp1 ;
 
-expression1 = {et} expression1 et expression2 |
-              {expression2} expression2 ;
+exp1 = {et} exp1 et exp2 |
+              {exp2} exp2 ;
 
-expression2 = {egal} expression2 egal expression3 |
-              {inf} expression2 inf expression3 |
-              {expression3} expression3 ;
+exp2 = {egal} exp2 egal exp3 |
+              {inf} exp2 inf exp3 |
+              {exp3} exp3 ;
 
-expression3 = {plus} expression3 plus expression4 |
-              {moins} expression3 moins expression4 |
-              {expression5} expression4 ;
+exp3 = {plus} exp3 plus exp4 |
+              {moins} exp3 moins exp4 |
+              {exp5} exp4 ;
 
-expression4 = {mult} expression4 mult expression5 |
-              {div} expression4 div expression5 |
-              {expression5} expression5 ;
+exp4 = {mult} exp4 mult exp5 |
+              {div} exp4 div exp5 |
+              {exp5} exp5 ;
 
-expression5 = {non} non expression5 |
-              {expression6} expression6 ;
+exp5 = {non} non exp5 |
+              {exp6} exp6 ;
 
-expression6 = {parentheses} par_g expression par_d |
+exp6 = {parentheses} par_g expression par_d |
               {var} var |
               {nombre} nombre |
               {appelfonction2} id par_g listeexpressions par_d |

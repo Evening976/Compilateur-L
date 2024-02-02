@@ -5,46 +5,46 @@ package lParser.node;
 import lParser.analysis.*;
 
 @SuppressWarnings("nls")
-public final class AFauxExpression6 extends PExpression6
+public final class AExp2Exp1 extends PExp1
 {
-    private TFaux _faux_;
+    private PExp2 _exp2_;
 
-    public AFauxExpression6()
+    public AExp2Exp1()
     {
         // Constructor
     }
 
-    public AFauxExpression6(
-        @SuppressWarnings("hiding") TFaux _faux_)
+    public AExp2Exp1(
+        @SuppressWarnings("hiding") PExp2 _exp2_)
     {
         // Constructor
-        setFaux(_faux_);
+        setExp2(_exp2_);
 
     }
 
     @Override
     public Object clone()
     {
-        return new AFauxExpression6(
-            cloneNode(this._faux_));
+        return new AExp2Exp1(
+            cloneNode(this._exp2_));
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseAFauxExpression6(this);
+        ((Analysis) sw).caseAExp2Exp1(this);
     }
 
-    public TFaux getFaux()
+    public PExp2 getExp2()
     {
-        return this._faux_;
+        return this._exp2_;
     }
 
-    public void setFaux(TFaux node)
+    public void setExp2(PExp2 node)
     {
-        if(this._faux_ != null)
+        if(this._exp2_ != null)
         {
-            this._faux_.parent(null);
+            this._exp2_.parent(null);
         }
 
         if(node != null)
@@ -57,23 +57,23 @@ public final class AFauxExpression6 extends PExpression6
             node.parent(this);
         }
 
-        this._faux_ = node;
+        this._exp2_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._faux_);
+            + toString(this._exp2_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._faux_ == child)
+        if(this._exp2_ == child)
         {
-            this._faux_ = null;
+            this._exp2_ = null;
             return;
         }
 
@@ -84,9 +84,9 @@ public final class AFauxExpression6 extends PExpression6
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._faux_ == oldChild)
+        if(this._exp2_ == oldChild)
         {
-            setFaux((TFaux) newChild);
+            setExp2((PExp2) newChild);
             return;
         }
 

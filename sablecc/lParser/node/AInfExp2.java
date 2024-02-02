@@ -5,56 +5,56 @@ package lParser.node;
 import lParser.analysis.*;
 
 @SuppressWarnings("nls")
-public final class AInfExpression2 extends PExpression2
+public final class AInfExp2 extends PExp2
 {
-    private PExpression2 _expression2_;
+    private PExp2 _exp2_;
     private TInf _inf_;
-    private PExpression3 _expression3_;
+    private PExp3 _exp3_;
 
-    public AInfExpression2()
+    public AInfExp2()
     {
         // Constructor
     }
 
-    public AInfExpression2(
-        @SuppressWarnings("hiding") PExpression2 _expression2_,
+    public AInfExp2(
+        @SuppressWarnings("hiding") PExp2 _exp2_,
         @SuppressWarnings("hiding") TInf _inf_,
-        @SuppressWarnings("hiding") PExpression3 _expression3_)
+        @SuppressWarnings("hiding") PExp3 _exp3_)
     {
         // Constructor
-        setExpression2(_expression2_);
+        setExp2(_exp2_);
 
         setInf(_inf_);
 
-        setExpression3(_expression3_);
+        setExp3(_exp3_);
 
     }
 
     @Override
     public Object clone()
     {
-        return new AInfExpression2(
-            cloneNode(this._expression2_),
+        return new AInfExp2(
+            cloneNode(this._exp2_),
             cloneNode(this._inf_),
-            cloneNode(this._expression3_));
+            cloneNode(this._exp3_));
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseAInfExpression2(this);
+        ((Analysis) sw).caseAInfExp2(this);
     }
 
-    public PExpression2 getExpression2()
+    public PExp2 getExp2()
     {
-        return this._expression2_;
+        return this._exp2_;
     }
 
-    public void setExpression2(PExpression2 node)
+    public void setExp2(PExp2 node)
     {
-        if(this._expression2_ != null)
+        if(this._exp2_ != null)
         {
-            this._expression2_.parent(null);
+            this._exp2_.parent(null);
         }
 
         if(node != null)
@@ -67,7 +67,7 @@ public final class AInfExpression2 extends PExpression2
             node.parent(this);
         }
 
-        this._expression2_ = node;
+        this._exp2_ = node;
     }
 
     public TInf getInf()
@@ -95,16 +95,16 @@ public final class AInfExpression2 extends PExpression2
         this._inf_ = node;
     }
 
-    public PExpression3 getExpression3()
+    public PExp3 getExp3()
     {
-        return this._expression3_;
+        return this._exp3_;
     }
 
-    public void setExpression3(PExpression3 node)
+    public void setExp3(PExp3 node)
     {
-        if(this._expression3_ != null)
+        if(this._exp3_ != null)
         {
-            this._expression3_.parent(null);
+            this._exp3_.parent(null);
         }
 
         if(node != null)
@@ -117,25 +117,25 @@ public final class AInfExpression2 extends PExpression2
             node.parent(this);
         }
 
-        this._expression3_ = node;
+        this._exp3_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._expression2_)
+            + toString(this._exp2_)
             + toString(this._inf_)
-            + toString(this._expression3_);
+            + toString(this._exp3_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._expression2_ == child)
+        if(this._exp2_ == child)
         {
-            this._expression2_ = null;
+            this._exp2_ = null;
             return;
         }
 
@@ -145,9 +145,9 @@ public final class AInfExpression2 extends PExpression2
             return;
         }
 
-        if(this._expression3_ == child)
+        if(this._exp3_ == child)
         {
-            this._expression3_ = null;
+            this._exp3_ = null;
             return;
         }
 
@@ -158,9 +158,9 @@ public final class AInfExpression2 extends PExpression2
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._expression2_ == oldChild)
+        if(this._exp2_ == oldChild)
         {
-            setExpression2((PExpression2) newChild);
+            setExp2((PExp2) newChild);
             return;
         }
 
@@ -170,9 +170,9 @@ public final class AInfExpression2 extends PExpression2
             return;
         }
 
-        if(this._expression3_ == oldChild)
+        if(this._exp3_ == oldChild)
         {
-            setExpression3((PExpression3) newChild);
+            setExp3((PExp3) newChild);
             return;
         }
 

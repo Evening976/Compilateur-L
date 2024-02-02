@@ -5,18 +5,18 @@ package lParser.node;
 import lParser.analysis.*;
 
 @SuppressWarnings("nls")
-public final class AParenthesesExpression6 extends PExpression6
+public final class AParenthesesExp6 extends PExp6
 {
     private TParG _parG_;
     private PExpression _expression_;
     private TParD _parD_;
 
-    public AParenthesesExpression6()
+    public AParenthesesExp6()
     {
         // Constructor
     }
 
-    public AParenthesesExpression6(
+    public AParenthesesExp6(
         @SuppressWarnings("hiding") TParG _parG_,
         @SuppressWarnings("hiding") PExpression _expression_,
         @SuppressWarnings("hiding") TParD _parD_)
@@ -33,7 +33,7 @@ public final class AParenthesesExpression6 extends PExpression6
     @Override
     public Object clone()
     {
-        return new AParenthesesExpression6(
+        return new AParenthesesExp6(
             cloneNode(this._parG_),
             cloneNode(this._expression_),
             cloneNode(this._parD_));
@@ -42,7 +42,7 @@ public final class AParenthesesExpression6 extends PExpression6
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseAParenthesesExpression6(this);
+        ((Analysis) sw).caseAParenthesesExp6(this);
     }
 
     public TParG getParG()

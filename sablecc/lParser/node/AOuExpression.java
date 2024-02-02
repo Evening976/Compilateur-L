@@ -9,7 +9,7 @@ public final class AOuExpression extends PExpression
 {
     private PExpression _expression_;
     private TOu _ou_;
-    private PExpression1 _expression1_;
+    private PExp1 _exp1_;
 
     public AOuExpression()
     {
@@ -19,14 +19,14 @@ public final class AOuExpression extends PExpression
     public AOuExpression(
         @SuppressWarnings("hiding") PExpression _expression_,
         @SuppressWarnings("hiding") TOu _ou_,
-        @SuppressWarnings("hiding") PExpression1 _expression1_)
+        @SuppressWarnings("hiding") PExp1 _exp1_)
     {
         // Constructor
         setExpression(_expression_);
 
         setOu(_ou_);
 
-        setExpression1(_expression1_);
+        setExp1(_exp1_);
 
     }
 
@@ -36,7 +36,7 @@ public final class AOuExpression extends PExpression
         return new AOuExpression(
             cloneNode(this._expression_),
             cloneNode(this._ou_),
-            cloneNode(this._expression1_));
+            cloneNode(this._exp1_));
     }
 
     @Override
@@ -95,16 +95,16 @@ public final class AOuExpression extends PExpression
         this._ou_ = node;
     }
 
-    public PExpression1 getExpression1()
+    public PExp1 getExp1()
     {
-        return this._expression1_;
+        return this._exp1_;
     }
 
-    public void setExpression1(PExpression1 node)
+    public void setExp1(PExp1 node)
     {
-        if(this._expression1_ != null)
+        if(this._exp1_ != null)
         {
-            this._expression1_.parent(null);
+            this._exp1_.parent(null);
         }
 
         if(node != null)
@@ -117,7 +117,7 @@ public final class AOuExpression extends PExpression
             node.parent(this);
         }
 
-        this._expression1_ = node;
+        this._exp1_ = node;
     }
 
     @Override
@@ -126,7 +126,7 @@ public final class AOuExpression extends PExpression
         return ""
             + toString(this._expression_)
             + toString(this._ou_)
-            + toString(this._expression1_);
+            + toString(this._exp1_);
     }
 
     @Override
@@ -145,9 +145,9 @@ public final class AOuExpression extends PExpression
             return;
         }
 
-        if(this._expression1_ == child)
+        if(this._exp1_ == child)
         {
-            this._expression1_ = null;
+            this._exp1_ = null;
             return;
         }
 
@@ -170,9 +170,9 @@ public final class AOuExpression extends PExpression
             return;
         }
 
-        if(this._expression1_ == oldChild)
+        if(this._exp1_ == oldChild)
         {
-            setExpression1((PExpression1) newChild);
+            setExp1((PExp1) newChild);
             return;
         }
 

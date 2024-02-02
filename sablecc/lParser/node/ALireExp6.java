@@ -5,30 +5,26 @@ package lParser.node;
 import lParser.analysis.*;
 
 @SuppressWarnings("nls")
-public final class AAppelfonction2Expression6 extends PExpression6
+public final class ALireExp6 extends PExp6
 {
-    private TId _id_;
+    private TLire _lire_;
     private TParG _parG_;
-    private PListeexpressions _listeexpressions_;
     private TParD _parD_;
 
-    public AAppelfonction2Expression6()
+    public ALireExp6()
     {
         // Constructor
     }
 
-    public AAppelfonction2Expression6(
-        @SuppressWarnings("hiding") TId _id_,
+    public ALireExp6(
+        @SuppressWarnings("hiding") TLire _lire_,
         @SuppressWarnings("hiding") TParG _parG_,
-        @SuppressWarnings("hiding") PListeexpressions _listeexpressions_,
         @SuppressWarnings("hiding") TParD _parD_)
     {
         // Constructor
-        setId(_id_);
+        setLire(_lire_);
 
         setParG(_parG_);
-
-        setListeexpressions(_listeexpressions_);
 
         setParD(_parD_);
 
@@ -37,29 +33,28 @@ public final class AAppelfonction2Expression6 extends PExpression6
     @Override
     public Object clone()
     {
-        return new AAppelfonction2Expression6(
-            cloneNode(this._id_),
+        return new ALireExp6(
+            cloneNode(this._lire_),
             cloneNode(this._parG_),
-            cloneNode(this._listeexpressions_),
             cloneNode(this._parD_));
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseAAppelfonction2Expression6(this);
+        ((Analysis) sw).caseALireExp6(this);
     }
 
-    public TId getId()
+    public TLire getLire()
     {
-        return this._id_;
+        return this._lire_;
     }
 
-    public void setId(TId node)
+    public void setLire(TLire node)
     {
-        if(this._id_ != null)
+        if(this._lire_ != null)
         {
-            this._id_.parent(null);
+            this._lire_.parent(null);
         }
 
         if(node != null)
@@ -72,7 +67,7 @@ public final class AAppelfonction2Expression6 extends PExpression6
             node.parent(this);
         }
 
-        this._id_ = node;
+        this._lire_ = node;
     }
 
     public TParG getParG()
@@ -98,31 +93,6 @@ public final class AAppelfonction2Expression6 extends PExpression6
         }
 
         this._parG_ = node;
-    }
-
-    public PListeexpressions getListeexpressions()
-    {
-        return this._listeexpressions_;
-    }
-
-    public void setListeexpressions(PListeexpressions node)
-    {
-        if(this._listeexpressions_ != null)
-        {
-            this._listeexpressions_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._listeexpressions_ = node;
     }
 
     public TParD getParD()
@@ -154,9 +124,8 @@ public final class AAppelfonction2Expression6 extends PExpression6
     public String toString()
     {
         return ""
-            + toString(this._id_)
+            + toString(this._lire_)
             + toString(this._parG_)
-            + toString(this._listeexpressions_)
             + toString(this._parD_);
     }
 
@@ -164,21 +133,15 @@ public final class AAppelfonction2Expression6 extends PExpression6
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._id_ == child)
+        if(this._lire_ == child)
         {
-            this._id_ = null;
+            this._lire_ = null;
             return;
         }
 
         if(this._parG_ == child)
         {
             this._parG_ = null;
-            return;
-        }
-
-        if(this._listeexpressions_ == child)
-        {
-            this._listeexpressions_ = null;
             return;
         }
 
@@ -195,21 +158,15 @@ public final class AAppelfonction2Expression6 extends PExpression6
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._id_ == oldChild)
+        if(this._lire_ == oldChild)
         {
-            setId((TId) newChild);
+            setLire((TLire) newChild);
             return;
         }
 
         if(this._parG_ == oldChild)
         {
             setParG((TParG) newChild);
-            return;
-        }
-
-        if(this._listeexpressions_ == oldChild)
-        {
-            setListeexpressions((PListeexpressions) newChild);
             return;
         }
 

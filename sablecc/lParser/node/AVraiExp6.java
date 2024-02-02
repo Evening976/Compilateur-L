@@ -5,46 +5,46 @@ package lParser.node;
 import lParser.analysis.*;
 
 @SuppressWarnings("nls")
-public final class ANombreExpression6 extends PExpression6
+public final class AVraiExp6 extends PExp6
 {
-    private TNombre _nombre_;
+    private TVrai _vrai_;
 
-    public ANombreExpression6()
+    public AVraiExp6()
     {
         // Constructor
     }
 
-    public ANombreExpression6(
-        @SuppressWarnings("hiding") TNombre _nombre_)
+    public AVraiExp6(
+        @SuppressWarnings("hiding") TVrai _vrai_)
     {
         // Constructor
-        setNombre(_nombre_);
+        setVrai(_vrai_);
 
     }
 
     @Override
     public Object clone()
     {
-        return new ANombreExpression6(
-            cloneNode(this._nombre_));
+        return new AVraiExp6(
+            cloneNode(this._vrai_));
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseANombreExpression6(this);
+        ((Analysis) sw).caseAVraiExp6(this);
     }
 
-    public TNombre getNombre()
+    public TVrai getVrai()
     {
-        return this._nombre_;
+        return this._vrai_;
     }
 
-    public void setNombre(TNombre node)
+    public void setVrai(TVrai node)
     {
-        if(this._nombre_ != null)
+        if(this._vrai_ != null)
         {
-            this._nombre_.parent(null);
+            this._vrai_.parent(null);
         }
 
         if(node != null)
@@ -57,23 +57,23 @@ public final class ANombreExpression6 extends PExpression6
             node.parent(this);
         }
 
-        this._nombre_ = node;
+        this._vrai_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._nombre_);
+            + toString(this._vrai_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._nombre_ == child)
+        if(this._vrai_ == child)
         {
-            this._nombre_ = null;
+            this._vrai_ = null;
             return;
         }
 
@@ -84,9 +84,9 @@ public final class ANombreExpression6 extends PExpression6
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._nombre_ == oldChild)
+        if(this._vrai_ == oldChild)
         {
-            setNombre((TNombre) newChild);
+            setVrai((TVrai) newChild);
             return;
         }
 

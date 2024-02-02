@@ -5,56 +5,56 @@ package lParser.node;
 import lParser.analysis.*;
 
 @SuppressWarnings("nls")
-public final class APlusExpression3 extends PExpression3
+public final class APlusExp3 extends PExp3
 {
-    private PExpression3 _expression3_;
+    private PExp3 _exp3_;
     private TPlus _plus_;
-    private PExpression4 _expression4_;
+    private PExp4 _exp4_;
 
-    public APlusExpression3()
+    public APlusExp3()
     {
         // Constructor
     }
 
-    public APlusExpression3(
-        @SuppressWarnings("hiding") PExpression3 _expression3_,
+    public APlusExp3(
+        @SuppressWarnings("hiding") PExp3 _exp3_,
         @SuppressWarnings("hiding") TPlus _plus_,
-        @SuppressWarnings("hiding") PExpression4 _expression4_)
+        @SuppressWarnings("hiding") PExp4 _exp4_)
     {
         // Constructor
-        setExpression3(_expression3_);
+        setExp3(_exp3_);
 
         setPlus(_plus_);
 
-        setExpression4(_expression4_);
+        setExp4(_exp4_);
 
     }
 
     @Override
     public Object clone()
     {
-        return new APlusExpression3(
-            cloneNode(this._expression3_),
+        return new APlusExp3(
+            cloneNode(this._exp3_),
             cloneNode(this._plus_),
-            cloneNode(this._expression4_));
+            cloneNode(this._exp4_));
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseAPlusExpression3(this);
+        ((Analysis) sw).caseAPlusExp3(this);
     }
 
-    public PExpression3 getExpression3()
+    public PExp3 getExp3()
     {
-        return this._expression3_;
+        return this._exp3_;
     }
 
-    public void setExpression3(PExpression3 node)
+    public void setExp3(PExp3 node)
     {
-        if(this._expression3_ != null)
+        if(this._exp3_ != null)
         {
-            this._expression3_.parent(null);
+            this._exp3_.parent(null);
         }
 
         if(node != null)
@@ -67,7 +67,7 @@ public final class APlusExpression3 extends PExpression3
             node.parent(this);
         }
 
-        this._expression3_ = node;
+        this._exp3_ = node;
     }
 
     public TPlus getPlus()
@@ -95,16 +95,16 @@ public final class APlusExpression3 extends PExpression3
         this._plus_ = node;
     }
 
-    public PExpression4 getExpression4()
+    public PExp4 getExp4()
     {
-        return this._expression4_;
+        return this._exp4_;
     }
 
-    public void setExpression4(PExpression4 node)
+    public void setExp4(PExp4 node)
     {
-        if(this._expression4_ != null)
+        if(this._exp4_ != null)
         {
-            this._expression4_.parent(null);
+            this._exp4_.parent(null);
         }
 
         if(node != null)
@@ -117,25 +117,25 @@ public final class APlusExpression3 extends PExpression3
             node.parent(this);
         }
 
-        this._expression4_ = node;
+        this._exp4_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._expression3_)
+            + toString(this._exp3_)
             + toString(this._plus_)
-            + toString(this._expression4_);
+            + toString(this._exp4_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._expression3_ == child)
+        if(this._exp3_ == child)
         {
-            this._expression3_ = null;
+            this._exp3_ = null;
             return;
         }
 
@@ -145,9 +145,9 @@ public final class APlusExpression3 extends PExpression3
             return;
         }
 
-        if(this._expression4_ == child)
+        if(this._exp4_ == child)
         {
-            this._expression4_ = null;
+            this._exp4_ = null;
             return;
         }
 
@@ -158,9 +158,9 @@ public final class APlusExpression3 extends PExpression3
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._expression3_ == oldChild)
+        if(this._exp3_ == oldChild)
         {
-            setExpression3((PExpression3) newChild);
+            setExp3((PExp3) newChild);
             return;
         }
 
@@ -170,9 +170,9 @@ public final class APlusExpression3 extends PExpression3
             return;
         }
 
-        if(this._expression4_ == oldChild)
+        if(this._exp4_ == oldChild)
         {
-            setExpression4((PExpression4) newChild);
+            setExp4((PExp4) newChild);
             return;
         }
 

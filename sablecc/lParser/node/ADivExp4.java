@@ -5,56 +5,56 @@ package lParser.node;
 import lParser.analysis.*;
 
 @SuppressWarnings("nls")
-public final class ADivExpression4 extends PExpression4
+public final class ADivExp4 extends PExp4
 {
-    private PExpression4 _expression4_;
+    private PExp4 _exp4_;
     private TDiv _div_;
-    private PExpression5 _expression5_;
+    private PExp5 _exp5_;
 
-    public ADivExpression4()
+    public ADivExp4()
     {
         // Constructor
     }
 
-    public ADivExpression4(
-        @SuppressWarnings("hiding") PExpression4 _expression4_,
+    public ADivExp4(
+        @SuppressWarnings("hiding") PExp4 _exp4_,
         @SuppressWarnings("hiding") TDiv _div_,
-        @SuppressWarnings("hiding") PExpression5 _expression5_)
+        @SuppressWarnings("hiding") PExp5 _exp5_)
     {
         // Constructor
-        setExpression4(_expression4_);
+        setExp4(_exp4_);
 
         setDiv(_div_);
 
-        setExpression5(_expression5_);
+        setExp5(_exp5_);
 
     }
 
     @Override
     public Object clone()
     {
-        return new ADivExpression4(
-            cloneNode(this._expression4_),
+        return new ADivExp4(
+            cloneNode(this._exp4_),
             cloneNode(this._div_),
-            cloneNode(this._expression5_));
+            cloneNode(this._exp5_));
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseADivExpression4(this);
+        ((Analysis) sw).caseADivExp4(this);
     }
 
-    public PExpression4 getExpression4()
+    public PExp4 getExp4()
     {
-        return this._expression4_;
+        return this._exp4_;
     }
 
-    public void setExpression4(PExpression4 node)
+    public void setExp4(PExp4 node)
     {
-        if(this._expression4_ != null)
+        if(this._exp4_ != null)
         {
-            this._expression4_.parent(null);
+            this._exp4_.parent(null);
         }
 
         if(node != null)
@@ -67,7 +67,7 @@ public final class ADivExpression4 extends PExpression4
             node.parent(this);
         }
 
-        this._expression4_ = node;
+        this._exp4_ = node;
     }
 
     public TDiv getDiv()
@@ -95,16 +95,16 @@ public final class ADivExpression4 extends PExpression4
         this._div_ = node;
     }
 
-    public PExpression5 getExpression5()
+    public PExp5 getExp5()
     {
-        return this._expression5_;
+        return this._exp5_;
     }
 
-    public void setExpression5(PExpression5 node)
+    public void setExp5(PExp5 node)
     {
-        if(this._expression5_ != null)
+        if(this._exp5_ != null)
         {
-            this._expression5_.parent(null);
+            this._exp5_.parent(null);
         }
 
         if(node != null)
@@ -117,25 +117,25 @@ public final class ADivExpression4 extends PExpression4
             node.parent(this);
         }
 
-        this._expression5_ = node;
+        this._exp5_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._expression4_)
+            + toString(this._exp4_)
             + toString(this._div_)
-            + toString(this._expression5_);
+            + toString(this._exp5_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._expression4_ == child)
+        if(this._exp4_ == child)
         {
-            this._expression4_ = null;
+            this._exp4_ = null;
             return;
         }
 
@@ -145,9 +145,9 @@ public final class ADivExpression4 extends PExpression4
             return;
         }
 
-        if(this._expression5_ == child)
+        if(this._exp5_ == child)
         {
-            this._expression5_ = null;
+            this._exp5_ = null;
             return;
         }
 
@@ -158,9 +158,9 @@ public final class ADivExpression4 extends PExpression4
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._expression4_ == oldChild)
+        if(this._exp4_ == oldChild)
         {
-            setExpression4((PExpression4) newChild);
+            setExp4((PExp4) newChild);
             return;
         }
 
@@ -170,9 +170,9 @@ public final class ADivExpression4 extends PExpression4
             return;
         }
 
-        if(this._expression5_ == oldChild)
+        if(this._exp5_ == oldChild)
         {
-            setExpression5((PExpression5) newChild);
+            setExp5((PExp5) newChild);
             return;
         }
 
