@@ -5,22 +5,22 @@ package lParser.node;
 import lParser.analysis.*;
 
 @SuppressWarnings("nls")
-public final class AProgramme extends PProgramme
+public final class AListeDeclarationFonc extends PListeDeclarationFonc
 {
-    private PListeDeclarationVar _listeDeclarationVar_;
+    private PDeclarationFonc _declarationFonc_;
     private PListeDeclarationFonc _listeDeclarationFonc_;
 
-    public AProgramme()
+    public AListeDeclarationFonc()
     {
         // Constructor
     }
 
-    public AProgramme(
-        @SuppressWarnings("hiding") PListeDeclarationVar _listeDeclarationVar_,
+    public AListeDeclarationFonc(
+        @SuppressWarnings("hiding") PDeclarationFonc _declarationFonc_,
         @SuppressWarnings("hiding") PListeDeclarationFonc _listeDeclarationFonc_)
     {
         // Constructor
-        setListeDeclarationVar(_listeDeclarationVar_);
+        setDeclarationFonc(_declarationFonc_);
 
         setListeDeclarationFonc(_listeDeclarationFonc_);
 
@@ -29,27 +29,27 @@ public final class AProgramme extends PProgramme
     @Override
     public Object clone()
     {
-        return new AProgramme(
-            cloneNode(this._listeDeclarationVar_),
+        return new AListeDeclarationFonc(
+            cloneNode(this._declarationFonc_),
             cloneNode(this._listeDeclarationFonc_));
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseAProgramme(this);
+        ((Analysis) sw).caseAListeDeclarationFonc(this);
     }
 
-    public PListeDeclarationVar getListeDeclarationVar()
+    public PDeclarationFonc getDeclarationFonc()
     {
-        return this._listeDeclarationVar_;
+        return this._declarationFonc_;
     }
 
-    public void setListeDeclarationVar(PListeDeclarationVar node)
+    public void setDeclarationFonc(PDeclarationFonc node)
     {
-        if(this._listeDeclarationVar_ != null)
+        if(this._declarationFonc_ != null)
         {
-            this._listeDeclarationVar_.parent(null);
+            this._declarationFonc_.parent(null);
         }
 
         if(node != null)
@@ -62,7 +62,7 @@ public final class AProgramme extends PProgramme
             node.parent(this);
         }
 
-        this._listeDeclarationVar_ = node;
+        this._declarationFonc_ = node;
     }
 
     public PListeDeclarationFonc getListeDeclarationFonc()
@@ -94,7 +94,7 @@ public final class AProgramme extends PProgramme
     public String toString()
     {
         return ""
-            + toString(this._listeDeclarationVar_)
+            + toString(this._declarationFonc_)
             + toString(this._listeDeclarationFonc_);
     }
 
@@ -102,9 +102,9 @@ public final class AProgramme extends PProgramme
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._listeDeclarationVar_ == child)
+        if(this._declarationFonc_ == child)
         {
-            this._listeDeclarationVar_ = null;
+            this._declarationFonc_ = null;
             return;
         }
 
@@ -121,9 +121,9 @@ public final class AProgramme extends PProgramme
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._listeDeclarationVar_ == oldChild)
+        if(this._declarationFonc_ == oldChild)
         {
-            setListeDeclarationVar((PListeDeclarationVar) newChild);
+            setDeclarationFonc((PDeclarationFonc) newChild);
             return;
         }
 

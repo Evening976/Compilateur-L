@@ -5,51 +5,51 @@ package lParser.node;
 import lParser.analysis.*;
 
 @SuppressWarnings("nls")
-public final class ANonExp5 extends PExp5
+public final class AListeExp extends PListeExp
 {
-    private TExclamation _exclamation_;
-    private PExp5 _exp5_;
+    private PExp _exp_;
+    private PListeExpPrime _listeExpPrime_;
 
-    public ANonExp5()
+    public AListeExp()
     {
         // Constructor
     }
 
-    public ANonExp5(
-        @SuppressWarnings("hiding") TExclamation _exclamation_,
-        @SuppressWarnings("hiding") PExp5 _exp5_)
+    public AListeExp(
+        @SuppressWarnings("hiding") PExp _exp_,
+        @SuppressWarnings("hiding") PListeExpPrime _listeExpPrime_)
     {
         // Constructor
-        setExclamation(_exclamation_);
+        setExp(_exp_);
 
-        setExp5(_exp5_);
+        setListeExpPrime(_listeExpPrime_);
 
     }
 
     @Override
     public Object clone()
     {
-        return new ANonExp5(
-            cloneNode(this._exclamation_),
-            cloneNode(this._exp5_));
+        return new AListeExp(
+            cloneNode(this._exp_),
+            cloneNode(this._listeExpPrime_));
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseANonExp5(this);
+        ((Analysis) sw).caseAListeExp(this);
     }
 
-    public TExclamation getExclamation()
+    public PExp getExp()
     {
-        return this._exclamation_;
+        return this._exp_;
     }
 
-    public void setExclamation(TExclamation node)
+    public void setExp(PExp node)
     {
-        if(this._exclamation_ != null)
+        if(this._exp_ != null)
         {
-            this._exclamation_.parent(null);
+            this._exp_.parent(null);
         }
 
         if(node != null)
@@ -62,19 +62,19 @@ public final class ANonExp5 extends PExp5
             node.parent(this);
         }
 
-        this._exclamation_ = node;
+        this._exp_ = node;
     }
 
-    public PExp5 getExp5()
+    public PListeExpPrime getListeExpPrime()
     {
-        return this._exp5_;
+        return this._listeExpPrime_;
     }
 
-    public void setExp5(PExp5 node)
+    public void setListeExpPrime(PListeExpPrime node)
     {
-        if(this._exp5_ != null)
+        if(this._listeExpPrime_ != null)
         {
-            this._exp5_.parent(null);
+            this._listeExpPrime_.parent(null);
         }
 
         if(node != null)
@@ -87,30 +87,30 @@ public final class ANonExp5 extends PExp5
             node.parent(this);
         }
 
-        this._exp5_ = node;
+        this._listeExpPrime_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._exclamation_)
-            + toString(this._exp5_);
+            + toString(this._exp_)
+            + toString(this._listeExpPrime_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._exclamation_ == child)
+        if(this._exp_ == child)
         {
-            this._exclamation_ = null;
+            this._exp_ = null;
             return;
         }
 
-        if(this._exp5_ == child)
+        if(this._listeExpPrime_ == child)
         {
-            this._exp5_ = null;
+            this._listeExpPrime_ = null;
             return;
         }
 
@@ -121,15 +121,15 @@ public final class ANonExp5 extends PExp5
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._exclamation_ == oldChild)
+        if(this._exp_ == oldChild)
         {
-            setExclamation((TExclamation) newChild);
+            setExp((PExp) newChild);
             return;
         }
 
-        if(this._exp5_ == oldChild)
+        if(this._listeExpPrime_ == oldChild)
         {
-            setExp5((PExp5) newChild);
+            setListeExpPrime((PListeExpPrime) newChild);
             return;
         }
 

@@ -5,51 +5,51 @@ package lParser.node;
 import lParser.analysis.*;
 
 @SuppressWarnings("nls")
-public final class ANonExp5 extends PExp5
+public final class APowerExp6 extends PExp6
 {
-    private TExclamation _exclamation_;
-    private PExp5 _exp5_;
+    private PExp6 _exp6_;
+    private TPower _power_;
 
-    public ANonExp5()
+    public APowerExp6()
     {
         // Constructor
     }
 
-    public ANonExp5(
-        @SuppressWarnings("hiding") TExclamation _exclamation_,
-        @SuppressWarnings("hiding") PExp5 _exp5_)
+    public APowerExp6(
+        @SuppressWarnings("hiding") PExp6 _exp6_,
+        @SuppressWarnings("hiding") TPower _power_)
     {
         // Constructor
-        setExclamation(_exclamation_);
+        setExp6(_exp6_);
 
-        setExp5(_exp5_);
+        setPower(_power_);
 
     }
 
     @Override
     public Object clone()
     {
-        return new ANonExp5(
-            cloneNode(this._exclamation_),
-            cloneNode(this._exp5_));
+        return new APowerExp6(
+            cloneNode(this._exp6_),
+            cloneNode(this._power_));
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseANonExp5(this);
+        ((Analysis) sw).caseAPowerExp6(this);
     }
 
-    public TExclamation getExclamation()
+    public PExp6 getExp6()
     {
-        return this._exclamation_;
+        return this._exp6_;
     }
 
-    public void setExclamation(TExclamation node)
+    public void setExp6(PExp6 node)
     {
-        if(this._exclamation_ != null)
+        if(this._exp6_ != null)
         {
-            this._exclamation_.parent(null);
+            this._exp6_.parent(null);
         }
 
         if(node != null)
@@ -62,19 +62,19 @@ public final class ANonExp5 extends PExp5
             node.parent(this);
         }
 
-        this._exclamation_ = node;
+        this._exp6_ = node;
     }
 
-    public PExp5 getExp5()
+    public TPower getPower()
     {
-        return this._exp5_;
+        return this._power_;
     }
 
-    public void setExp5(PExp5 node)
+    public void setPower(TPower node)
     {
-        if(this._exp5_ != null)
+        if(this._power_ != null)
         {
-            this._exp5_.parent(null);
+            this._power_.parent(null);
         }
 
         if(node != null)
@@ -87,30 +87,30 @@ public final class ANonExp5 extends PExp5
             node.parent(this);
         }
 
-        this._exp5_ = node;
+        this._power_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._exclamation_)
-            + toString(this._exp5_);
+            + toString(this._exp6_)
+            + toString(this._power_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._exclamation_ == child)
+        if(this._exp6_ == child)
         {
-            this._exclamation_ = null;
+            this._exp6_ = null;
             return;
         }
 
-        if(this._exp5_ == child)
+        if(this._power_ == child)
         {
-            this._exp5_ = null;
+            this._power_ = null;
             return;
         }
 
@@ -121,15 +121,15 @@ public final class ANonExp5 extends PExp5
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._exclamation_ == oldChild)
+        if(this._exp6_ == oldChild)
         {
-            setExclamation((TExclamation) newChild);
+            setExp6((PExp6) newChild);
             return;
         }
 
-        if(this._exp5_ == oldChild)
+        if(this._power_ == oldChild)
         {
-            setExp5((PExp5) newChild);
+            setPower((TPower) newChild);
             return;
         }
 

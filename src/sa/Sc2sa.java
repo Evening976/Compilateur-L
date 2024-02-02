@@ -20,54 +20,85 @@ public class Sc2sa extends DepthFirstAdapter {
     public SaProg getRoot() {
         return this.saRoot;
     }
+    // exp3 = {plus} exp3 plus exp4
+    /*
+     * @Override
+     * public void caseAPlusExp3(APlusExp3 node)
+     * {
+     * SaExp op1 = null;
+     * SaExp op2 = null;
+     * inAPlusExp3(node);
+     * node.getExp3().apply(this);
+     * op1 = (SaExp) this.returnValue;
+     * node.getExp4().apply(this);
+     * op2 = (SaExp) this.returnValue;
+     * this.returnValue = new SaExpAdd(op1, op2);
+     * outAPlusExp3(node);
+     * }
+     */
 
     @Override
     public void caseAAffectationInstruction(AAffectationInstruction node) {
         // TODO Auto-generated method stub
         super.caseAAffectationInstruction(node);
-        //returnValue = new
     }
 
     @Override
-    public void caseAAppelfonction2Expression6(AAppelfonction2Expression6 node) {
+    public void caseAAppelFonctionExp7(AAppelFonctionExp7 node) {
         // TODO Auto-generated method stub
-        super.caseAAppelfonction2Expression6(node);
+        super.caseAAppelFonctionExp7(node);
     }
 
     @Override
-    public void caseABlocBlocinstructions(ABlocBlocinstructions node) {
+    public void caseAAppelFonctionInstruction(AAppelFonctionInstruction node) {
         // TODO Auto-generated method stub
-        super.caseABlocBlocinstructions(node);
+        super.caseAAppelFonctionInstruction(node);
     }
 
     @Override
-    public void caseABooleanType(ABooleanType node) {
+    public void caseABlocInstruction(ABlocInstruction node) {
         // TODO Auto-generated method stub
-        super.caseABooleanType(node);
+        super.caseABlocInstruction(node);
     }
 
     @Override
-    public void caseACasetableauVar(ACasetableauVar node) {
+    public void caseABoolType(ABoolType node) {
         // TODO Auto-generated method stub
-        super.caseACasetableauVar(node);
+        super.caseABoolType(node);
     }
 
     @Override
-    public void caseADecfonctionListedecfonc(ADecfonctionListedecfonc node) {
-        // TODO Auto-generated method stub
-        super.caseADecfonctionListedecfonc(node);
+    public void caseADeclarationFonc(ADeclarationFonc node) {
+        Type type = Type.NUL;
+        String identif = node.getIdentif().getText();
+        node.getTypeOptionnel().apply(this);
+        type = this.returnType;
+        SaLDecVar parametres = null;
+        node.getArgument().apply(this);
+        parametres = (SaLDecVar) this.returnValue;
+
+        SaLDecVar variables = null;
+        node.getVarLocale().apply(this);
+        variables = (SaLDecVar) this.returnValue;
+
+        SaInst corps = null;
+        node.getBlocInstruction().apply(this);
+        corps = (SaInstBloc) this.returnValue;
+
+        SaDecFonc decFonc = new SaDecFonc(identif, type, parametres, variables, corps);
+        this.returnValue = decFonc;
     }
 
     @Override
-    public void caseADecvarListedecvar(ADecvarListedecvar node) {
+    public void caseADeclarationVar(ADeclarationVar node) {
         // TODO Auto-generated method stub
-        super.caseADecvarListedecvar(node);
+        super.caseADeclarationVar(node);
     }
 
     @Override
-    public void caseADivExpression4(ADivExpression4 node) {
+    public void caseADivExp4(ADivExp4 node) {
         // TODO Auto-generated method stub
-        super.caseADivExpression4(node);
+        super.caseADivExp4(node);
     }
 
     @Override
@@ -77,9 +108,9 @@ public class Sc2sa extends DepthFirstAdapter {
     }
 
     @Override
-    public void caseAEgalExpression2(AEgalExpression2 node) {
+    public void caseAEgalExp2(AEgalExp2 node) {
         // TODO Auto-generated method stub
-        super.caseAEgalExpression2(node);
+        super.caseAEgalExp2(node);
     }
 
     @Override
@@ -89,162 +120,165 @@ public class Sc2sa extends DepthFirstAdapter {
     }
 
     @Override
-    public void caseAEtExpression1(AEtExpression1 node) {
+    public void caseAEntreParanthesesExp7(AEntreParanthesesExp7 node) {
         // TODO Auto-generated method stub
-        super.caseAEtExpression1(node);
+        super.caseAEntreParanthesesExp7(node);
     }
 
     @Override
-    public void caseAExpression1Expression(AExpression1Expression node) {
+    public void caseAEtExp1(AEtExp1 node) {
         // TODO Auto-generated method stub
-        super.caseAExpression1Expression(node);
+        super.caseAEtExp1(node);
     }
 
     @Override
-    public void caseAExpression2Expression1(AExpression2Expression1 node) {
+    public void caseAExp1Exp(AExp1Exp node) {
         // TODO Auto-generated method stub
-        super.caseAExpression2Expression1(node);
+        super.caseAExp1Exp(node);
     }
 
     @Override
-    public void caseAExpression3Expression2(AExpression3Expression2 node) {
+    public void caseAExp2Exp1(AExp2Exp1 node) {
         // TODO Auto-generated method stub
-        super.caseAExpression3Expression2(node);
+        super.caseAExp2Exp1(node);
     }
 
     @Override
-    public void caseAExpression5Expression3(AExpression5Expression3 node) {
+    public void caseAExp3Exp2(AExp3Exp2 node) {
         // TODO Auto-generated method stub
-        super.caseAExpression5Expression3(node);
+        super.caseAExp3Exp2(node);
     }
 
     @Override
-    public void caseAExpression5Expression4(AExpression5Expression4 node) {
+    public void caseAExp4Exp3(AExp4Exp3 node) {
         // TODO Auto-generated method stub
-        super.caseAExpression5Expression4(node);
+        super.caseAExp4Exp3(node);
     }
 
     @Override
-    public void caseAExpression6Expression5(AExpression6Expression5 node) {
+    public void caseAExp5Exp4(AExp5Exp4 node) {
         // TODO Auto-generated method stub
-        super.caseAExpression6Expression5(node);
+        super.caseAExp5Exp4(node);
     }
 
     @Override
-    public void caseAFauxExpression6(AFauxExpression6 node) {
+    public void caseAExp6Exp5(AExp6Exp5 node) {
         // TODO Auto-generated method stub
-        super.caseAFauxExpression6(node);
+        super.caseAExp6Exp5(node);
     }
 
     @Override
-    public void caseAFonction(AFonction node) {
+    public void caseAExp7Exp6(AExp7Exp6 node) {
         // TODO Auto-generated method stub
-        super.caseAFonction(node);
+        super.caseAExp7Exp6(node);
     }
 
     @Override
-    public void caseAIdInstruction(AIdInstruction node) {
+    public void caseAFaireTantQueInstruction(AFaireTantQueInstruction node) {
         // TODO Auto-generated method stub
-        super.caseAIdInstruction(node);
+        super.caseAFaireTantQueInstruction(node);
     }
 
     @Override
-    public void caseAIdentificateurVar(AIdentificateurVar node) {
+    public void caseAFauxExp7(AFauxExp7 node) {
         // TODO Auto-generated method stub
-        super.caseAIdentificateurVar(node);
+        super.caseAFauxExp7(node);
     }
 
     @Override
-    public void caseAInfExpression2(AInfExpression2 node) {
+    public void caseAInfExp2(AInfExp2 node) {
         // TODO Auto-generated method stub
-        super.caseAInfExpression2(node);
+        super.caseAInfExp2(node);
     }
 
     @Override
-    public void caseAInstructionsListeinstructions(AInstructionsListeinstructions node) {
+    public void caseALireExp7(ALireExp7 node) {
         // TODO Auto-generated method stub
-        super.caseAInstructionsListeinstructions(node);
+        super.caseALireExp7(node);
     }
 
     @Override
-    public void caseALireExpression6(ALireExpression6 node) {
+    public void caseAListeDeclarationFonc(AListeDeclarationFonc node) {
         // TODO Auto-generated method stub
-        super.caseALireExpression6(node);
+        super.caseAListeDeclarationFonc(node);
     }
 
     @Override
-    public void caseAListeparametresListeexpressions(AListeparametresListeexpressions node) {
+    public void caseAListeDeclarationVar(AListeDeclarationVar node) {
         // TODO Auto-generated method stub
-        super.caseAListeparametresListeexpressions(node);
+        super.caseAListeDeclarationVar(node);
     }
 
     @Override
-    public void caseAMoinsExpression3(AMoinsExpression3 node) {
+    public void caseAListeDeclarationVarPrime(AListeDeclarationVarPrime node) {
         // TODO Auto-generated method stub
-        super.caseAMoinsExpression3(node);
+        super.caseAListeDeclarationVarPrime(node);
     }
 
     @Override
-    public void caseAMultExpression4(AMultExpression4 node) {
+    public void caseAListeExp(AListeExp node) {
         // TODO Auto-generated method stub
-        super.caseAMultExpression4(node);
+        super.caseAListeExp(node);
     }
 
     @Override
-    public void caseANombreExpression6(ANombreExpression6 node) {
+    public void caseAListeExpPrime(AListeExpPrime node) {
         // TODO Auto-generated method stub
-        super.caseANombreExpression6(node);
+        super.caseAListeExpPrime(node);
     }
 
     @Override
-    public void caseANonExpression5(ANonExpression5 node) {
+    public void caseAListeInstruction(AListeInstruction node) {
         // TODO Auto-generated method stub
-        super.caseANonExpression5(node);
+        super.caseAListeInstruction(node);
     }
 
     @Override
-    public void caseAOuExpression(AOuExpression node) {
+    public void caseAMoinsExp3(AMoinsExp3 node) {
         // TODO Auto-generated method stub
-        super.caseAOuExpression(node);
+        super.caseAMoinsExp3(node);
     }
 
     @Override
-    public void caseAParenthesesExpression6(AParenthesesExpression6 node) {
+    public void caseAMultExp4(AMultExp4 node) {
         // TODO Auto-generated method stub
-        super.caseAParenthesesExpression6(node);
+        super.caseAMultExp4(node);
     }
 
     @Override
-    public void caseAPlusExpression3(APlusExpression3 node) {
+    public void caseANombreExp7(ANombreExp7 node) {
         // TODO Auto-generated method stub
-       //super.caseAPlusExpression3(node);
-        SaExp op1 = null;
-        SaExp op2 = null;
-        node.getExp3().apply(this);
-        op1 = (SaExp) this.returnValue;
-        node.getExp4().apply(this);
-        op2 = (SaExp) this.returnValue;
-        this.returnValue = new SaExpAdd(op1, op2);
+        super.caseANombreExp7(node);
+    }
+
+    @Override
+    public void caseANonExp5(ANonExp5 node) {
+        // TODO Auto-generated method stub
+        super.caseANonExp5(node);
+    }
+
+    @Override
+    public void caseAOuExp(AOuExp node) {
+        // TODO Auto-generated method stub
+        super.caseAOuExp(node);
+    }
+
+    @Override
+    public void caseAPlusExp3(APlusExp3 node) {
+        // TODO Auto-generated method stub
+        super.caseAPlusExp3(node);
+    }
+
+    @Override
+    public void caseAPowerExp6(APowerExp6 node) {
+        // TODO Auto-generated method stub
+        super.caseAPowerExp6(node);
     }
 
     @Override
     public void caseAProgramme(AProgramme node) {
         // TODO Auto-generated method stub
         super.caseAProgramme(node);
-        returnValue = new SaProg(node.getListedecfonc(), node.getListedecvar(), (SaBloc) returnValue);
-    }
-
-    @Override
-    public void caseARestedecvarListedecvar1(ARestedecvarListedecvar1 node) {
-        // TODO Auto-generated method stub
-        super.caseARestedecvarListedecvar1(node);
-    }
-
-    @Override
-    public void caseAResteparametrescommencantvirguleListeexpressions1(
-            AResteparametrescommencantvirguleListeexpressions1 node) {
-        // TODO Auto-generated method stub
-        super.caseAResteparametrescommencantvirguleListeexpressions1(node);
     }
 
     @Override
@@ -254,93 +288,777 @@ public class Sc2sa extends DepthFirstAdapter {
     }
 
     @Override
-    public void caseASialorsInstruction(ASialorsInstruction node) {
+    public void caseASiInstruction(ASiInstruction node) {
         // TODO Auto-generated method stub
-        super.caseASialorsInstruction(node);
+        super.caseASiInstruction(node);
     }
 
     @Override
-    public void caseASisinonInstruction(ASisinonInstruction node) {
+    public void caseASiSinonInstruction(ASiSinonInstruction node) {
         // TODO Auto-generated method stub
-        super.caseASisinonInstruction(node);
+        super.caseASiSinonInstruction(node);
     }
 
     @Override
-    public void caseATantqueInstruction(ATantqueInstruction node) {
+    public void caseATableauDeclarationVar(ATableauDeclarationVar node) {
         // TODO Auto-generated method stub
-        super.caseATantqueInstruction(node);
+        super.caseATableauDeclarationVar(node);
     }
 
     @Override
-    public void caseATypevarTypeoptionnel(ATypevarTypeoptionnel node) {
+    public void caseATableauVar(ATableauVar node) {
         // TODO Auto-generated method stub
-        super.caseATypevarTypeoptionnel(node);
+        super.caseATableauVar(node);
     }
 
     @Override
-    public void caseAVarExpression6(AVarExpression6 node) {
+    public void caseATantQueInstruction(ATantQueInstruction node) {
         // TODO Auto-generated method stub
-        super.caseAVarExpression6(node);
+        super.caseATantQueInstruction(node);
     }
 
     @Override
-    public void caseAVarsimpleDecvar(AVarsimpleDecvar node) {
+    public void caseATypeTypeOptionnel(ATypeTypeOptionnel node) {
         // TODO Auto-generated method stub
-        super.caseAVarsimpleDecvar(node);
+        super.caseATypeTypeOptionnel(node);
     }
 
     @Override
-    public void caseAVartabDecvar(AVartabDecvar node) {
+    public void caseAVar(AVar node) {
         // TODO Auto-generated method stub
-        super.caseAVartabDecvar(node);
+        super.caseAVar(node);
     }
 
     @Override
-    public void caseAVideListedecfonc(AVideListedecfonc node) {
+    public void caseAVariableExp7(AVariableExp7 node) {
         // TODO Auto-generated method stub
-        super.caseAVideListedecfonc(node);
+        super.caseAVariableExp7(node);
     }
 
     @Override
-    public void caseAVideListedecvar(AVideListedecvar node) {
+    public void caseAVideListeDeclarationFonc(AVideListeDeclarationFonc node) {
         // TODO Auto-generated method stub
-        super.caseAVideListedecvar(node);
+        super.caseAVideListeDeclarationFonc(node);
     }
 
     @Override
-    public void caseAVideListedecvar1(AVideListedecvar1 node) {
+    public void caseAVideListeDeclarationVar(AVideListeDeclarationVar node) {
         // TODO Auto-generated method stub
-        super.caseAVideListedecvar1(node);
+        super.caseAVideListeDeclarationVar(node);
     }
 
     @Override
-    public void caseAVideListeexpressions(AVideListeexpressions node) {
+    public void caseAVideListeDeclarationVarPrime(AVideListeDeclarationVarPrime node) {
         // TODO Auto-generated method stub
-        super.caseAVideListeexpressions(node);
+        super.caseAVideListeDeclarationVarPrime(node);
     }
 
     @Override
-    public void caseAVideListeexpressions1(AVideListeexpressions1 node) {
+    public void caseAVideListeExp(AVideListeExp node) {
         // TODO Auto-generated method stub
-        super.caseAVideListeexpressions1(node);
+        super.caseAVideListeExp(node);
     }
 
     @Override
-    public void caseAVideListeinstructions(AVideListeinstructions node) {
+    public void caseAVideListeExpPrime(AVideListeExpPrime node) {
         // TODO Auto-generated method stub
-        super.caseAVideListeinstructions(node);
+        super.caseAVideListeExpPrime(node);
     }
 
     @Override
-    public void caseAVideTypeoptionnel(AVideTypeoptionnel node) {
+    public void caseAVideListeInstruction(AVideListeInstruction node) {
         // TODO Auto-generated method stub
-        super.caseAVideTypeoptionnel(node);
+        super.caseAVideListeInstruction(node);
     }
 
     @Override
-    public void caseAVraiExpression6(AVraiExpression6 node) {
+    public void caseAVideTypeOptionnel(AVideTypeOptionnel node) {
         // TODO Auto-generated method stub
-        super.caseAVraiExpression6(node);
+        super.caseAVideTypeOptionnel(node);
+    }
+
+    @Override
+    public void caseAVraiExp7(AVraiExp7 node) {
+        // TODO Auto-generated method stub
+        super.caseAVraiExp7(node);
+    }
+
+    @Override
+    public void caseStart(Start node) {
+        // TODO Auto-generated method stub
+        super.caseStart(node);
+    }
+
+    @Override
+    public void inAAffectationInstruction(AAffectationInstruction node) {
+        // TODO Auto-generated method stub
+        super.inAAffectationInstruction(node);
+    }
+
+    @Override
+    public void inAAppelFonctionExp7(AAppelFonctionExp7 node) {
+        // TODO Auto-generated method stub
+        super.inAAppelFonctionExp7(node);
+    }
+
+    @Override
+    public void inAAppelFonctionInstruction(AAppelFonctionInstruction node) {
+        // TODO Auto-generated method stub
+        super.inAAppelFonctionInstruction(node);
+    }
+
+    @Override
+    public void inABlocInstruction(ABlocInstruction node) {
+        // TODO Auto-generated method stub
+        super.inABlocInstruction(node);
+    }
+
+    @Override
+    public void inABoolType(ABoolType node) {
+        // TODO Auto-generated method stub
+        super.inABoolType(node);
+    }
+
+    @Override
+    public void inADeclarationFonc(ADeclarationFonc node) {
+        // TODO Auto-generated method stub
+        super.inADeclarationFonc(node);
+    }
+
+    @Override
+    public void inADeclarationVar(ADeclarationVar node) {
+        // TODO Auto-generated method stub
+        super.inADeclarationVar(node);
+    }
+
+    @Override
+    public void inADivExp4(ADivExp4 node) {
+        // TODO Auto-generated method stub
+        super.inADivExp4(node);
+    }
+
+    @Override
+    public void inAEcrireInstruction(AEcrireInstruction node) {
+        // TODO Auto-generated method stub
+        super.inAEcrireInstruction(node);
+    }
+
+    @Override
+    public void inAEgalExp2(AEgalExp2 node) {
+        // TODO Auto-generated method stub
+        super.inAEgalExp2(node);
+    }
+
+    @Override
+    public void inAEntierType(AEntierType node) {
+        // TODO Auto-generated method stub
+        super.inAEntierType(node);
+    }
+
+    @Override
+    public void inAEntreParanthesesExp7(AEntreParanthesesExp7 node) {
+        // TODO Auto-generated method stub
+        super.inAEntreParanthesesExp7(node);
+    }
+
+    @Override
+    public void inAEtExp1(AEtExp1 node) {
+        // TODO Auto-generated method stub
+        super.inAEtExp1(node);
+    }
+
+    @Override
+    public void inAExp1Exp(AExp1Exp node) {
+        // TODO Auto-generated method stub
+        super.inAExp1Exp(node);
+    }
+
+    @Override
+    public void inAExp2Exp1(AExp2Exp1 node) {
+        // TODO Auto-generated method stub
+        super.inAExp2Exp1(node);
+    }
+
+    @Override
+    public void inAExp3Exp2(AExp3Exp2 node) {
+        // TODO Auto-generated method stub
+        super.inAExp3Exp2(node);
+    }
+
+    @Override
+    public void inAExp4Exp3(AExp4Exp3 node) {
+        // TODO Auto-generated method stub
+        super.inAExp4Exp3(node);
+    }
+
+    @Override
+    public void inAExp5Exp4(AExp5Exp4 node) {
+        // TODO Auto-generated method stub
+        super.inAExp5Exp4(node);
+    }
+
+    @Override
+    public void inAExp6Exp5(AExp6Exp5 node) {
+        // TODO Auto-generated method stub
+        super.inAExp6Exp5(node);
+    }
+
+    @Override
+    public void inAExp7Exp6(AExp7Exp6 node) {
+        // TODO Auto-generated method stub
+        super.inAExp7Exp6(node);
+    }
+
+    @Override
+    public void inAFaireTantQueInstruction(AFaireTantQueInstruction node) {
+        // TODO Auto-generated method stub
+        super.inAFaireTantQueInstruction(node);
+    }
+
+    @Override
+    public void inAFauxExp7(AFauxExp7 node) {
+        // TODO Auto-generated method stub
+        super.inAFauxExp7(node);
+    }
+
+    @Override
+    public void inAInfExp2(AInfExp2 node) {
+        // TODO Auto-generated method stub
+        super.inAInfExp2(node);
+    }
+
+    @Override
+    public void inALireExp7(ALireExp7 node) {
+        // TODO Auto-generated method stub
+        super.inALireExp7(node);
+    }
+
+    @Override
+    public void inAListeDeclarationFonc(AListeDeclarationFonc node) {
+        // TODO Auto-generated method stub
+        super.inAListeDeclarationFonc(node);
+    }
+
+    @Override
+    public void inAListeDeclarationVar(AListeDeclarationVar node) {
+        // TODO Auto-generated method stub
+        super.inAListeDeclarationVar(node);
+    }
+
+    @Override
+    public void inAListeDeclarationVarPrime(AListeDeclarationVarPrime node) {
+        // TODO Auto-generated method stub
+        super.inAListeDeclarationVarPrime(node);
+    }
+
+    @Override
+    public void inAListeExp(AListeExp node) {
+        // TODO Auto-generated method stub
+        super.inAListeExp(node);
+    }
+
+    @Override
+    public void inAListeExpPrime(AListeExpPrime node) {
+        // TODO Auto-generated method stub
+        super.inAListeExpPrime(node);
+    }
+
+    @Override
+    public void inAListeInstruction(AListeInstruction node) {
+        // TODO Auto-generated method stub
+        super.inAListeInstruction(node);
+    }
+
+    @Override
+    public void inAMoinsExp3(AMoinsExp3 node) {
+        // TODO Auto-generated method stub
+        super.inAMoinsExp3(node);
+    }
+
+    @Override
+    public void inAMultExp4(AMultExp4 node) {
+        // TODO Auto-generated method stub
+        super.inAMultExp4(node);
+    }
+
+    @Override
+    public void inANombreExp7(ANombreExp7 node) {
+        // TODO Auto-generated method stub
+        super.inANombreExp7(node);
+    }
+
+    @Override
+    public void inANonExp5(ANonExp5 node) {
+        // TODO Auto-generated method stub
+        super.inANonExp5(node);
+    }
+
+    @Override
+    public void inAOuExp(AOuExp node) {
+        // TODO Auto-generated method stub
+        super.inAOuExp(node);
+    }
+
+    @Override
+    public void inAPlusExp3(APlusExp3 node) {
+        // TODO Auto-generated method stub
+        super.inAPlusExp3(node);
+    }
+
+    @Override
+    public void inAPowerExp6(APowerExp6 node) {
+        // TODO Auto-generated method stub
+        super.inAPowerExp6(node);
+    }
+
+    @Override
+    public void inAProgramme(AProgramme node) {
+        // TODO Auto-generated method stub
+        super.inAProgramme(node);
+    }
+
+    @Override
+    public void inARetourInstruction(ARetourInstruction node) {
+        // TODO Auto-generated method stub
+        super.inARetourInstruction(node);
+    }
+
+    @Override
+    public void inASiInstruction(ASiInstruction node) {
+        // TODO Auto-generated method stub
+        super.inASiInstruction(node);
+    }
+
+    @Override
+    public void inASiSinonInstruction(ASiSinonInstruction node) {
+        // TODO Auto-generated method stub
+        super.inASiSinonInstruction(node);
+    }
+
+    @Override
+    public void inATableauDeclarationVar(ATableauDeclarationVar node) {
+        // TODO Auto-generated method stub
+        super.inATableauDeclarationVar(node);
+    }
+
+    @Override
+    public void inATableauVar(ATableauVar node) {
+        // TODO Auto-generated method stub
+        super.inATableauVar(node);
+    }
+
+    @Override
+    public void inATantQueInstruction(ATantQueInstruction node) {
+        // TODO Auto-generated method stub
+        super.inATantQueInstruction(node);
+    }
+
+    @Override
+    public void inATypeTypeOptionnel(ATypeTypeOptionnel node) {
+        // TODO Auto-generated method stub
+        super.inATypeTypeOptionnel(node);
+    }
+
+    @Override
+    public void inAVar(AVar node) {
+        // TODO Auto-generated method stub
+        super.inAVar(node);
+    }
+
+    @Override
+    public void inAVariableExp7(AVariableExp7 node) {
+        // TODO Auto-generated method stub
+        super.inAVariableExp7(node);
+    }
+
+    @Override
+    public void inAVideListeDeclarationFonc(AVideListeDeclarationFonc node) {
+        // TODO Auto-generated method stub
+        super.inAVideListeDeclarationFonc(node);
+    }
+
+    @Override
+    public void inAVideListeDeclarationVar(AVideListeDeclarationVar node) {
+        // TODO Auto-generated method stub
+        super.inAVideListeDeclarationVar(node);
+    }
+
+    @Override
+    public void inAVideListeDeclarationVarPrime(AVideListeDeclarationVarPrime node) {
+        // TODO Auto-generated method stub
+        super.inAVideListeDeclarationVarPrime(node);
+    }
+
+    @Override
+    public void inAVideListeExp(AVideListeExp node) {
+        // TODO Auto-generated method stub
+        super.inAVideListeExp(node);
+    }
+
+    @Override
+    public void inAVideListeExpPrime(AVideListeExpPrime node) {
+        // TODO Auto-generated method stub
+        super.inAVideListeExpPrime(node);
+    }
+
+    @Override
+    public void inAVideListeInstruction(AVideListeInstruction node) {
+        // TODO Auto-generated method stub
+        super.inAVideListeInstruction(node);
+    }
+
+    @Override
+    public void inAVideTypeOptionnel(AVideTypeOptionnel node) {
+        // TODO Auto-generated method stub
+        super.inAVideTypeOptionnel(node);
+    }
+
+    @Override
+    public void inAVraiExp7(AVraiExp7 node) {
+        // TODO Auto-generated method stub
+        super.inAVraiExp7(node);
+    }
+
+    @Override
+    public void inStart(Start node) {
+        // TODO Auto-generated method stub
+        super.inStart(node);
+    }
+
+    @Override
+    public void outAAffectationInstruction(AAffectationInstruction node) {
+        // TODO Auto-generated method stub
+        super.outAAffectationInstruction(node);
+    }
+
+    @Override
+    public void outAAppelFonctionExp7(AAppelFonctionExp7 node) {
+        // TODO Auto-generated method stub
+        super.outAAppelFonctionExp7(node);
+    }
+
+    @Override
+    public void outAAppelFonctionInstruction(AAppelFonctionInstruction node) {
+        // TODO Auto-generated method stub
+        super.outAAppelFonctionInstruction(node);
+    }
+
+    @Override
+    public void outABlocInstruction(ABlocInstruction node) {
+        // TODO Auto-generated method stub
+        super.outABlocInstruction(node);
+    }
+
+    @Override
+    public void outABoolType(ABoolType node) {
+        // TODO Auto-generated method stub
+        super.outABoolType(node);
+    }
+
+    @Override
+    public void outADeclarationFonc(ADeclarationFonc node) {
+        // TODO Auto-generated method stub
+        super.outADeclarationFonc(node);
+    }
+
+    @Override
+    public void outADeclarationVar(ADeclarationVar node) {
+        // TODO Auto-generated method stub
+        super.outADeclarationVar(node);
+    }
+
+    @Override
+    public void outADivExp4(ADivExp4 node) {
+        // TODO Auto-generated method stub
+        super.outADivExp4(node);
+    }
+
+    @Override
+    public void outAEcrireInstruction(AEcrireInstruction node) {
+        // TODO Auto-generated method stub
+        super.outAEcrireInstruction(node);
+    }
+
+    @Override
+    public void outAEgalExp2(AEgalExp2 node) {
+        // TODO Auto-generated method stub
+        super.outAEgalExp2(node);
+    }
+
+    @Override
+    public void outAEntierType(AEntierType node) {
+        // TODO Auto-generated method stub
+        super.outAEntierType(node);
+    }
+
+    @Override
+    public void outAEntreParanthesesExp7(AEntreParanthesesExp7 node) {
+        // TODO Auto-generated method stub
+        super.outAEntreParanthesesExp7(node);
+    }
+
+    @Override
+    public void outAEtExp1(AEtExp1 node) {
+        // TODO Auto-generated method stub
+        super.outAEtExp1(node);
+    }
+
+    @Override
+    public void outAExp1Exp(AExp1Exp node) {
+        // TODO Auto-generated method stub
+        super.outAExp1Exp(node);
+    }
+
+    @Override
+    public void outAExp2Exp1(AExp2Exp1 node) {
+        // TODO Auto-generated method stub
+        super.outAExp2Exp1(node);
+    }
+
+    @Override
+    public void outAExp3Exp2(AExp3Exp2 node) {
+        // TODO Auto-generated method stub
+        super.outAExp3Exp2(node);
+    }
+
+    @Override
+    public void outAExp4Exp3(AExp4Exp3 node) {
+        // TODO Auto-generated method stub
+        super.outAExp4Exp3(node);
+    }
+
+    @Override
+    public void outAExp5Exp4(AExp5Exp4 node) {
+        // TODO Auto-generated method stub
+        super.outAExp5Exp4(node);
+    }
+
+    @Override
+    public void outAExp6Exp5(AExp6Exp5 node) {
+        // TODO Auto-generated method stub
+        super.outAExp6Exp5(node);
+    }
+
+    @Override
+    public void outAExp7Exp6(AExp7Exp6 node) {
+        // TODO Auto-generated method stub
+        super.outAExp7Exp6(node);
+    }
+
+    @Override
+    public void outAFaireTantQueInstruction(AFaireTantQueInstruction node) {
+        // TODO Auto-generated method stub
+        super.outAFaireTantQueInstruction(node);
+    }
+
+    @Override
+    public void outAFauxExp7(AFauxExp7 node) {
+        // TODO Auto-generated method stub
+        super.outAFauxExp7(node);
+    }
+
+    @Override
+    public void outAInfExp2(AInfExp2 node) {
+        // TODO Auto-generated method stub
+        super.outAInfExp2(node);
+    }
+
+    @Override
+    public void outALireExp7(ALireExp7 node) {
+        // TODO Auto-generated method stub
+        super.outALireExp7(node);
+    }
+
+    @Override
+    public void outAListeDeclarationFonc(AListeDeclarationFonc node) {
+        // TODO Auto-generated method stub
+        super.outAListeDeclarationFonc(node);
+    }
+
+    @Override
+    public void outAListeDeclarationVar(AListeDeclarationVar node) {
+        // TODO Auto-generated method stub
+        super.outAListeDeclarationVar(node);
+    }
+
+    @Override
+    public void outAListeDeclarationVarPrime(AListeDeclarationVarPrime node) {
+        // TODO Auto-generated method stub
+        super.outAListeDeclarationVarPrime(node);
+    }
+
+    @Override
+    public void outAListeExp(AListeExp node) {
+        // TODO Auto-generated method stub
+        super.outAListeExp(node);
+    }
+
+    @Override
+    public void outAListeExpPrime(AListeExpPrime node) {
+        // TODO Auto-generated method stub
+        super.outAListeExpPrime(node);
+    }
+
+    @Override
+    public void outAListeInstruction(AListeInstruction node) {
+        // TODO Auto-generated method stub
+        super.outAListeInstruction(node);
+    }
+
+    @Override
+    public void outAMoinsExp3(AMoinsExp3 node) {
+        // TODO Auto-generated method stub
+        super.outAMoinsExp3(node);
+    }
+
+    @Override
+    public void outAMultExp4(AMultExp4 node) {
+        // TODO Auto-generated method stub
+        super.outAMultExp4(node);
+    }
+
+    @Override
+    public void outANombreExp7(ANombreExp7 node) {
+        // TODO Auto-generated method stub
+        super.outANombreExp7(node);
+    }
+
+    @Override
+    public void outANonExp5(ANonExp5 node) {
+        // TODO Auto-generated method stub
+        super.outANonExp5(node);
+    }
+
+    @Override
+    public void outAOuExp(AOuExp node) {
+        // TODO Auto-generated method stub
+        super.outAOuExp(node);
+    }
+
+    @Override
+    public void outAPlusExp3(APlusExp3 node) {
+        // TODO Auto-generated method stub
+        super.outAPlusExp3(node);
+    }
+
+    @Override
+    public void outAPowerExp6(APowerExp6 node) {
+        // TODO Auto-generated method stub
+        super.outAPowerExp6(node);
+    }
+
+    @Override
+    public void outAProgramme(AProgramme node) {
+        // TODO Auto-generated method stub
+        super.outAProgramme(node);
+    }
+
+    @Override
+    public void outARetourInstruction(ARetourInstruction node) {
+        // TODO Auto-generated method stub
+        super.outARetourInstruction(node);
+    }
+
+    @Override
+    public void outASiInstruction(ASiInstruction node) {
+        // TODO Auto-generated method stub
+        super.outASiInstruction(node);
+    }
+
+    @Override
+    public void outASiSinonInstruction(ASiSinonInstruction node) {
+        // TODO Auto-generated method stub
+        super.outASiSinonInstruction(node);
+    }
+
+    @Override
+    public void outATableauDeclarationVar(ATableauDeclarationVar node) {
+        // TODO Auto-generated method stub
+        super.outATableauDeclarationVar(node);
+    }
+
+    @Override
+    public void outATableauVar(ATableauVar node) {
+        // TODO Auto-generated method stub
+        super.outATableauVar(node);
+    }
+
+    @Override
+    public void outATantQueInstruction(ATantQueInstruction node) {
+        // TODO Auto-generated method stub
+        super.outATantQueInstruction(node);
+    }
+
+    @Override
+    public void outATypeTypeOptionnel(ATypeTypeOptionnel node) {
+        // TODO Auto-generated method stub
+        super.outATypeTypeOptionnel(node);
+    }
+
+    @Override
+    public void outAVar(AVar node) {
+        // TODO Auto-generated method stub
+        super.outAVar(node);
+    }
+
+    @Override
+    public void outAVariableExp7(AVariableExp7 node) {
+        // TODO Auto-generated method stub
+        super.outAVariableExp7(node);
+    }
+
+    @Override
+    public void outAVideListeDeclarationFonc(AVideListeDeclarationFonc node) {
+        // TODO Auto-generated method stub
+        super.outAVideListeDeclarationFonc(node);
+    }
+
+    @Override
+    public void outAVideListeDeclarationVar(AVideListeDeclarationVar node) {
+        // TODO Auto-generated method stub
+        super.outAVideListeDeclarationVar(node);
+    }
+
+    @Override
+    public void outAVideListeDeclarationVarPrime(AVideListeDeclarationVarPrime node) {
+        // TODO Auto-generated method stub
+        super.outAVideListeDeclarationVarPrime(node);
+    }
+
+    @Override
+    public void outAVideListeExp(AVideListeExp node) {
+        // TODO Auto-generated method stub
+        super.outAVideListeExp(node);
+    }
+
+    @Override
+    public void outAVideListeExpPrime(AVideListeExpPrime node) {
+        // TODO Auto-generated method stub
+        super.outAVideListeExpPrime(node);
+    }
+
+    @Override
+    public void outAVideListeInstruction(AVideListeInstruction node) {
+        // TODO Auto-generated method stub
+        super.outAVideListeInstruction(node);
+    }
+
+    @Override
+    public void outAVideTypeOptionnel(AVideTypeOptionnel node) {
+        // TODO Auto-generated method stub
+        super.outAVideTypeOptionnel(node);
+    }
+
+    @Override
+    public void outAVraiExp7(AVraiExp7 node) {
+        // TODO Auto-generated method stub
+        super.outAVraiExp7(node);
+    }
+
+    @Override
+    public void outStart(Start node) {
+        // TODO Auto-generated method stub
+        super.outStart(node);
     }
 
     @Override
@@ -356,15 +1074,15 @@ public class Sc2sa extends DepthFirstAdapter {
     }
 
     @Override
-    public void caseTAccD(TAccD node) {
+    public void caseTAccoladeDroite(TAccoladeDroite node) {
         // TODO Auto-generated method stub
-        super.caseTAccD(node);
+        super.caseTAccoladeDroite(node);
     }
 
     @Override
-    public void caseTAccG(TAccG node) {
+    public void caseTAccoladeGauche(TAccoladeGauche node) {
         // TODO Auto-generated method stub
-        super.caseTAccG(node);
+        super.caseTAccoladeGauche(node);
     }
 
     @Override
@@ -386,15 +1104,15 @@ public class Sc2sa extends DepthFirstAdapter {
     }
 
     @Override
-    public void caseTCroD(TCroD node) {
+    public void caseTCrochetDroit(TCrochetDroit node) {
         // TODO Auto-generated method stub
-        super.caseTCroD(node);
+        super.caseTCrochetDroit(node);
     }
 
     @Override
-    public void caseTCroG(TCroG node) {
+    public void caseTCrochetGauche(TCrochetGauche node) {
         // TODO Auto-generated method stub
-        super.caseTCroG(node);
+        super.caseTCrochetGauche(node);
     }
 
     @Override
@@ -422,15 +1140,21 @@ public class Sc2sa extends DepthFirstAdapter {
     }
 
     @Override
-    public void caseTEspaces(TEspaces node) {
+    public void caseTEspace(TEspace node) {
         // TODO Auto-generated method stub
-        super.caseTEspaces(node);
+        super.caseTEspace(node);
     }
 
     @Override
     public void caseTEt(TEt node) {
         // TODO Auto-generated method stub
         super.caseTEt(node);
+    }
+
+    @Override
+    public void caseTExclamation(TExclamation node) {
+        // TODO Auto-generated method stub
+        super.caseTExclamation(node);
     }
 
     @Override
@@ -446,9 +1170,9 @@ public class Sc2sa extends DepthFirstAdapter {
     }
 
     @Override
-    public void caseTId(TId node) {
+    public void caseTIdentif(TIdentif node) {
         // TODO Auto-generated method stub
-        super.caseTId(node);
+        super.caseTIdentif(node);
     }
 
     @Override
@@ -461,12 +1185,6 @@ public class Sc2sa extends DepthFirstAdapter {
     public void caseTLire(TLire node) {
         // TODO Auto-generated method stub
         super.caseTLire(node);
-    }
-
-    @Override
-    public void caseTMod(TMod node) {
-        // TODO Auto-generated method stub
-        super.caseTMod(node);
     }
 
     @Override
@@ -488,39 +1206,39 @@ public class Sc2sa extends DepthFirstAdapter {
     }
 
     @Override
-    public void caseTNon(TNon node) {
-        // TODO Auto-generated method stub
-        super.caseTNon(node);
-    }
-
-    @Override
     public void caseTOu(TOu node) {
         // TODO Auto-generated method stub
         super.caseTOu(node);
     }
 
     @Override
-    public void caseTPVirgule(TPVirgule node) {
+    public void caseTParentheseDroite(TParentheseDroite node) {
         // TODO Auto-generated method stub
-        super.caseTPVirgule(node);
+        super.caseTParentheseDroite(node);
     }
 
     @Override
-    public void caseTParD(TParD node) {
+    public void caseTParentheseGauche(TParentheseGauche node) {
         // TODO Auto-generated method stub
-        super.caseTParD(node);
-    }
-
-    @Override
-    public void caseTParG(TParG node) {
-        // TODO Auto-generated method stub
-        super.caseTParG(node);
+        super.caseTParentheseGauche(node);
     }
 
     @Override
     public void caseTPlus(TPlus node) {
         // TODO Auto-generated method stub
         super.caseTPlus(node);
+    }
+
+    @Override
+    public void caseTPointVirgule(TPointVirgule node) {
+        // TODO Auto-generated method stub
+        super.caseTPointVirgule(node);
+    }
+
+    @Override
+    public void caseTPower(TPower node) {
+        // TODO Auto-generated method stub
+        super.caseTPower(node);
     }
 
     @Override
@@ -542,9 +1260,9 @@ public class Sc2sa extends DepthFirstAdapter {
     }
 
     @Override
-    public void caseTTq(TTq node) {
+    public void caseTTantQue(TTantQue node) {
         // TODO Auto-generated method stub
-        super.caseTTq(node);
+        super.caseTTantQue(node);
     }
 
     @Override
@@ -559,21 +1277,35 @@ public class Sc2sa extends DepthFirstAdapter {
         super.caseTVrai(node);
     }
 
+    @Override
+    public void defaultCase(Node node) {
+        // TODO Auto-generated method stub
+        super.defaultCase(node);
+    }
 
-    // exp3 = {plus} exp3 plus exp4
-    /*
-     * @Override
-     * public void caseAPlusExp3(APlusExp3 node)
-     * {
-     * SaExp op1 = null;
-     * SaExp op2 = null;
-     * inAPlusExp3(node);
-     * node.getExp3().apply(this);
-     * op1 = (SaExp) this.returnValue;
-     * node.getExp4().apply(this);
-     * op2 = (SaExp) this.returnValue;
-     * this.returnValue = new SaExpAdd(op1, op2);
-     * outAPlusExp3(node);
-     * }
-     */
+    @Override
+    public Object getIn(Node node) {
+        // TODO Auto-generated method stub
+        return super.getIn(node);
+    }
+
+    @Override
+    public Object getOut(Node node) {
+        // TODO Auto-generated method stub
+        return super.getOut(node);
+    }
+
+    @Override
+    public void setIn(Node node, Object o) {
+        // TODO Auto-generated method stub
+        super.setIn(node, o);
+    }
+
+    @Override
+    public void setOut(Node node, Object o) {
+        // TODO Auto-generated method stub
+        super.setOut(node, o);
+    }
+
+
 }

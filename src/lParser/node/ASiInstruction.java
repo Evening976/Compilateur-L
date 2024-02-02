@@ -5,61 +5,61 @@ package lParser.node;
 import lParser.analysis.*;
 
 @SuppressWarnings("nls")
-public final class AAffectationInstruction extends PInstruction
+public final class ASiInstruction extends PInstruction
 {
-    private PVar _var_;
-    private TEgal _egal_;
+    private TSi _si_;
     private PExp _exp_;
-    private TPointVirgule _pointVirgule_;
+    private TAlors _alors_;
+    private PBlocInstruction _blocInstruction_;
 
-    public AAffectationInstruction()
+    public ASiInstruction()
     {
         // Constructor
     }
 
-    public AAffectationInstruction(
-        @SuppressWarnings("hiding") PVar _var_,
-        @SuppressWarnings("hiding") TEgal _egal_,
+    public ASiInstruction(
+        @SuppressWarnings("hiding") TSi _si_,
         @SuppressWarnings("hiding") PExp _exp_,
-        @SuppressWarnings("hiding") TPointVirgule _pointVirgule_)
+        @SuppressWarnings("hiding") TAlors _alors_,
+        @SuppressWarnings("hiding") PBlocInstruction _blocInstruction_)
     {
         // Constructor
-        setVar(_var_);
-
-        setEgal(_egal_);
+        setSi(_si_);
 
         setExp(_exp_);
 
-        setPointVirgule(_pointVirgule_);
+        setAlors(_alors_);
+
+        setBlocInstruction(_blocInstruction_);
 
     }
 
     @Override
     public Object clone()
     {
-        return new AAffectationInstruction(
-            cloneNode(this._var_),
-            cloneNode(this._egal_),
+        return new ASiInstruction(
+            cloneNode(this._si_),
             cloneNode(this._exp_),
-            cloneNode(this._pointVirgule_));
+            cloneNode(this._alors_),
+            cloneNode(this._blocInstruction_));
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseAAffectationInstruction(this);
+        ((Analysis) sw).caseASiInstruction(this);
     }
 
-    public PVar getVar()
+    public TSi getSi()
     {
-        return this._var_;
+        return this._si_;
     }
 
-    public void setVar(PVar node)
+    public void setSi(TSi node)
     {
-        if(this._var_ != null)
+        if(this._si_ != null)
         {
-            this._var_.parent(null);
+            this._si_.parent(null);
         }
 
         if(node != null)
@@ -72,32 +72,7 @@ public final class AAffectationInstruction extends PInstruction
             node.parent(this);
         }
 
-        this._var_ = node;
-    }
-
-    public TEgal getEgal()
-    {
-        return this._egal_;
-    }
-
-    public void setEgal(TEgal node)
-    {
-        if(this._egal_ != null)
-        {
-            this._egal_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._egal_ = node;
+        this._si_ = node;
     }
 
     public PExp getExp()
@@ -125,16 +100,16 @@ public final class AAffectationInstruction extends PInstruction
         this._exp_ = node;
     }
 
-    public TPointVirgule getPointVirgule()
+    public TAlors getAlors()
     {
-        return this._pointVirgule_;
+        return this._alors_;
     }
 
-    public void setPointVirgule(TPointVirgule node)
+    public void setAlors(TAlors node)
     {
-        if(this._pointVirgule_ != null)
+        if(this._alors_ != null)
         {
-            this._pointVirgule_.parent(null);
+            this._alors_.parent(null);
         }
 
         if(node != null)
@@ -147,32 +122,51 @@ public final class AAffectationInstruction extends PInstruction
             node.parent(this);
         }
 
-        this._pointVirgule_ = node;
+        this._alors_ = node;
+    }
+
+    public PBlocInstruction getBlocInstruction()
+    {
+        return this._blocInstruction_;
+    }
+
+    public void setBlocInstruction(PBlocInstruction node)
+    {
+        if(this._blocInstruction_ != null)
+        {
+            this._blocInstruction_.parent(null);
+        }
+
+        if(node != null)
+        {
+            if(node.parent() != null)
+            {
+                node.parent().removeChild(node);
+            }
+
+            node.parent(this);
+        }
+
+        this._blocInstruction_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._var_)
-            + toString(this._egal_)
+            + toString(this._si_)
             + toString(this._exp_)
-            + toString(this._pointVirgule_);
+            + toString(this._alors_)
+            + toString(this._blocInstruction_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._var_ == child)
+        if(this._si_ == child)
         {
-            this._var_ = null;
-            return;
-        }
-
-        if(this._egal_ == child)
-        {
-            this._egal_ = null;
+            this._si_ = null;
             return;
         }
 
@@ -182,9 +176,15 @@ public final class AAffectationInstruction extends PInstruction
             return;
         }
 
-        if(this._pointVirgule_ == child)
+        if(this._alors_ == child)
         {
-            this._pointVirgule_ = null;
+            this._alors_ = null;
+            return;
+        }
+
+        if(this._blocInstruction_ == child)
+        {
+            this._blocInstruction_ = null;
             return;
         }
 
@@ -195,15 +195,9 @@ public final class AAffectationInstruction extends PInstruction
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._var_ == oldChild)
+        if(this._si_ == oldChild)
         {
-            setVar((PVar) newChild);
-            return;
-        }
-
-        if(this._egal_ == oldChild)
-        {
-            setEgal((TEgal) newChild);
+            setSi((TSi) newChild);
             return;
         }
 
@@ -213,9 +207,15 @@ public final class AAffectationInstruction extends PInstruction
             return;
         }
 
-        if(this._pointVirgule_ == oldChild)
+        if(this._alors_ == oldChild)
         {
-            setPointVirgule((TPointVirgule) newChild);
+            setAlors((TAlors) newChild);
+            return;
+        }
+
+        if(this._blocInstruction_ == oldChild)
+        {
+            setBlocInstruction((PBlocInstruction) newChild);
             return;
         }
 

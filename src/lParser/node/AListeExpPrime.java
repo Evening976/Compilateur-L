@@ -5,61 +5,56 @@ package lParser.node;
 import lParser.analysis.*;
 
 @SuppressWarnings("nls")
-public final class AAffectationInstruction extends PInstruction
+public final class AListeExpPrime extends PListeExpPrime
 {
-    private PVar _var_;
-    private TEgal _egal_;
+    private TVirgule _virgule_;
     private PExp _exp_;
-    private TPointVirgule _pointVirgule_;
+    private PListeExpPrime _listeExpPrime_;
 
-    public AAffectationInstruction()
+    public AListeExpPrime()
     {
         // Constructor
     }
 
-    public AAffectationInstruction(
-        @SuppressWarnings("hiding") PVar _var_,
-        @SuppressWarnings("hiding") TEgal _egal_,
+    public AListeExpPrime(
+        @SuppressWarnings("hiding") TVirgule _virgule_,
         @SuppressWarnings("hiding") PExp _exp_,
-        @SuppressWarnings("hiding") TPointVirgule _pointVirgule_)
+        @SuppressWarnings("hiding") PListeExpPrime _listeExpPrime_)
     {
         // Constructor
-        setVar(_var_);
-
-        setEgal(_egal_);
+        setVirgule(_virgule_);
 
         setExp(_exp_);
 
-        setPointVirgule(_pointVirgule_);
+        setListeExpPrime(_listeExpPrime_);
 
     }
 
     @Override
     public Object clone()
     {
-        return new AAffectationInstruction(
-            cloneNode(this._var_),
-            cloneNode(this._egal_),
+        return new AListeExpPrime(
+            cloneNode(this._virgule_),
             cloneNode(this._exp_),
-            cloneNode(this._pointVirgule_));
+            cloneNode(this._listeExpPrime_));
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseAAffectationInstruction(this);
+        ((Analysis) sw).caseAListeExpPrime(this);
     }
 
-    public PVar getVar()
+    public TVirgule getVirgule()
     {
-        return this._var_;
+        return this._virgule_;
     }
 
-    public void setVar(PVar node)
+    public void setVirgule(TVirgule node)
     {
-        if(this._var_ != null)
+        if(this._virgule_ != null)
         {
-            this._var_.parent(null);
+            this._virgule_.parent(null);
         }
 
         if(node != null)
@@ -72,32 +67,7 @@ public final class AAffectationInstruction extends PInstruction
             node.parent(this);
         }
 
-        this._var_ = node;
-    }
-
-    public TEgal getEgal()
-    {
-        return this._egal_;
-    }
-
-    public void setEgal(TEgal node)
-    {
-        if(this._egal_ != null)
-        {
-            this._egal_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._egal_ = node;
+        this._virgule_ = node;
     }
 
     public PExp getExp()
@@ -125,16 +95,16 @@ public final class AAffectationInstruction extends PInstruction
         this._exp_ = node;
     }
 
-    public TPointVirgule getPointVirgule()
+    public PListeExpPrime getListeExpPrime()
     {
-        return this._pointVirgule_;
+        return this._listeExpPrime_;
     }
 
-    public void setPointVirgule(TPointVirgule node)
+    public void setListeExpPrime(PListeExpPrime node)
     {
-        if(this._pointVirgule_ != null)
+        if(this._listeExpPrime_ != null)
         {
-            this._pointVirgule_.parent(null);
+            this._listeExpPrime_.parent(null);
         }
 
         if(node != null)
@@ -147,32 +117,25 @@ public final class AAffectationInstruction extends PInstruction
             node.parent(this);
         }
 
-        this._pointVirgule_ = node;
+        this._listeExpPrime_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._var_)
-            + toString(this._egal_)
+            + toString(this._virgule_)
             + toString(this._exp_)
-            + toString(this._pointVirgule_);
+            + toString(this._listeExpPrime_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._var_ == child)
+        if(this._virgule_ == child)
         {
-            this._var_ = null;
-            return;
-        }
-
-        if(this._egal_ == child)
-        {
-            this._egal_ = null;
+            this._virgule_ = null;
             return;
         }
 
@@ -182,9 +145,9 @@ public final class AAffectationInstruction extends PInstruction
             return;
         }
 
-        if(this._pointVirgule_ == child)
+        if(this._listeExpPrime_ == child)
         {
-            this._pointVirgule_ = null;
+            this._listeExpPrime_ = null;
             return;
         }
 
@@ -195,15 +158,9 @@ public final class AAffectationInstruction extends PInstruction
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._var_ == oldChild)
+        if(this._virgule_ == oldChild)
         {
-            setVar((PVar) newChild);
-            return;
-        }
-
-        if(this._egal_ == oldChild)
-        {
-            setEgal((TEgal) newChild);
+            setVirgule((TVirgule) newChild);
             return;
         }
 
@@ -213,9 +170,9 @@ public final class AAffectationInstruction extends PInstruction
             return;
         }
 
-        if(this._pointVirgule_ == oldChild)
+        if(this._listeExpPrime_ == oldChild)
         {
-            setPointVirgule((TPointVirgule) newChild);
+            setListeExpPrime((PListeExpPrime) newChild);
             return;
         }
 

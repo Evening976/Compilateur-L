@@ -5,69 +5,44 @@ package lParser.node;
 import lParser.analysis.*;
 
 @SuppressWarnings("nls")
-public final class ARetourInstruction extends PInstruction
+public final class AOuExp extends PExp
 {
-    private TRetour _retour_;
     private PExp _exp_;
-    private TPointVirgule _pointVirgule_;
+    private TOu _ou_;
+    private PExp1 _exp1_;
 
-    public ARetourInstruction()
+    public AOuExp()
     {
         // Constructor
     }
 
-    public ARetourInstruction(
-        @SuppressWarnings("hiding") TRetour _retour_,
+    public AOuExp(
         @SuppressWarnings("hiding") PExp _exp_,
-        @SuppressWarnings("hiding") TPointVirgule _pointVirgule_)
+        @SuppressWarnings("hiding") TOu _ou_,
+        @SuppressWarnings("hiding") PExp1 _exp1_)
     {
         // Constructor
-        setRetour(_retour_);
-
         setExp(_exp_);
 
-        setPointVirgule(_pointVirgule_);
+        setOu(_ou_);
+
+        setExp1(_exp1_);
 
     }
 
     @Override
     public Object clone()
     {
-        return new ARetourInstruction(
-            cloneNode(this._retour_),
+        return new AOuExp(
             cloneNode(this._exp_),
-            cloneNode(this._pointVirgule_));
+            cloneNode(this._ou_),
+            cloneNode(this._exp1_));
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseARetourInstruction(this);
-    }
-
-    public TRetour getRetour()
-    {
-        return this._retour_;
-    }
-
-    public void setRetour(TRetour node)
-    {
-        if(this._retour_ != null)
-        {
-            this._retour_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._retour_ = node;
+        ((Analysis) sw).caseAOuExp(this);
     }
 
     public PExp getExp()
@@ -95,16 +70,16 @@ public final class ARetourInstruction extends PInstruction
         this._exp_ = node;
     }
 
-    public TPointVirgule getPointVirgule()
+    public TOu getOu()
     {
-        return this._pointVirgule_;
+        return this._ou_;
     }
 
-    public void setPointVirgule(TPointVirgule node)
+    public void setOu(TOu node)
     {
-        if(this._pointVirgule_ != null)
+        if(this._ou_ != null)
         {
-            this._pointVirgule_.parent(null);
+            this._ou_.parent(null);
         }
 
         if(node != null)
@@ -117,37 +92,62 @@ public final class ARetourInstruction extends PInstruction
             node.parent(this);
         }
 
-        this._pointVirgule_ = node;
+        this._ou_ = node;
+    }
+
+    public PExp1 getExp1()
+    {
+        return this._exp1_;
+    }
+
+    public void setExp1(PExp1 node)
+    {
+        if(this._exp1_ != null)
+        {
+            this._exp1_.parent(null);
+        }
+
+        if(node != null)
+        {
+            if(node.parent() != null)
+            {
+                node.parent().removeChild(node);
+            }
+
+            node.parent(this);
+        }
+
+        this._exp1_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._retour_)
             + toString(this._exp_)
-            + toString(this._pointVirgule_);
+            + toString(this._ou_)
+            + toString(this._exp1_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._retour_ == child)
-        {
-            this._retour_ = null;
-            return;
-        }
-
         if(this._exp_ == child)
         {
             this._exp_ = null;
             return;
         }
 
-        if(this._pointVirgule_ == child)
+        if(this._ou_ == child)
         {
-            this._pointVirgule_ = null;
+            this._ou_ = null;
+            return;
+        }
+
+        if(this._exp1_ == child)
+        {
+            this._exp1_ = null;
             return;
         }
 
@@ -158,21 +158,21 @@ public final class ARetourInstruction extends PInstruction
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._retour_ == oldChild)
-        {
-            setRetour((TRetour) newChild);
-            return;
-        }
-
         if(this._exp_ == oldChild)
         {
             setExp((PExp) newChild);
             return;
         }
 
-        if(this._pointVirgule_ == oldChild)
+        if(this._ou_ == oldChild)
         {
-            setPointVirgule((TPointVirgule) newChild);
+            setOu((TOu) newChild);
+            return;
+        }
+
+        if(this._exp1_ == oldChild)
+        {
+            setExp1((PExp1) newChild);
             return;
         }
 

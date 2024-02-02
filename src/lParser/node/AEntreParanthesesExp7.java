@@ -5,61 +5,56 @@ package lParser.node;
 import lParser.analysis.*;
 
 @SuppressWarnings("nls")
-public final class AAffectationInstruction extends PInstruction
+public final class AEntreParanthesesExp7 extends PExp7
 {
-    private PVar _var_;
-    private TEgal _egal_;
+    private TParentheseGauche _parentheseGauche_;
     private PExp _exp_;
-    private TPointVirgule _pointVirgule_;
+    private TParentheseDroite _parentheseDroite_;
 
-    public AAffectationInstruction()
+    public AEntreParanthesesExp7()
     {
         // Constructor
     }
 
-    public AAffectationInstruction(
-        @SuppressWarnings("hiding") PVar _var_,
-        @SuppressWarnings("hiding") TEgal _egal_,
+    public AEntreParanthesesExp7(
+        @SuppressWarnings("hiding") TParentheseGauche _parentheseGauche_,
         @SuppressWarnings("hiding") PExp _exp_,
-        @SuppressWarnings("hiding") TPointVirgule _pointVirgule_)
+        @SuppressWarnings("hiding") TParentheseDroite _parentheseDroite_)
     {
         // Constructor
-        setVar(_var_);
-
-        setEgal(_egal_);
+        setParentheseGauche(_parentheseGauche_);
 
         setExp(_exp_);
 
-        setPointVirgule(_pointVirgule_);
+        setParentheseDroite(_parentheseDroite_);
 
     }
 
     @Override
     public Object clone()
     {
-        return new AAffectationInstruction(
-            cloneNode(this._var_),
-            cloneNode(this._egal_),
+        return new AEntreParanthesesExp7(
+            cloneNode(this._parentheseGauche_),
             cloneNode(this._exp_),
-            cloneNode(this._pointVirgule_));
+            cloneNode(this._parentheseDroite_));
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseAAffectationInstruction(this);
+        ((Analysis) sw).caseAEntreParanthesesExp7(this);
     }
 
-    public PVar getVar()
+    public TParentheseGauche getParentheseGauche()
     {
-        return this._var_;
+        return this._parentheseGauche_;
     }
 
-    public void setVar(PVar node)
+    public void setParentheseGauche(TParentheseGauche node)
     {
-        if(this._var_ != null)
+        if(this._parentheseGauche_ != null)
         {
-            this._var_.parent(null);
+            this._parentheseGauche_.parent(null);
         }
 
         if(node != null)
@@ -72,32 +67,7 @@ public final class AAffectationInstruction extends PInstruction
             node.parent(this);
         }
 
-        this._var_ = node;
-    }
-
-    public TEgal getEgal()
-    {
-        return this._egal_;
-    }
-
-    public void setEgal(TEgal node)
-    {
-        if(this._egal_ != null)
-        {
-            this._egal_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._egal_ = node;
+        this._parentheseGauche_ = node;
     }
 
     public PExp getExp()
@@ -125,16 +95,16 @@ public final class AAffectationInstruction extends PInstruction
         this._exp_ = node;
     }
 
-    public TPointVirgule getPointVirgule()
+    public TParentheseDroite getParentheseDroite()
     {
-        return this._pointVirgule_;
+        return this._parentheseDroite_;
     }
 
-    public void setPointVirgule(TPointVirgule node)
+    public void setParentheseDroite(TParentheseDroite node)
     {
-        if(this._pointVirgule_ != null)
+        if(this._parentheseDroite_ != null)
         {
-            this._pointVirgule_.parent(null);
+            this._parentheseDroite_.parent(null);
         }
 
         if(node != null)
@@ -147,32 +117,25 @@ public final class AAffectationInstruction extends PInstruction
             node.parent(this);
         }
 
-        this._pointVirgule_ = node;
+        this._parentheseDroite_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._var_)
-            + toString(this._egal_)
+            + toString(this._parentheseGauche_)
             + toString(this._exp_)
-            + toString(this._pointVirgule_);
+            + toString(this._parentheseDroite_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._var_ == child)
+        if(this._parentheseGauche_ == child)
         {
-            this._var_ = null;
-            return;
-        }
-
-        if(this._egal_ == child)
-        {
-            this._egal_ = null;
+            this._parentheseGauche_ = null;
             return;
         }
 
@@ -182,9 +145,9 @@ public final class AAffectationInstruction extends PInstruction
             return;
         }
 
-        if(this._pointVirgule_ == child)
+        if(this._parentheseDroite_ == child)
         {
-            this._pointVirgule_ = null;
+            this._parentheseDroite_ = null;
             return;
         }
 
@@ -195,15 +158,9 @@ public final class AAffectationInstruction extends PInstruction
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._var_ == oldChild)
+        if(this._parentheseGauche_ == oldChild)
         {
-            setVar((PVar) newChild);
-            return;
-        }
-
-        if(this._egal_ == oldChild)
-        {
-            setEgal((TEgal) newChild);
+            setParentheseGauche((TParentheseGauche) newChild);
             return;
         }
 
@@ -213,9 +170,9 @@ public final class AAffectationInstruction extends PInstruction
             return;
         }
 
-        if(this._pointVirgule_ == oldChild)
+        if(this._parentheseDroite_ == oldChild)
         {
-            setPointVirgule((TPointVirgule) newChild);
+            setParentheseDroite((TParentheseDroite) newChild);
             return;
         }
 

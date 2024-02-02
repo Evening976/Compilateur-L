@@ -5,66 +5,61 @@ package lParser.node;
 import lParser.analysis.*;
 
 @SuppressWarnings("nls")
-public final class AEcrireInstruction extends PInstruction
+public final class AAppelFonctionExp7 extends PExp7
 {
-    private TEcrire _ecrire_;
+    private TIdentif _identif_;
     private TParentheseGauche _parentheseGauche_;
-    private PExp _exp_;
+    private PListeExp _listeExp_;
     private TParentheseDroite _parentheseDroite_;
-    private TPointVirgule _pointVirgule_;
 
-    public AEcrireInstruction()
+    public AAppelFonctionExp7()
     {
         // Constructor
     }
 
-    public AEcrireInstruction(
-        @SuppressWarnings("hiding") TEcrire _ecrire_,
+    public AAppelFonctionExp7(
+        @SuppressWarnings("hiding") TIdentif _identif_,
         @SuppressWarnings("hiding") TParentheseGauche _parentheseGauche_,
-        @SuppressWarnings("hiding") PExp _exp_,
-        @SuppressWarnings("hiding") TParentheseDroite _parentheseDroite_,
-        @SuppressWarnings("hiding") TPointVirgule _pointVirgule_)
+        @SuppressWarnings("hiding") PListeExp _listeExp_,
+        @SuppressWarnings("hiding") TParentheseDroite _parentheseDroite_)
     {
         // Constructor
-        setEcrire(_ecrire_);
+        setIdentif(_identif_);
 
         setParentheseGauche(_parentheseGauche_);
 
-        setExp(_exp_);
+        setListeExp(_listeExp_);
 
         setParentheseDroite(_parentheseDroite_);
-
-        setPointVirgule(_pointVirgule_);
 
     }
 
     @Override
     public Object clone()
     {
-        return new AEcrireInstruction(
-            cloneNode(this._ecrire_),
+        return new AAppelFonctionExp7(
+            cloneNode(this._identif_),
             cloneNode(this._parentheseGauche_),
-            cloneNode(this._exp_),
-            cloneNode(this._parentheseDroite_),
-            cloneNode(this._pointVirgule_));
+            cloneNode(this._listeExp_),
+            cloneNode(this._parentheseDroite_));
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseAEcrireInstruction(this);
+        ((Analysis) sw).caseAAppelFonctionExp7(this);
     }
 
-    public TEcrire getEcrire()
+    public TIdentif getIdentif()
     {
-        return this._ecrire_;
+        return this._identif_;
     }
 
-    public void setEcrire(TEcrire node)
+    public void setIdentif(TIdentif node)
     {
-        if(this._ecrire_ != null)
+        if(this._identif_ != null)
         {
-            this._ecrire_.parent(null);
+            this._identif_.parent(null);
         }
 
         if(node != null)
@@ -77,7 +72,7 @@ public final class AEcrireInstruction extends PInstruction
             node.parent(this);
         }
 
-        this._ecrire_ = node;
+        this._identif_ = node;
     }
 
     public TParentheseGauche getParentheseGauche()
@@ -105,16 +100,16 @@ public final class AEcrireInstruction extends PInstruction
         this._parentheseGauche_ = node;
     }
 
-    public PExp getExp()
+    public PListeExp getListeExp()
     {
-        return this._exp_;
+        return this._listeExp_;
     }
 
-    public void setExp(PExp node)
+    public void setListeExp(PListeExp node)
     {
-        if(this._exp_ != null)
+        if(this._listeExp_ != null)
         {
-            this._exp_.parent(null);
+            this._listeExp_.parent(null);
         }
 
         if(node != null)
@@ -127,7 +122,7 @@ public final class AEcrireInstruction extends PInstruction
             node.parent(this);
         }
 
-        this._exp_ = node;
+        this._listeExp_ = node;
     }
 
     public TParentheseDroite getParentheseDroite()
@@ -155,49 +150,23 @@ public final class AEcrireInstruction extends PInstruction
         this._parentheseDroite_ = node;
     }
 
-    public TPointVirgule getPointVirgule()
-    {
-        return this._pointVirgule_;
-    }
-
-    public void setPointVirgule(TPointVirgule node)
-    {
-        if(this._pointVirgule_ != null)
-        {
-            this._pointVirgule_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._pointVirgule_ = node;
-    }
-
     @Override
     public String toString()
     {
         return ""
-            + toString(this._ecrire_)
+            + toString(this._identif_)
             + toString(this._parentheseGauche_)
-            + toString(this._exp_)
-            + toString(this._parentheseDroite_)
-            + toString(this._pointVirgule_);
+            + toString(this._listeExp_)
+            + toString(this._parentheseDroite_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._ecrire_ == child)
+        if(this._identif_ == child)
         {
-            this._ecrire_ = null;
+            this._identif_ = null;
             return;
         }
 
@@ -207,21 +176,15 @@ public final class AEcrireInstruction extends PInstruction
             return;
         }
 
-        if(this._exp_ == child)
+        if(this._listeExp_ == child)
         {
-            this._exp_ = null;
+            this._listeExp_ = null;
             return;
         }
 
         if(this._parentheseDroite_ == child)
         {
             this._parentheseDroite_ = null;
-            return;
-        }
-
-        if(this._pointVirgule_ == child)
-        {
-            this._pointVirgule_ = null;
             return;
         }
 
@@ -232,9 +195,9 @@ public final class AEcrireInstruction extends PInstruction
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._ecrire_ == oldChild)
+        if(this._identif_ == oldChild)
         {
-            setEcrire((TEcrire) newChild);
+            setIdentif((TIdentif) newChild);
             return;
         }
 
@@ -244,21 +207,15 @@ public final class AEcrireInstruction extends PInstruction
             return;
         }
 
-        if(this._exp_ == oldChild)
+        if(this._listeExp_ == oldChild)
         {
-            setExp((PExp) newChild);
+            setListeExp((PListeExp) newChild);
             return;
         }
 
         if(this._parentheseDroite_ == oldChild)
         {
             setParentheseDroite((TParentheseDroite) newChild);
-            return;
-        }
-
-        if(this._pointVirgule_ == oldChild)
-        {
-            setPointVirgule((TPointVirgule) newChild);
             return;
         }
 

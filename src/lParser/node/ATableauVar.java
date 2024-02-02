@@ -5,61 +5,61 @@ package lParser.node;
 import lParser.analysis.*;
 
 @SuppressWarnings("nls")
-public final class AAffectationInstruction extends PInstruction
+public final class ATableauVar extends PVar
 {
-    private PVar _var_;
-    private TEgal _egal_;
+    private TIdentif _identif_;
+    private TCrochetGauche _crochetGauche_;
     private PExp _exp_;
-    private TPointVirgule _pointVirgule_;
+    private TCrochetDroit _crochetDroit_;
 
-    public AAffectationInstruction()
+    public ATableauVar()
     {
         // Constructor
     }
 
-    public AAffectationInstruction(
-        @SuppressWarnings("hiding") PVar _var_,
-        @SuppressWarnings("hiding") TEgal _egal_,
+    public ATableauVar(
+        @SuppressWarnings("hiding") TIdentif _identif_,
+        @SuppressWarnings("hiding") TCrochetGauche _crochetGauche_,
         @SuppressWarnings("hiding") PExp _exp_,
-        @SuppressWarnings("hiding") TPointVirgule _pointVirgule_)
+        @SuppressWarnings("hiding") TCrochetDroit _crochetDroit_)
     {
         // Constructor
-        setVar(_var_);
+        setIdentif(_identif_);
 
-        setEgal(_egal_);
+        setCrochetGauche(_crochetGauche_);
 
         setExp(_exp_);
 
-        setPointVirgule(_pointVirgule_);
+        setCrochetDroit(_crochetDroit_);
 
     }
 
     @Override
     public Object clone()
     {
-        return new AAffectationInstruction(
-            cloneNode(this._var_),
-            cloneNode(this._egal_),
+        return new ATableauVar(
+            cloneNode(this._identif_),
+            cloneNode(this._crochetGauche_),
             cloneNode(this._exp_),
-            cloneNode(this._pointVirgule_));
+            cloneNode(this._crochetDroit_));
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseAAffectationInstruction(this);
+        ((Analysis) sw).caseATableauVar(this);
     }
 
-    public PVar getVar()
+    public TIdentif getIdentif()
     {
-        return this._var_;
+        return this._identif_;
     }
 
-    public void setVar(PVar node)
+    public void setIdentif(TIdentif node)
     {
-        if(this._var_ != null)
+        if(this._identif_ != null)
         {
-            this._var_.parent(null);
+            this._identif_.parent(null);
         }
 
         if(node != null)
@@ -72,19 +72,19 @@ public final class AAffectationInstruction extends PInstruction
             node.parent(this);
         }
 
-        this._var_ = node;
+        this._identif_ = node;
     }
 
-    public TEgal getEgal()
+    public TCrochetGauche getCrochetGauche()
     {
-        return this._egal_;
+        return this._crochetGauche_;
     }
 
-    public void setEgal(TEgal node)
+    public void setCrochetGauche(TCrochetGauche node)
     {
-        if(this._egal_ != null)
+        if(this._crochetGauche_ != null)
         {
-            this._egal_.parent(null);
+            this._crochetGauche_.parent(null);
         }
 
         if(node != null)
@@ -97,7 +97,7 @@ public final class AAffectationInstruction extends PInstruction
             node.parent(this);
         }
 
-        this._egal_ = node;
+        this._crochetGauche_ = node;
     }
 
     public PExp getExp()
@@ -125,16 +125,16 @@ public final class AAffectationInstruction extends PInstruction
         this._exp_ = node;
     }
 
-    public TPointVirgule getPointVirgule()
+    public TCrochetDroit getCrochetDroit()
     {
-        return this._pointVirgule_;
+        return this._crochetDroit_;
     }
 
-    public void setPointVirgule(TPointVirgule node)
+    public void setCrochetDroit(TCrochetDroit node)
     {
-        if(this._pointVirgule_ != null)
+        if(this._crochetDroit_ != null)
         {
-            this._pointVirgule_.parent(null);
+            this._crochetDroit_.parent(null);
         }
 
         if(node != null)
@@ -147,32 +147,32 @@ public final class AAffectationInstruction extends PInstruction
             node.parent(this);
         }
 
-        this._pointVirgule_ = node;
+        this._crochetDroit_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._var_)
-            + toString(this._egal_)
+            + toString(this._identif_)
+            + toString(this._crochetGauche_)
             + toString(this._exp_)
-            + toString(this._pointVirgule_);
+            + toString(this._crochetDroit_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._var_ == child)
+        if(this._identif_ == child)
         {
-            this._var_ = null;
+            this._identif_ = null;
             return;
         }
 
-        if(this._egal_ == child)
+        if(this._crochetGauche_ == child)
         {
-            this._egal_ = null;
+            this._crochetGauche_ = null;
             return;
         }
 
@@ -182,9 +182,9 @@ public final class AAffectationInstruction extends PInstruction
             return;
         }
 
-        if(this._pointVirgule_ == child)
+        if(this._crochetDroit_ == child)
         {
-            this._pointVirgule_ = null;
+            this._crochetDroit_ = null;
             return;
         }
 
@@ -195,15 +195,15 @@ public final class AAffectationInstruction extends PInstruction
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._var_ == oldChild)
+        if(this._identif_ == oldChild)
         {
-            setVar((PVar) newChild);
+            setIdentif((TIdentif) newChild);
             return;
         }
 
-        if(this._egal_ == oldChild)
+        if(this._crochetGauche_ == oldChild)
         {
-            setEgal((TEgal) newChild);
+            setCrochetGauche((TCrochetGauche) newChild);
             return;
         }
 
@@ -213,9 +213,9 @@ public final class AAffectationInstruction extends PInstruction
             return;
         }
 
-        if(this._pointVirgule_ == oldChild)
+        if(this._crochetDroit_ == oldChild)
         {
-            setPointVirgule((TPointVirgule) newChild);
+            setCrochetDroit((TCrochetDroit) newChild);
             return;
         }
 
