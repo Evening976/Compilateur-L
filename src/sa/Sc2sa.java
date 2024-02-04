@@ -60,9 +60,6 @@ public class Sc2sa extends DepthFirstAdapter {
         appel = new SaAppel(identif, arguments);
         this.returnValue = appel;
         outAAppelFonctionExp7(node);
-
-
-
     }
 
     @Override
@@ -434,8 +431,15 @@ public class Sc2sa extends DepthFirstAdapter {
 
     @Override
     public void caseAProgramme(AProgramme node) {
-        // TODO Auto-generated method stub
-        super.caseAProgramme(node);
+        inAProgramme(node);
+        SaLDecVar dec = null;
+        SaLDecFonc fonc = null;
+        node.getListeDeclarationVar().apply(this);
+        dec = (SaLDecVar) this.returnValue;
+        node.getListeDeclarationFonc().apply(this);
+        fonc = (SaLDecFonc) this.returnValue;
+        this.saRoot = new SaProg(dec, fonc);
+        outAProgramme(node);
     }
 
     @Override
@@ -504,14 +508,22 @@ public class Sc2sa extends DepthFirstAdapter {
 
     @Override
     public void caseATantQueInstruction(ATantQueInstruction node) {
-        // TODO Auto-generated method stub
-        super.caseATantQueInstruction(node);
+        inATantQueInstruction(node);
+        SaExp test = null;
+        SaInst faire = null;
+        node.getExp().apply(this);
+        test = (SaExp) this.returnValue;
+        node.getBlocInstruction().apply(this);
+        faire = (SaInst) this.returnValue;
+        this.returnValue = new SaInstTantQue(test, faire);
+        outATantQueInstruction(node);
     }
 
     @Override
     public void caseATypeTypeOptionnel(ATypeTypeOptionnel node) {
-        // TODO Auto-generated method stub
-        super.caseATypeTypeOptionnel(node);
+        inATypeTypeOptionnel(node);
+        node.getType().apply(this);
+        outATypeTypeOptionnel(node);
     }
 
     @Override
@@ -524,50 +536,60 @@ public class Sc2sa extends DepthFirstAdapter {
 
     @Override
     public void caseAVariableExp7(AVariableExp7 node) {
-        // TODO Auto-generated method stub
-        super.caseAVariableExp7(node);
+        inAVariableExp7(node);
+        String identif = node.getIdentif().getText();
+        this.returnValue = new SaVarSimple(identif);
+        outAVariableExp7(node);
     }
 
     @Override
     public void caseAVideListeDeclarationFonc(AVideListeDeclarationFonc node) {
-        // TODO Auto-generated method stub
-        super.caseAVideListeDeclarationFonc(node);
+        inAVideListeDeclarationFonc(node);
+        this.returnValue = null;
+        outAVideListeDeclarationFonc(node);
     }
 
     @Override
-    public void caseAVideListeDeclarationVar(AVideListeDeclarationVar node) {
-        // TODO Auto-generated method stub
-        super.caseAVideListeDeclarationVar(node);
+    public void caseAVideListeDeclarationVar(AVideListeDeclarationVar node)
+    {
+        inAVideListeDeclarationVar(node);
+        this.returnValue = null;
+        outAVideListeDeclarationVar(node);
     }
 
     @Override
     public void caseAVideListeDeclarationVarPrime(AVideListeDeclarationVarPrime node) {
-        // TODO Auto-generated method stub
-        super.caseAVideListeDeclarationVarPrime(node);
+        inAVideListeDeclarationVarPrime(node);
+        this.returnValue = null;
+        outAVideListeDeclarationVarPrime(node);
     }
 
     @Override
     public void caseAVideListeExp(AVideListeExp node) {
-        // TODO Auto-generated method stub
-        super.caseAVideListeExp(node);
+        inAVideListeExp(node);
+        this.returnValue = null;
+        outAVideListeExp(node);
     }
 
     @Override
     public void caseAVideListeExpPrime(AVideListeExpPrime node) {
-        // TODO Auto-generated method stub
-        super.caseAVideListeExpPrime(node);
+        inAVideListeExpPrime(node);
+        this.returnValue = null;
+        outAVideListeExpPrime(node);
     }
 
     @Override
     public void caseAVideListeInstruction(AVideListeInstruction node) {
-        // TODO Auto-generated method stub
-        super.caseAVideListeInstruction(node);
+        inAVideListeInstruction(node);
+        this.returnValue = null;
+        outAVideListeInstruction(node);
     }
 
     @Override
     public void caseAVideTypeOptionnel(AVideTypeOptionnel node) {
-        // TODO Auto-generated method stub
-        super.caseAVideTypeOptionnel(node);
+        inAVideTypeOptionnel(node);
+        this.returnType = Type.VOID;
+        outAVideTypeOptionnel(node);
     }
 
     @Override
@@ -579,8 +601,9 @@ public class Sc2sa extends DepthFirstAdapter {
 
     @Override
     public void caseStart(Start node) {
-        // TODO Auto-generated method stub
-        super.caseStart(node);
+        inStart(node);
+        node.getPProgramme().apply(this);
+        outStart(node);
     }
 
     @Override
