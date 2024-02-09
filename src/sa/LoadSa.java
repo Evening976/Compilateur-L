@@ -59,7 +59,7 @@ public class LoadSa extends DepthFirstAdapter {
 
 
 
-    
+
 // prog =         po saprog ldecvar ldecfonc pf
     @Override
     public void caseAProg(AProg node)
@@ -355,7 +355,7 @@ public class LoadSa extends DepthFirstAdapter {
 	node.getDecfonc().apply(this);
 	SaDecFonc dec = (SaDecFonc) returnValue;
 	node.getLdecfonc().apply(this);
-	SaLDecFonc ldec = (SaLDecFonc) returnValue; 
+	SaLDecFonc ldec = (SaLDecFonc) returnValue;
         returnValue = new SaLDecFonc(dec, ldec);
         outARecLdecfonc(node);
     }
@@ -539,9 +539,4 @@ public class LoadSa extends DepthFirstAdapter {
         outANullType(node);
     }
 }
-
-
-
-
-
 

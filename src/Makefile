@@ -18,8 +18,8 @@ Compiler.jar : Compiler
 Compiler: Compiler.java lParser
 	javac Compiler.java
 
-lParser: l.cfg
-	java -jar ../sablecc/sablecc.jar l.cfg
+# lParser: l.cfg
+# 	java -jar ../sablecc/sablecc.jar l.cfg
 
 saParser: sa.cfg
 	java -jar ../sablecc/sablecc.jar sa.cfg
@@ -45,7 +45,6 @@ clean:
 	-rm util/intset/*.class
 	-rm util/graph/*.class
 	-rm util/*.class
-	-rm -r lParser
 	-rm -r saParser
 	-rm -r c3aParser
 	-rm -r nasmParser

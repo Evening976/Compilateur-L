@@ -1,129 +1,152 @@
 Package lParser;
 
 Helpers
-
-lettre = [['a' .. 'z'] + ['A' .. 'Z']];
-chiffre = ['0' .. '9'];
-alpha = [lettre + ['_' + '$']];
-alphanum = [lettre + chiffre];
+    lettre = [['a' .. 'z'] + ['A' .. 'Z']];
+    chiffre = ['0' .. '9'];
+    alpha = [lettre + ['_' + '$']];
+    alphanum = [lettre + chiffre];
 
 Tokens
+    crochet_gauche = '[';
+    crochet_droit = ']';
+    parenthese_gauche = '(';
+    parenthese_droite = ')';
+    accolade_gauche = '{';
+    accolade_droite = '}';
 
-espaces = (' ' | 13 | 10)+;
-commentaire= '#' [[0 .. 0xffff] - [10 + 13]]* (10 | 13 | 10 13);
-plus = '+';
-moins = '-';
-nombre = chiffre+;
-div = '/';
-mult = '*';
-mod = '%';
-et = '&';
-ou = '|';
-non = '!';
-par_g = '(';
-par_d = ')';
-egal = '=';
-inf = '<';
-acc_g = '{';
-acc_d = '}';
-cro_g = '[';
-cro_d = ']';
-si = 'si';
-tq = 'tantque';
-retour = 'retour';
-alors = 'alors';
-entier = 'entier';
-sinon = 'sinon';
-bool = 'bool';
-faire = 'faire';
-lire = 'lire';
-ecrire = 'ecrire';
-virgule = ',';
-p_virgule = ';';
-vrai = 'vrai';
-faux = 'faux';
-id = alpha alphanum*;
+    si = 'si';
+    sinon = 'sinon';
+    alors = 'alors';
+    tant_que = 'tantque';
+    faire = 'faire';
+    ecrire = 'ecrire';
+    retour = 'retour';
+    lire = 'lire';
 
+    ou = '|';
+    et = '&';
+    egal = '=';
+    inf = '<';
+    plus = '+';
+    moins = '-';
+    mult = '*';
+    power = '**';
+    div = '/';
+    exclamation = '!';
 
+    bool = 'bool';
+    entier = 'entier';
+    vrai = 'vrai';
+    faux = 'faux';
+    virgule = ',';
+    point_virgule = ';';
 
+    espace = (' ' | 13 | 10)+;
+    commentaire = '#' [[0 .. 0xffff] - [10 + 13]]* (10 | 13 | 10 13);
+    nombre = chiffre+;
+    identif = alpha alphanum*;
 
 Ignored Tokens
-
-espaces, commentaire;
+    espace, commentaire;
 
 Productions
+    programme =
+        liste_declaration_var liste_declaration_fonc;
 
-//l''axiome
+    liste_declaration_var =
+        declaration_var liste_declaration_var_prime |
+        {vide} ;
 
-programme = listedecvar listedecfonc ;
+    liste_declaration_var_prime =
+        virgule declaration_var liste_declaration_var_prime |
+        {vide} ;
 
-listedecvar = {decvar} decvar listedecvar1 |
-              {vide} ;
+    declaration_var =
+        type identif |
+        {tableau} type identif crochet_gauche nombre crochet_droit;
 
-listedecvar1 = {restedecvar} virgule decvar listedecvar1 |
-               {vide} ;
 
-decvar = {varsimple} [premier]:type id |
-         {vartab} [second]:type id cro_g nombre cro_d ;
+    liste_declaration_fonc =
+        declaration_fonc liste_declaration_fonc |
+        {vide} ;
 
-type = {entier} entier |
-       {boolean} bool ;
+    declaration_fonc =
+        type_optionnel identif parenthese_gauche [argument]:liste_declaration_var parenthese_droite [var_locale]:liste_declaration_var bloc_instruction;
 
-listedecfonc = {decfonction} fonction listedecfonc |
-               {vide} ;
+    type =
+        {bool} bool |
+        {entier} entier;
 
-fonction = typeoptionnel id par_g [premier]:listedecvar par_d [second]:listedecvar blocinstructions ;
+    type_optionnel =
+        {type} type |
+        {vide} ;
 
-typeoptionnel = {typevar} type |
-                {vide} ;
 
-blocinstructions = {bloc} acc_g listeinstructions acc_d ;
+    bloc_instruction =
+        accolade_gauche liste_instruction accolade_droite;
 
-listeinstructions = {instructions} instruction listeinstructions |
-                    {vide} ;
+    liste_instruction =
+        instruction liste_instruction |
+        {vide} ;
 
-instruction = {affectation} var egal expression p_virgule|
-              {tantque} tq expression faire blocinstructions |
-              {sialors} si expression alors blocinstructions |
-              {sisinon} si expression alors [premier]:blocinstructions sinon [second]:blocinstructions |
-              {retour} retour expression p_virgule |
-              {ecrire} ecrire par_g expression par_d p_virgule |
-              {id} id par_g listeexpressions par_d p_virgule ;
+    instruction =
+        {affectation} var egal exp point_virgule |
+        {si} si exp alors bloc_instruction |
+        {si_sinon} si exp alors [si_instruction]:bloc_instruction sinon [sinon_instruction]:bloc_instruction |
+        {tant_que} tant_que exp faire bloc_instruction |
+        {retour} retour exp point_virgule |
+        {appel_fonction} identif parenthese_gauche liste_exp parenthese_droite point_virgule |
+        {ecrire} ecrire parenthese_gauche exp parenthese_droite point_virgule |
+        {faire_tant_que} faire bloc_instruction tant_que exp;
 
-var = {identificateur} id |
-      {casetableau} id cro_g expression cro_d ;
+    var =
+        identif |
+        {tableau} identif crochet_gauche exp crochet_droit;
 
-listeexpressions = {listeparametres} expression listeexpressions1 |
-                   {vide} ;
+    liste_exp =
+        exp liste_exp_prime |
+        {vide} ;
 
-listeexpressions1 = {resteparametrescommencantvirgule} virgule expression listeexpressions1 |
-                    {vide} ;
+    liste_exp_prime =
+        virgule exp liste_exp_prime |
+        {vide} ;
 
-expression = {ou} expression ou exp1 |
-             {exp1} exp1 ;
+    exp =
+        {ou} exp ou exp1 |
+        {exp1} exp1;
 
-exp1 = {et} exp1 et exp2 |
-              {exp2} exp2 ;
+    exp1 =
+        {et} exp1 et exp2 |
+        {exp2} exp2;
 
-exp2 = {egal} exp2 egal exp3 |
-              {inf} exp2 inf exp3 |
-              {exp3} exp3 ;
+    exp2 =
+        {egal} exp2 egal exp3 |
+        {inf} exp2 inf exp3 |
+        {exp3} exp3;
 
-exp3 = {plus} exp3 plus exp4 |
-              {moins} exp3 moins exp4 |
-              {exp5} exp4 ;
+    exp3 =
+        {plus} exp3 plus exp4 |
+        {moins} exp3 moins exp4 |
+        {exp4} exp4;
 
-exp4 = {mult} exp4 mult exp5 |
-              {div} exp4 div exp5 |
-              {exp5} exp5 ;
+    exp4 =
+        {mult} exp4 mult exp5 |
+        {div} exp4 div exp5 |
+        {exp5} exp5;
 
-exp5 = {non} non exp5 |
-              {exp6} exp6 ;
+    exp5 =
+        {non} exclamation exp5 |
+        {exp6} exp6;
 
-exp6 = {parentheses} par_g expression par_d |
-              {var} var |
-              {nombre} nombre |
-              {appelfonction2} id par_g listeexpressions par_d |
-              {lire} lire par_g par_d  |
-              {vrai} vrai |
-              {faux} faux ;
+    exp6 =
+        {power} exp6 power |
+        {exp7} exp7;
+
+    exp7 =
+        {entre_parantheses} parenthese_gauche exp parenthese_droite |
+        {nombre} nombre |
+        {vrai} vrai |
+        {faux} faux |
+        {appel_fonction} identif parenthese_gauche liste_exp parenthese_droite |
+        {lire} lire parenthese_gauche parenthese_droite |
+        {variable} var;
