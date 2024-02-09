@@ -1,5 +1,10 @@
-# 2024_compilation
+# 2024_compilation_MESKINI_LEFEVRE_SLAYBI
 
+Participants:
+
+MESKINI Driss
+LEFEVRE Quentin
+SLAYBI Christopher
 
 
 ## Getting started

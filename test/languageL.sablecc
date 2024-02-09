@@ -1,0 +1,129 @@
+Package lParser;
+
+Helpers
+
+lettre = [['a' .. 'z'] + ['A' .. 'Z']];
+chiffre = ['0' .. '9'];
+alpha = [lettre + ['_' + '$']];
+alphanum = [lettre + chiffre];
+
+Tokens
+
+espaces = (' ' | 13 | 10)+;
+commentaire= '#' [[0 .. 0xffff] - [10 + 13]]* (10 | 13 | 10 13);
+plus = '+';
+moins = '-';
+nombre = chiffre+;
+div = '/';
+mult = '*';
+mod = '%';
+et = '&';
+ou = '|';
+non = '!';
+par_g = '(';
+par_d = ')';
+egal = '=';
+inf = '<';
+acc_g = '{';
+acc_d = '}';
+cro_g = '[';
+cro_d = ']';
+si = 'si';
+tq = 'tantque';
+retour = 'retour';
+alors = 'alors';
+entier = 'entier';
+sinon = 'sinon';
+bool = 'bool';
+faire = 'faire';
+lire = 'lire';
+ecrire = 'ecrire';
+virgule = ',';
+p_virgule = ';';
+vrai = 'vrai';
+faux = 'faux';
+id = alpha alphanum*;
+
+
+
+
+Ignored Tokens
+
+espaces, commentaire;
+
+Productions
+
+//l''axiome
+
+programme = listedecvar listedecfonc ;
+
+listedecvar = {decvar} decvar listedecvar1 |
+              {vide} ;
+
+listedecvar1 = {restedecvar} virgule decvar listedecvar1 |
+               {vide} ;
+
+decvar = {varsimple} [premier]:type id |
+         {vartab} [second]:type id cro_g nombre cro_d ;
+
+type = {entier} entier |
+       {boolean} bool ;
+
+listedecfonc = {decfonction} fonction listedecfonc |
+               {vide} ;
+
+fonction = typeoptionnel id par_g [premier]:listedecvar par_d [second]:listedecvar blocinstructions ;
+
+typeoptionnel = {typevar} type |
+                {vide} ;
+
+blocinstructions = {bloc} acc_g listeinstructions acc_d ;
+
+listeinstructions = {instructions} instruction listeinstructions |
+                    {vide} ;
+
+instruction = {affectation} var egal expression p_virgule|
+              {tantque} tq expression faire blocinstructions |
+              {sialors} si expression alors blocinstructions |
+              {sisinon} si expression alors [premier]:blocinstructions sinon [second]:blocinstructions |
+              {retour} retour expression p_virgule |
+              {ecrire} ecrire par_g expression par_d p_virgule |
+              {id} id par_g listeexpressions par_d p_virgule ;
+
+var = {identificateur} id |
+      {casetableau} id cro_g expression cro_d ;
+
+listeexpressions = {listeparametres} expression listeexpressions1 |
+                   {vide} ;
+
+listeexpressions1 = {resteparametrescommencantvirgule} virgule expression listeexpressions1 |
+                    {vide} ;
+
+expression = {ou} expression ou exp1 |
+             {exp1} exp1 ;
+
+exp1 = {et} exp1 et exp2 |
+              {exp2} exp2 ;
+
+exp2 = {egal} exp2 egal exp3 |
+              {inf} exp2 inf exp3 |
+              {exp3} exp3 ;
+
+exp3 = {plus} exp3 plus exp4 |
+              {moins} exp3 moins exp4 |
+              {exp5} exp4 ;
+
+exp4 = {mult} exp4 mult exp5 |
+              {div} exp4 div exp5 |
+              {exp5} exp5 ;
+
+exp5 = {non} non exp5 |
+              {exp6} exp6 ;
+
+exp6 = {parentheses} par_g expression par_d |
+              {var} var |
+              {nombre} nombre |
+              {appelfonction2} id par_g listeexpressions par_d |
+              {lire} lire par_g par_d  |
+              {vrai} vrai |
+              {faux} faux ;
