@@ -53,12 +53,14 @@ public class Sc2sa extends DepthFirstAdapter {
     @Override
     public void caseAAppelFonctionExp7(AAppelFonctionExp7 node) {
         inAAppelFonctionExp7(node);
+
         String identif = node.getIdentif().getText();
-        SaAppel appel = null;
+
         node.getListeExp().apply(this);
         SaLExp arguments = (SaLExp) this.returnValue;
-        appel = new SaAppel(identif, arguments);
-        this.returnValue = appel;
+
+        this.returnValue = new SaExpAppel(new SaAppel(identif, arguments));
+
         outAAppelFonctionExp7(node);
     }
 
@@ -66,13 +68,13 @@ public class Sc2sa extends DepthFirstAdapter {
     public void caseAAppelFonctionInstruction(AAppelFonctionInstruction node) {
         inAAppelFonctionInstruction(node);
 
-        String identif = node.getIdentif().getText();
-        SaAppel appel = null;
-        SaLExp arguments = null;
+        String nom = node.getIdentif().getText();
+
+
         node.getListeExp().apply(this);
-        arguments = (SaLExp) this.returnValue;
-        appel = new SaAppel(identif, arguments);
-        this.returnValue = appel;
+        SaLExp arguments = (SaLExp) this.returnValue;
+
+        this.returnValue = new SaAppel(nom, arguments);
 
         outAAppelFonctionInstruction(node);
     }
@@ -80,10 +82,12 @@ public class Sc2sa extends DepthFirstAdapter {
     @Override
     public void caseABlocInstruction(ABlocInstruction node) {
         inABlocInstruction(node);
-        SaInstBloc bloc = null;
+
+        SaLInst saLInst;
         node.getListeInstruction().apply(this);
-        bloc = (SaInstBloc) this.returnValue;
-        returnValue = bloc;
+        saLInst = (SaLInst) this.returnValue;
+        this.returnValue = new SaInstBloc(saLInst);
+
         outABlocInstruction(node);
     }
 
@@ -297,60 +301,87 @@ public class Sc2sa extends DepthFirstAdapter {
     @Override
     public void caseAListeDeclarationFonc(AListeDeclarationFonc node) {
         inAListeDeclarationFonc(node);
-        SaLDecFonc dec = null;
+
         node.getDeclarationFonc().apply(this);
-        dec = (SaLDecFonc) this.returnValue;
-        this.returnValue = dec;
+        SaDecFonc fonc = (SaDecFonc) this.returnValue;
+        node.getListeDeclarationFonc().apply(this);
+        SaLDecFonc dec = (SaLDecFonc) this.returnValue;
+        this.returnValue = new SaLDecFonc(fonc, dec);
+
         outAListeDeclarationFonc(node);
     }
 
     @Override
     public void caseAListeDeclarationVar(AListeDeclarationVar node) {
         inAListeDeclarationVar(node);
-        SaLDecVar dec = null;
+
         node.getDeclarationVar().apply(this);
-        dec = (SaLDecVar) this.returnValue;
-        this.returnValue = dec;
+        SaDecVar var = (SaDecVar) this.returnValue;
+
+
+
+        node.getListeDeclarationVarPrime().apply(this);
+        SaLDecVar dec = (SaLDecVar) this.returnValue;
+
+        this.returnValue = new SaLDecVar(var, dec);
+
         outAListeDeclarationVar(node);
     }
 
     @Override
     public void caseAListeDeclarationVarPrime(AListeDeclarationVarPrime node) {
         inAListeDeclarationVarPrime(node);
-        SaLDecVar dec = null;
+
+        node.getListeDeclarationVarPrime().apply(this);
+        SaLDecVar dec = (SaLDecVar) this.returnValue;
         node.getDeclarationVar().apply(this);
-        dec = (SaLDecVar) this.returnValue;
-        this.returnValue = dec;
+        SaDecVar var = (SaDecVar) this.returnValue;
+        this.returnValue = new SaLDecVar(var, dec);
+
         outAListeDeclarationVarPrime(node);
     }
 
     @Override
     public void caseAListeExp(AListeExp node) {
         inAListeExp(node);
-        SaLExp liste = null;
+
+        node.getListeExpPrime().apply(this);
+        SaLExp liste = (SaLExp) this.returnValue;
+
         node.getExp().apply(this);
-        liste = (SaLExp) this.returnValue;
-        this.returnValue = liste;
+        SaExp exp = (SaExp) this.returnValue;
+
+        this.returnValue = new SaLExp(exp, liste);
+
         outAListeExp(node);
     }
 
     @Override
     public void caseAListeExpPrime(AListeExpPrime node) {
         inAListeExpPrime(node);
-        SaLExp liste = null;
+
+        node.getListeExpPrime().apply(this);
+        SaLExp liste = (SaLExp) this.returnValue;
         node.getExp().apply(this);
-        liste = (SaLExp) this.returnValue;
-        this.returnValue = liste;
+        SaExp exp = (SaExp) this.returnValue;
+
+        this.returnValue = new SaLExp(exp, liste);
+
         outAListeExpPrime(node);
     }
 
     @Override
     public void caseAListeInstruction(AListeInstruction node){
         inAListeInstruction(node);
-        SaLInst liste = null;
+
         node.getInstruction().apply(this);
-        liste = (SaLInst) this.returnValue;
-        this.returnValue = liste;
+        SaInst inst = (SaInst) this.returnValue;
+
+        node.getListeInstruction().apply(this);
+        SaLInst liste = (SaLInst) this.returnValue;
+
+        this.returnValue = new SaLInst(inst, liste);
+
         outAListeInstruction(node);
     }
 
