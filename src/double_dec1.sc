@@ -1,0 +1,34 @@
+<Start>
+ <AProgramme>
+  <AListeDeclarationVar>
+   <ADeclarationVar>
+    <AEntierType>
+    </AEntierType>
+   </ADeclarationVar>
+   <AListeDeclarationVarPrime>
+    <ADeclarationVar>
+     <ABoolType>
+     </ABoolType>
+    </ADeclarationVar>
+    <AVideListeDeclarationVarPrime>
+    </AVideListeDeclarationVarPrime>
+   </AListeDeclarationVarPrime>
+  </AListeDeclarationVar>
+  <AListeDeclarationFonc>
+   <ADeclarationFonc>
+    <AVideTypeOptionnel>
+    </AVideTypeOptionnel>
+    <AVideListeDeclarationVar>
+    </AVideListeDeclarationVar>
+    <AVideListeDeclarationVar>
+    </AVideListeDeclarationVar>
+    <ABlocInstruction>
+     <AVideListeInstruction>
+     </AVideListeInstruction>
+    </ABlocInstruction>
+   </ADeclarationFonc>
+   <AVideListeDeclarationFonc>
+   </AVideListeDeclarationFonc>
+  </AListeDeclarationFonc>
+ </AProgramme>
+</Start>

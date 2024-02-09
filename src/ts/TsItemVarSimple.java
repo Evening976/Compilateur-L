@@ -17,6 +17,5 @@ public class TsItemVarSimple extends TsItemVar{
 	else
 	    return this.identif + "\tVAR  \t" + this.type + "\t" + this.adresse;
     }
-    
-}
 
+}

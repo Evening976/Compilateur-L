@@ -9,7 +9,7 @@ public class TsItemFct {
     public Ts table;
     public SaDecFonc saDecFonc;
     public Type typeRetour;
-    
+
     public TsItemFct(String identif, Type typeRetour, int nbArgs, Ts table, SaDecFonc saDecFonc){
 	this.identif = identif;
 	this.nbArgs = nbArgs;
@@ -27,4 +27,3 @@ public class TsItemFct {
     }
 
 }
-
