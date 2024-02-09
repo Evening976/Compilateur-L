@@ -1,0 +1,878 @@
+Évaluation de 5 :
+80/80 correct (100.00%)
+	add1.l            CORRECT
+	add2.l            CORRECT
+	affect1.l         CORRECT
+	affect2.l         CORRECT
+	affect3.l         CORRECT
+	and1.l            CORRECT
+	and2.l            CORRECT
+	and3.l            CORRECT
+	and4.l            CORRECT
+	and5.l            CORRECT
+	appel-param1.l    CORRECT
+	appel-param2.l    CORRECT
+	appel-param3.l    CORRECT
+	appel-retour1.l   CORRECT
+	appel1.l          CORRECT
+	appel2.l          CORRECT
+	appel3.l          CORRECT
+	div1.l            CORRECT
+	div2.l            CORRECT
+	div3.l            CORRECT
+	div4.l            CORRECT
+	ecrire1.l         CORRECT
+	ecrire2.l         CORRECT
+	egal1.l           CORRECT
+	egal2.l           CORRECT
+	egal3.l           CORRECT
+	fibo.l            CORRECT
+	inf1.l            CORRECT
+	inf2.l            CORRECT
+	inf3.l            CORRECT
+	mult1.l           CORRECT
+	mult2.l           CORRECT
+	mult3.l           CORRECT
+	not1.l            CORRECT
+	not2.l            CORRECT
+	not3.l            CORRECT
+	or1.l             CORRECT
+	or2.l             CORRECT
+	or3.l             CORRECT
+	or4.l             CORRECT
+	or5.l             CORRECT
+	parenth1.l        CORRECT
+	parenth2.l        CORRECT
+	prio34-1.l        CORRECT
+	prio34-2.l        CORRECT
+	prio34-3.l        CORRECT
+	prio34-4.l        CORRECT
+	prio45-1.l        CORRECT
+	prio45-2.l        CORRECT
+	prio45-3.l        CORRECT
+	prio45-4.l        CORRECT
+	prio56-1.l        CORRECT
+	prio56-2.l        CORRECT
+	prio67-1.l        CORRECT
+	prio67-2.l        CORRECT
+	rec1.l            CORRECT
+	si1.l             CORRECT
+	si2.l             CORRECT
+	si3.l             CORRECT
+	si4.l             CORRECT
+	si5.l             CORRECT
+	sub1.l            CORRECT
+	sub2.l            CORRECT
+	sub3.l            CORRECT
+	tab1.l            CORRECT
+	tab2.l            CORRECT
+	tab3.l            CORRECT
+	tab4.l            CORRECT
+	tantque1.l        CORRECT
+	tantque2.l        CORRECT
+	tri.l             CORRECT
+	varglob1.l        CORRECT
+	varglob2.l        CORRECT
+	varglob3.l        CORRECT
+	varglob4.l        CORRECT
+	varloc1.l         CORRECT
+	varloc2.l         CORRECT
+	varloc3.l         CORRECT
+	varloc4.l         CORRECT
+	varloc5.l         CORRECT
+Évaluation de Diff de sa :
+0/80 correct (  0.00%)
+	add1.sa            INCORRECT
+	add2.sa            INCORRECT
+	affect1.sa         INCORRECT
+	affect2.sa         INCORRECT
+	affect3.sa         INCORRECT
+	and1.sa            INCORRECT
+	and2.sa            INCORRECT
+	and3.sa            INCORRECT
+	and4.sa            INCORRECT
+	and5.sa            INCORRECT
+	appel-param1.sa    INCORRECT
+	appel-param2.sa    INCORRECT
+	appel-param3.sa    INCORRECT
+	appel-retour1.sa   INCORRECT
+	appel1.sa          INCORRECT
+	appel2.sa          INCORRECT
+	appel3.sa          INCORRECT
+	div1.sa            INCORRECT
+	div2.sa            INCORRECT
+	div3.sa            INCORRECT
+	div4.sa            INCORRECT
+	ecrire1.sa         INCORRECT
+	ecrire2.sa         INCORRECT
+	egal1.sa           INCORRECT
+	egal2.sa           INCORRECT
+	egal3.sa           INCORRECT
+	fibo.sa            INCORRECT
+	inf1.sa            INCORRECT
+	inf2.sa            INCORRECT
+	inf3.sa            INCORRECT
+	mult1.sa           INCORRECT
+	mult2.sa           INCORRECT
+	mult3.sa           INCORRECT
+	not1.sa            INCORRECT
+	not2.sa            INCORRECT
+	not3.sa            INCORRECT
+	or1.sa             INCORRECT
+	or2.sa             INCORRECT
+	or3.sa             INCORRECT
+	or4.sa             INCORRECT
+	or5.sa             INCORRECT
+	parenth1.sa        INCORRECT
+	parenth2.sa        INCORRECT
+	prio34-1.sa        INCORRECT
+	prio34-2.sa        INCORRECT
+	prio34-3.sa        INCORRECT
+	prio34-4.sa        INCORRECT
+	prio45-1.sa        INCORRECT
+	prio45-2.sa        INCORRECT
+	prio45-3.sa        INCORRECT
+	prio45-4.sa        INCORRECT
+	prio56-1.sa        INCORRECT
+	prio56-2.sa        INCORRECT
+	prio67-1.sa        INCORRECT
+	prio67-2.sa        INCORRECT
+	rec1.sa            INCORRECT
+	si1.sa             INCORRECT
+	si2.sa             INCORRECT
+	si3.sa             INCORRECT
+	si4.sa             INCORRECT
+	si5.sa             INCORRECT
+	sub1.sa            INCORRECT
+	sub2.sa            INCORRECT
+	sub3.sa            INCORRECT
+	tab1.sa            INCORRECT
+	tab2.sa            INCORRECT
+	tab3.sa            INCORRECT
+	tab4.sa            INCORRECT
+	tantque1.sa        INCORRECT
+	tantque2.sa        INCORRECT
+	tri.sa             INCORRECT
+	varglob1.sa        INCORRECT
+	varglob2.sa        INCORRECT
+	varglob3.sa        INCORRECT
+	varglob4.sa        INCORRECT
+	varloc1.sa         INCORRECT
+	varloc2.sa         INCORRECT
+	varloc3.sa         INCORRECT
+	varloc4.sa         INCORRECT
+	varloc5.sa         INCORRECT
+Évaluation de Diff de ts :
+0/80 correct (  0.00%)
+Évaluation de Execution de sa :
+0/80 correct (  0.00%)
+	add1.saout            INCORRECT
+	add2.saout            INCORRECT
+	affect1.saout         INCORRECT
+	affect2.saout         INCORRECT
+	affect3.saout         INCORRECT
+	and1.saout            INCORRECT
+	and2.saout            INCORRECT
+	and3.saout            INCORRECT
+	and4.saout            INCORRECT
+	and5.saout            INCORRECT
+	appel-param1.saout    INCORRECT
+	appel-param2.saout    INCORRECT
+	appel-param3.saout    INCORRECT
+	appel-retour1.saout   INCORRECT
+	appel1.saout          INCORRECT
+	appel2.saout          INCORRECT
+	appel3.saout          INCORRECT
+	div1.saout            INCORRECT
+	div2.saout            INCORRECT
+	div3.saout            INCORRECT
+	div4.saout            INCORRECT
+	ecrire1.saout         INCORRECT
+	ecrire2.saout         INCORRECT
+	egal1.saout           INCORRECT
+	egal2.saout           INCORRECT
+	egal3.saout           INCORRECT
+	fibo.saout            INCORRECT
+	inf1.saout            INCORRECT
+	inf2.saout            INCORRECT
+	inf3.saout            INCORRECT
+	mult1.saout           INCORRECT
+	mult2.saout           INCORRECT
+	mult3.saout           INCORRECT
+	not1.saout            INCORRECT
+	not2.saout            INCORRECT
+	not3.saout            INCORRECT
+	or1.saout             INCORRECT
+	or2.saout             INCORRECT
+	or3.saout             INCORRECT
+	or4.saout             INCORRECT
+	or5.saout             INCORRECT
+	parenth1.saout        INCORRECT
+	parenth2.saout        INCORRECT
+	prio34-1.saout        INCORRECT
+	prio34-2.saout        INCORRECT
+	prio34-3.saout        INCORRECT
+	prio34-4.saout        INCORRECT
+	prio45-1.saout        INCORRECT
+	prio45-2.saout        INCORRECT
+	prio45-3.saout        INCORRECT
+	prio45-4.saout        INCORRECT
+	prio56-1.saout        INCORRECT
+	prio56-2.saout        INCORRECT
+	prio67-1.saout        INCORRECT
+	prio67-2.saout        INCORRECT
+	rec1.saout            INCORRECT
+	si1.saout             INCORRECT
+	si2.saout             INCORRECT
+	si3.saout             INCORRECT
+	si4.saout             INCORRECT
+	si5.saout             INCORRECT
+	sub1.saout            INCORRECT
+	sub2.saout            INCORRECT
+	sub3.saout            INCORRECT
+	tab1.saout            INCORRECT
+	tab2.saout            INCORRECT
+	tab3.saout            INCORRECT
+	tab4.saout            INCORRECT
+	tantque1.saout        INCORRECT
+	tantque2.saout        INCORRECT
+	tri.saout             INCORRECT
+	varglob1.saout        INCORRECT
+	varglob2.saout        INCORRECT
+	varglob3.saout        INCORRECT
+	varglob4.saout        INCORRECT
+	varloc1.saout         INCORRECT
+	varloc2.saout         INCORRECT
+	varloc3.saout         INCORRECT
+	varloc4.saout         INCORRECT
+	varloc5.saout         INCORRECT
+Évaluation de Diff de c3a :
+0/80 correct (  0.00%)
+Évaluation de Execution du c3a :
+0/80 correct (  0.00%)
+Évaluation de Diff de pre-nasm :
+0/80 correct (  0.00%)
+Évaluation de Execution du pre-nasm :
+0/80 correct (  0.00%)
+Évaluation de Diff de nasm :
+0/80 correct (  0.00%)
+Évaluation de Execution du nasm :
+0/80 correct (  0.00%)
+Évaluation de Execution du binaire :
+0/80 correct (  0.00%)
+Évaluation de ERR_TS        :
+0/7 correct (  0.00%)
+	double_dec1.l       INCORRECT
+	double_dec2.l       INCORRECT
+	double_dec3.l       INCORRECT
+	double_dec4.l       INCORRECT
+	fct_inconnue1.l     INCORRECT
+	mauvais_nb_arg1.l   INCORRECT
+	var_inconnue1.l     INCORRECT
+Évaluation de ERR_TYPE      :
+0/45 correct (  0.00%)
+	add1.l       INCORRECT
+	add2.l       INCORRECT
+	add3.l       INCORRECT
+	add4.l       INCORRECT
+	affect1.l    INCORRECT
+	affect2.l    INCORRECT
+	affect3.l    INCORRECT
+	affect4.l    INCORRECT
+	and1.l       INCORRECT
+	and2.l       INCORRECT
+	and3.l       INCORRECT
+	and4.l       INCORRECT
+	appel1.l     INCORRECT
+	appel2.l     INCORRECT
+	appel3.l     INCORRECT
+	appel4.l     INCORRECT
+	div1.l       INCORRECT
+	div2.l       INCORRECT
+	div3.l       INCORRECT
+	div4.l       INCORRECT
+	egal1.l      INCORRECT
+	egal2.l      INCORRECT
+	egal3.l      INCORRECT
+	inf1.l       INCORRECT
+	inf2.l       INCORRECT
+	inf3.l       INCORRECT
+	inf4.l       INCORRECT
+	mult1.l      INCORRECT
+	mult2.l      INCORRECT
+	mult3.l      INCORRECT
+	mult4.l      INCORRECT
+	not1.l       INCORRECT
+	or1.l        INCORRECT
+	or2.l        INCORRECT
+	or3.l        INCORRECT
+	or4.l        INCORRECT
+	retour1.l    INCORRECT
+	retour2.l    INCORRECT
+	retour3.l    INCORRECT
+	si1.l        INCORRECT
+	sub1.l       INCORRECT
+	sub2.l       INCORRECT
+	sub3.l       INCORRECT
+	sub4.l       INCORRECT
+	tantque1.l   INCORRECT
+------------------------------EVALUATION ERRORS------------------------------
+ERROR evaluateSa for input add1.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input add2.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input affect1.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input affect2.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input affect3.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input and1.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input and2.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input and3.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input and4.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input and5.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input appel-param1.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input appel-param2.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input appel-param3.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input appel-retour1.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input appel1.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input appel2.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input appel3.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input div1.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input div2.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input div3.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input div4.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input ecrire1.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input ecrire2.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input egal1.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input egal2.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input egal3.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input fibo.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input inf1.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input inf2.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input inf3.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input mult1.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input mult2.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input mult3.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input not1.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input not2.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input not3.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input or1.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input or2.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input or3.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input or4.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input or5.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input parenth1.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input parenth2.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input prio34-1.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input prio34-2.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input prio34-3.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input prio34-4.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input prio45-1.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input prio45-2.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input prio45-3.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input prio45-4.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input prio56-1.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input prio56-2.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input prio67-1.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input prio67-2.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input rec1.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input si1.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input si2.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input si3.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input si4.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input si5.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input sub1.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input sub2.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input sub3.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input tab1.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input tab2.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input tab3.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input tab4.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input tantque1.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input tantque2.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input tri.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input varglob1.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input varglob2.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input varglob3.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input varglob4.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input varloc1.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input varloc2.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input varloc3.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input varloc4.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'
+
+ERROR evaluateSa for input varloc5.l : 'syntax error
+saParser.parser.ParserException: [1,1] expecting: '('
+	at saParser.parser.Parser.parse(Parser.java:190)
+	at sa.LoadSa.<init>(LoadSa.java:33)
+	at SaVM.main(SaVM.java:27)
+'

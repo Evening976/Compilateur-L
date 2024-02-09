@@ -20,17 +20,6 @@ public class Sc2sa extends DepthFirstAdapter {
     public SaProg getRoot() {
         return this.saRoot;
     }
-
-    public void inAProgramme(AProgramme node)
-    {
-        defaultIn(node);
-    }
-
-    public void outAProgramme(AProgramme node)
-    {
-        defaultOut(node);
-    }
-
     // exp3 = {plus} exp3 plus exp4
     /*
      * @Override
@@ -110,24 +99,22 @@ public class Sc2sa extends DepthFirstAdapter {
     public void caseADeclarationFonc(ADeclarationFonc node) {
         inADeclarationFonc(node);
 
-        Type type = Type.NUL;
+
         String identif = node.getIdentif().getText();
         node.getTypeOptionnel().apply(this);
-        type = this.returnType;
-        SaLDecVar parametres = null;
+        Type type = returnType;
+
         node.getArgument().apply(this);
-        parametres = (SaLDecVar) this.returnValue;
+        SaLDecVar parametres = (SaLDecVar) returnValue;
 
-        SaLDecVar variables = null;
         node.getVarLocale().apply(this);
-        variables = (SaLDecVar) this.returnValue;
+        SaLDecVar variables = (SaLDecVar) returnValue;
 
-        SaInst corps = null;
+
         node.getBlocInstruction().apply(this);
-        corps = (SaInstBloc) this.returnValue;
+        SaInst corps = (SaInstBloc) returnValue;
 
-        SaDecFonc decFonc = new SaDecFonc(identif, type, parametres, variables, corps);
-        this.returnValue = decFonc;
+        returnValue = new SaDecFonc(identif, type, parametres, variables, corps);
 
         outADeclarationFonc(node);
     }
@@ -135,25 +122,27 @@ public class Sc2sa extends DepthFirstAdapter {
     @Override
     public void caseADeclarationVar(ADeclarationVar node) {
         inADeclarationVar(node);
-        Type type = Type.NUL;
-        String identif = node.getIdentif().getText();
-        node.getType().apply(this);
-        type = this.returnType;
 
-        SaDecVar decVar = new SaDecVarSimple(identif, type);
-        this.returnValue = decVar;
+        String varName = node.getIdentif().getText();
+
+        node.getType().apply(this);
+        Type type = returnType;
+
+        returnValue = new SaDecVarSimple(varName, type);
+
         outADeclarationVar(node);
     }
 
     @Override
     public void caseADivExp4(ADivExp4 node) {
         inADivExp4(node);
-        SaExp op1 = null;
-        SaExp op2 = null;
+
         node.getExp4().apply(this);
-        op1 = (SaExp)  this.returnValue;
+        SaExp op1 = (SaExp)  this.returnValue;
+
         node.getExp5().apply(this);
-        op2 = (SaExp) this.returnValue;
+        SaExp op2 = (SaExp) this.returnValue;
+
         this.returnValue = new SaExpDiv(op1, op2);
         outADivExp4(node);
     }
@@ -425,13 +414,15 @@ public class Sc2sa extends DepthFirstAdapter {
     @Override
     public void caseAPlusExp3(APlusExp3 node) {
         inAPlusExp3(node);
-        SaExp op1 = null;
-        SaExp op2 = null;
+
         node.getExp3().apply(this);
-        op1 = (SaExp) this.returnValue;
+        SaExp op1 = (SaExp) this.returnValue;
+
         node.getExp4().apply(this);
-        op2 = (SaExp) this.returnValue;
+        SaExp op2 = (SaExp) this.returnValue;
+
         this.returnValue = new SaExpAdd(op1, op2);
+
         outAPlusExp3(node);
     }
 
@@ -445,10 +436,10 @@ public class Sc2sa extends DepthFirstAdapter {
         inAProgramme(node);
         SaLDecVar dec = null;
         SaLDecFonc fonc = null;
-        node.getListeDeclarationVar().apply(this);
-        dec = (SaLDecVar) this.returnValue;
-        node.getListeDeclarationFonc().apply(this);
-        fonc = (SaLDecFonc) this.returnValue;
+
+        if(node.getListeDeclarationVar() != null) node.getListeDeclarationVar().apply(this); dec = (SaLDecVar) this.returnValue;
+        if(node.getListeDeclarationFonc() != null) node.getListeDeclarationFonc().apply(this); fonc = (SaLDecFonc) this.returnValue;
+
         this.saRoot = new SaProg(dec, fonc);
         outAProgramme(node);
     }
@@ -610,233 +601,5 @@ public class Sc2sa extends DepthFirstAdapter {
         inAVraiExp7(node);
         this.returnValue = new SaExpVrai();
         outAVraiExp7(node);
-    }
-
-    @Override
-    public void caseStart(Start node) {
-        inStart(node);
-        node.getPProgramme().apply(this);
-        outStart(node);
-    }
-
-    @Override
-    public void caseEOF(EOF node) {
-        // TODO Auto-generated method stub
-        super.caseEOF(node);
-    }
-
-    @Override
-    public void caseInvalidToken(InvalidToken node) {
-        // TODO Auto-generated method stub
-    }
-
-    @Override
-    public void caseTAccoladeDroite(TAccoladeDroite node) {
-        // TODO Auto-generated method stub
-        super.caseTAccoladeDroite(node);
-    }
-
-    @Override
-    public void caseTAccoladeGauche(TAccoladeGauche node) {
-        // TODO Auto-generated method stub
-        super.caseTAccoladeGauche(node);
-    }
-
-    @Override
-    public void caseTAlors(TAlors node) {
-        // TODO Auto-generated method stub
-        super.caseTAlors(node);
-    }
-
-    @Override
-    public void caseTBool(TBool node) {
-        // TODO Auto-generated method stub
-        super.caseTBool(node);
-    }
-
-    @Override
-    public void caseTCommentaire(TCommentaire node) {
-        // TODO Auto-generated method stub
-        super.caseTCommentaire(node);
-    }
-
-    @Override
-    public void caseTCrochetDroit(TCrochetDroit node) {
-        // TODO Auto-generated method stub
-        super.caseTCrochetDroit(node);
-    }
-
-    @Override
-    public void caseTCrochetGauche(TCrochetGauche node) {
-        // TODO Auto-generated method stub
-        super.caseTCrochetGauche(node);
-    }
-
-    @Override
-    public void caseTDiv(TDiv node) {
-        // TODO Auto-generated method stub
-        super.caseTDiv(node);
-    }
-
-    @Override
-    public void caseTEcrire(TEcrire node) {
-        // TODO Auto-generated method stub
-        super.caseTEcrire(node);
-    }
-
-    @Override
-    public void caseTEgal(TEgal node) {
-        // TODO Auto-generated method stub
-        super.caseTEgal(node);
-    }
-
-    @Override
-    public void caseTEntier(TEntier node) {
-        // TODO Auto-generated method stub
-        super.caseTEntier(node);
-    }
-
-    @Override
-    public void caseTEspace(TEspace node) {
-        // TODO Auto-generated method stub
-        super.caseTEspace(node);
-    }
-
-    @Override
-    public void caseTEt(TEt node) {
-        // TODO Auto-generated method stub
-        super.caseTEt(node);
-    }
-
-    @Override
-    public void caseTExclamation(TExclamation node) {
-        // TODO Auto-generated method stub
-        super.caseTExclamation(node);
-    }
-
-    @Override
-    public void caseTFaire(TFaire node) {
-        // TODO Auto-generated method stub
-        super.caseTFaire(node);
-    }
-
-    @Override
-    public void caseTFaux(TFaux node) {
-        // TODO Auto-generated method stub
-        super.caseTFaux(node);
-    }
-
-    @Override
-    public void caseTIdentif(TIdentif node) {
-        // TODO Auto-generated method stub
-        super.caseTIdentif(node);
-    }
-
-    @Override
-    public void caseTInf(TInf node) {
-        // TODO Auto-generated method stub
-        super.caseTInf(node);
-    }
-
-    @Override
-    public void caseTLire(TLire node) {
-        // TODO Auto-generated method stub
-        super.caseTLire(node);
-    }
-
-    @Override
-    public void caseTMoins(TMoins node) {
-        // TODO Auto-generated method stub
-        super.caseTMoins(node);
-    }
-
-    @Override
-    public void caseTMult(TMult node) {
-        // TODO Auto-generated method stub
-        super.caseTMult(node);
-    }
-
-    @Override
-    public void caseTNombre(TNombre node) {
-        // TODO Auto-generated method stub
-        super.caseTNombre(node);
-    }
-
-    @Override
-    public void caseTOu(TOu node) {
-        // TODO Auto-generated method stub
-        super.caseTOu(node);
-    }
-
-    @Override
-    public void caseTParentheseDroite(TParentheseDroite node) {
-        // TODO Auto-generated method stub
-        super.caseTParentheseDroite(node);
-    }
-
-    @Override
-    public void caseTParentheseGauche(TParentheseGauche node) {
-        // TODO Auto-generated method stub
-        super.caseTParentheseGauche(node);
-    }
-
-    @Override
-    public void caseTPlus(TPlus node) {
-        // TODO Auto-generated method stub
-        super.caseTPlus(node);
-    }
-
-    @Override
-    public void caseTPointVirgule(TPointVirgule node) {
-        // TODO Auto-generated method stub
-        super.caseTPointVirgule(node);
-    }
-
-    @Override
-    public void caseTPower(TPower node) {
-        // TODO Auto-generated method stub
-        super.caseTPower(node);
-    }
-
-    @Override
-    public void caseTRetour(TRetour node) {
-        // TODO Auto-generated method stub
-        super.caseTRetour(node);
-    }
-
-    @Override
-    public void caseTSi(TSi node) {
-        // TODO Auto-generated method stub
-        super.caseTSi(node);
-    }
-
-    @Override
-    public void caseTSinon(TSinon node) {
-        // TODO Auto-generated method stub
-        super.caseTSinon(node);
-    }
-
-    @Override
-    public void caseTTantQue(TTantQue node) {
-        // TODO Auto-generated method stub
-        super.caseTTantQue(node);
-    }
-
-    @Override
-    public void caseTVirgule(TVirgule node) {
-        // TODO Auto-generated method stub
-        super.caseTVirgule(node);
-    }
-
-    @Override
-    public void caseTVrai(TVrai node) {
-        // TODO Auto-generated method stub
-        super.caseTVrai(node);
-    }
-
-    @Override
-    public void defaultCase(Node node) {
-        // TODO Auto-generated method stub
-        super.defaultCase(node);
     }
 }

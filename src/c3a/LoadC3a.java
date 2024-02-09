@@ -1,12 +1,11 @@
 package c3a;
-import lParser.analysis.DepthFirstAdapter;
+import c3aParser.analysis.DepthFirstAdapter;
 import ts.*;
-import lParser.lexer.Lexer;
-import lParser.lexer.LexerException;
-import lParser.node.*;
-import lParser.parser.Parser;
-import lParser.parser.ParserException;
-import lParser.*;
+import c3aParser.lexer.Lexer;
+import c3aParser.lexer.LexerException;
+import c3aParser.node.*;
+import c3aParser.parser.Parser;
+import c3aParser.parser.ParserException;
 import util.Error;
 
 import java.io.FileReader;
@@ -62,15 +61,15 @@ public class LoadC3a extends DepthFirstAdapter {
     public C3a getC3a(){return c3a;}
     //prog = listeinst;
     @Override
-    public void caseAProgramme(AProgramme node)
+    public void caseAProg(AProg node)
     {
-        inAProgramme(node);
+        inAProg(node);
         c3a = new C3a();
         if(node.getListeinst() != null)
         {
             node.getListeinst().apply(this);
         }
-        outAProgramme(node);
+        outAProg(node);
     }
 //listeinst = {recursif} inst listeinst
     @Override
@@ -469,6 +468,4 @@ public void caseAConstante(AConstante node) {
 
 
 }
-
-
 

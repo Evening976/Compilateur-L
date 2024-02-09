@@ -11,9 +11,7 @@ import fg.*;
 import ig.*;
 import util.Error;
 
-
-public class Compiler
-{
+public class Compiler {
 	private static String baseName = null;
 	private static String inputFileName = null;
 	private static int verboseLevel = 0;
@@ -26,32 +24,33 @@ public class Compiler
 	private static FgSolution flowGraphSolution = null;
 	private static Ig interferenceGraph = null;
 
-
 	public static void main(String[] args) {
 		processCommandLine(args);
 		System.out.println("[BUILD SC] ");
 		buildSc();
-				System.out.println("[BUILD SA] ");
+		System.out.println("[BUILD SA] ");
 		buildSa();
-		/*System.out.println("[BUILD TS] ");
-		buildTs();
-		System.out.println("[TYPE CHECKING]");
-		typeCheck();
-		System.out.println("[BUILD C3A] ");
-		buildC3a();
-		System.out.println("[BUILD PRE NASM] ");
-		buildPreNasm();
-		System.out.println("[BUILD FLOW GRAPH] ");
-		buildFg();
-		System.out.println("[SOLVE FLOW GRAPH]");
-		solveFg();
-		System.out.println("[BUILD INTERFERENCE GRAPH] ");
-		buildIg();
-		System.out.println("[ALLOCATE REGISTERS]");
-		interferenceGraph.allocateRegisters();
-		System.out.println("[PRINT NASM]");
-		nasm.afficheNasm(baseName);
-		System.exit(Error.NOERROR.code());*/
+		/*
+		 * System.out.println("[BUILD TS] ");
+		 * buildTs();
+		 * System.out.println("[TYPE CHECKING]");
+		 * typeCheck();
+		 * System.out.println("[BUILD C3A] ");
+		 * buildC3a();
+		 * System.out.println("[BUILD PRE NASM] ");
+		 * buildPreNasm();
+		 * System.out.println("[BUILD FLOW GRAPH] ");
+		 * buildFg();
+		 * System.out.println("[SOLVE FLOW GRAPH]");
+		 * solveFg();
+		 * System.out.println("[BUILD INTERFERENCE GRAPH] ");
+		 * buildIg();
+		 * System.out.println("[ALLOCATE REGISTERS]");
+		 * interferenceGraph.allocateRegisters();
+		 * System.out.println("[PRINT NASM]");
+		 * nasm.afficheNasm(baseName);
+		 * System.exit(Error.NOERROR.code());
+		 */
 	}
 
 	private static void processCommandLine(String[] args) {
@@ -103,18 +102,20 @@ public class Compiler
 			Sc2sa sc2sa = new Sc2sa();
 			scRoot.apply(sc2sa);
 			saRoot = sc2sa.getRoot();
-		} catch (Exception ignored) {}
+		} catch (Exception ignored) {
+			System.out.println("exception construction arbre abstrait");
+			ignored.printStackTrace();
+		}
 		PrintStream out = System.out;
 		if (verboseLevel > 1) {
 			System.out.println("[PRINT SA]");
 			try {
 				out = new PrintStream(baseName + ".sa");
-			}
-			catch (IOException e) {
+			} catch (IOException e) {
 				System.err.println("Error: " + e.getMessage());
 			}
 			out.println(saRoot);
-			//new Sa2Xml(saRoot, baseName);
+			// new Sa2Xml(saRoot, baseName);
 		}
 	}
 
@@ -144,12 +145,12 @@ public class Compiler
 	}
 
 	private static void buildC3a() {
-		try{
+		try {
 			Sa2c3a sa2c3a = new Sa2c3a(saRoot, tableGlobale);
 			saRoot.accept(sa2c3a);
 			c3a = sa2c3a.getC3a();
+		} catch (Exception e) {
 		}
-		catch(Exception e){}
 
 		if (verboseLevel > 1) {
 			System.out.println("[PRINT C3A] ");
@@ -166,7 +167,6 @@ public class Compiler
 			nasm.affichePreNasm(baseName);
 		}
 	}
-
 
 	private static void buildFg() {
 		flowGraph = new Fg(nasm);
@@ -192,23 +192,20 @@ public class Compiler
 		}
 	}
 
+	/*
+	 * catch (Exception e)
+	 * {
+	 * e.printStackTrace();
+	 * System.out.println(e.getMessage());
+	 * System.exit(1);
+	 * }
+	 * }
+	 */
 
-
-	/*catch (Exception e)
-	{
-		e.printStackTrace();
-		System.out.println(e.getMessage());
-		System.exit(1);
-	}
-    }*/
-
-
-    public static String removeSuffix(final String s, final String suffix)
-    {
-		if (s != null && suffix != null && s.endsWith(suffix)){
+	public static String removeSuffix(final String s, final String suffix) {
+		if (s != null && suffix != null && s.endsWith(suffix)) {
 			return s.substring(0, s.length() - suffix.length());
 		}
 		return s;
-    }
-
+	}
 }
