@@ -49,7 +49,7 @@ public class Sc2sa extends DepthFirstAdapter {
         node.getExp().apply(this);
         exp = (SaExp) this.returnValue;
         this.returnValue = new SaInstAffect(var, exp);
-        new SaTypeCheck(this.returnValue);
+        SaTypeCheck typeCheck = new SaTypeCheck(this.returnValue);
         outAAffectationInstruction(node);
     }
 
@@ -263,12 +263,11 @@ public class Sc2sa extends DepthFirstAdapter {
     public void caseAFaireTantQueInstruction(AFaireTantQueInstruction node) {
         inAFaireTantQueInstruction(node);
 
-        SaExp test = null;
-        SaInst faire = null;
         node.getExp().apply(this);
-        test = (SaExp) this.returnValue;
+        SaExp test = (SaExp) this.returnValue;
+
         node.getBlocInstruction().apply(this);
-        faire = (SaInst) this.returnValue;
+        SaInst faire = (SaInst) this.returnValue;
         this.returnValue = new SaInstTantQue(test, faire);
 
         outAFaireTantQueInstruction(node);

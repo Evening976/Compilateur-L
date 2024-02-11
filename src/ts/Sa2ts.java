@@ -204,8 +204,8 @@ public class Sa2ts extends SaDepthFirstVisitor<Void> {
 
     @Override
     public Void visit(SaInstTantQue node) throws Exception {
-        defaultIn(node);
         System.out.println("?????");
+        defaultIn(node);
         System.out.println(node.getFaire());
         node.getTest().accept(this);
         if(node.getFaire()!=null) node.getFaire().accept(this);
