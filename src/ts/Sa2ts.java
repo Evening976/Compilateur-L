@@ -41,7 +41,7 @@ public class Sa2ts extends SaDepthFirstVisitor<Void> {
                 if (tableGlobale.getVar(node.getNom()) != null) {
                     throw new ErrorException(Error.TS, "Variable " + node.getNom() + " existe deja");
                 }
-                node.setTsItem(tableGlobale.addVar(node.getNom(), node.getType()));
+                node.setTsItem(tableGlobale.addTab(node.getNom(), node.getType(), node.getTaille()));
                 break;
             default:
                 throw new ErrorException(Error.TS, "Invalid context");
@@ -54,6 +54,7 @@ public class Sa2ts extends SaDepthFirstVisitor<Void> {
     public Void visit(SaDecFonc node) throws Exception {
         defaultIn(node);
 
+        System.out.println("DecFonc");
         //System.out.println(node.getCorps());
 
         // if(tableGlobale.getFct("main") == null ||
@@ -67,24 +68,35 @@ public class Sa2ts extends SaDepthFirstVisitor<Void> {
 
         tableLocaleCourante = new Ts();
 
+        System.out.println("ALLLEZ");
+
         int argCount = 0;
         if (node.getParametres() != null) {
             argCount = node.getParametres().length();
             context = Context.PARAM;
             node.getParametres().accept(this);
+            System.out.println("Param : " + node.getParametres());
         }
+
+        System.out.println("tjs plus");
 
         node.tsItem = tableGlobale.addFct(node.getNom(), node.getTypeRetour(), argCount, tableLocaleCourante, node);
 
         if (node.getVariable() != null) {
             context = Context.LOCAL;
+            System.out.println("Var : " + node.getVariable());
             node.getVariable().accept(this);
         }
 
+        System.out.println("loin");
+
         if (!node.getCorps().toString().contains("SaInstBloc null")) {
             context = Context.LOCAL;
+            System.out.println("Inst : " + node.getCorps());
             node.getCorps().accept(this);
         }
+
+        System.out.println("SUS");
 
         context = Context.GLOBAL;
 
@@ -145,8 +157,6 @@ public class Sa2ts extends SaDepthFirstVisitor<Void> {
     public Void visit(SaAppel node) throws Exception {
         defaultIn(node);
 
-        System.out.println("HELLO");
-
         if (tableGlobale.getFct(node.getNom()) == null){
             throw new ErrorException(Error.TS, "La fonction '" + node.getNom() + "' n'a pas été déclarée.");
         }
@@ -175,12 +185,14 @@ public class Sa2ts extends SaDepthFirstVisitor<Void> {
     @Override
     public Void visit(SaVarIndicee node) throws Exception {
         defaultIn(node);
+        //System.out.println(tableGlobale.getVar(node.getNom()));
         if (tableGlobale.getVar(node.getNom()) == null)
             throw new ErrorException(Error.TS, "Le tableau '" + node.getNom() + "' n'a pas été déclaré.");
 
         try {
             node.tsItem = (TsItemVarTab) tableGlobale.getVar(node.getNom());
         } catch (ClassCastException e) {
+            e.printStackTrace(System.err);
             throw new ErrorException(Error.TS, "La variable '" + node.getNom() + "' n'est pas un tableau.");
         }
 
@@ -189,5 +201,86 @@ public class Sa2ts extends SaDepthFirstVisitor<Void> {
         defaultOut(node);
         return null;
     }
+
+    @Override
+    public Void visit(SaInstTantQue node) throws Exception {
+        defaultIn(node);
+        System.out.println("?????");
+        System.out.println(node.getFaire());
+        node.getTest().accept(this);
+        if(node.getFaire()!=null) node.getFaire().accept(this);
+
+        defaultOut(node);
+
+        return null;
+    }
+
+    @Override
+    public Void visit(SaInstBloc node) throws Exception {
+        defaultIn(node);
+        System.out.println("Inst bloc");
+        if (node.getVal() != null) {
+            node.getVal().accept(this);
+        }
+        defaultOut(node);
+        return null;
+    }
+
+    @Override
+    public Void visit(SaLInst node) throws Exception {
+        defaultIn(node);
+        System.out.println("LInst");
+		if (node != null) {
+			if (node.getTete() != null)
+				node.getTete().accept(this);
+			if (node.getQueue() != null)
+				node.getQueue().accept(this);
+		}
+		defaultOut(node);
+		return null;
+    }
+
+    @Override
+    public Void visit(SaLDecFonc node) throws Exception {
+        defaultIn(node);
+        System.out.println("LDecFonc");
+        if (node != null) {
+            if (node.getTete() != null)
+                node.getTete().accept(this);
+            if (node.getQueue() != null)
+                node.getQueue().accept(this);
+        }
+        else{
+            System.out.println("null");
+        }
+		defaultOut(node);
+		return null;
+    }
+
+    @Override
+    public Void visit(SaInstSi node) throws Exception {
+        System.out.println("Si");
+        return super.visit(node);
+    }
+
+    @Override
+    public Void visit(SaInstEcriture node) throws Exception {
+        System.out.println("Ecriture");
+        return super.visit(node);
+    }
+
+    @Override
+    public Void visit(SaInstAffect node) throws Exception {
+        System.out.println("Affect");
+        return super.visit(node);
+    }
+
+    @Override
+    public Void visit(SaInstRetour node) throws Exception {
+        System.out.println("Retour");
+        return super.visit(node);
+    }
+
+
 
 }

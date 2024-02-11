@@ -4,6 +4,8 @@ import lParser.analysis.*;
 import lParser.node.*;
 import util.Type;
 
+import sa.SaTypeCheck;
+
 public class Sc2sa extends DepthFirstAdapter {
     private SaNode returnValue;
     private Type returnType;
@@ -47,6 +49,7 @@ public class Sc2sa extends DepthFirstAdapter {
         node.getExp().apply(this);
         exp = (SaExp) this.returnValue;
         this.returnValue = new SaInstAffect(var, exp);
+        new SaTypeCheck(this.returnValue);
         outAAffectationInstruction(node);
     }
 
