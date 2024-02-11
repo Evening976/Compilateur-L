@@ -4,6 +4,7 @@ import sa.*;
 import util.Error;
 
 public class Sa2ts extends SaDepthFirstVisitor<Void> {
+
     enum Context {
         LOCAL,
         GLOBAL,
@@ -53,24 +54,25 @@ public class Sa2ts extends SaDepthFirstVisitor<Void> {
     public Void visit(SaDecFonc node) throws Exception {
         defaultIn(node);
 
-        // if(tableGlobale.getFct("main") == null || tableGlobale.getFct("main").getNbArgs() != 0)
-        //     throw new ErrorException(Error.TS, "La fonction main doit être déclarée avec 0 arguments.");
+        // System.out.println(node.getVariable());
 
+        // if(tableGlobale.getFct("main") == null ||
+        // tableGlobale.getFct("main").getNbArgs() != 0)
+        // throw new ErrorException(Error.TS, "La fonction main doit être déclarée avec
+        // 0 arguments.");
 
-        System.out.println(node.getNom());
-
-        if (tableGlobale.getFct(node.getNom()) != null){
-            throw new ErrorException(Error.TS, "Function " + node.getNom() + " existe deja");
+        if (tableGlobale.getFct(node.getNom()) != null) {
+            throw new ErrorException(Error.TS, "La fonction " + node.getNom() + " existe deja");
         }
 
         tableLocaleCourante = new Ts();
-
         int argCount = 0;
         if (node.getParametres() != null) {
             argCount = node.getParametres().length();
             context = Context.PARAM;
             node.getParametres().accept(this);
         }
+
         node.tsItem = tableGlobale.addFct(node.getNom(), node.getTypeRetour(), argCount, tableLocaleCourante, node);
 
         if (node.getVariable() != null) {
@@ -78,7 +80,7 @@ public class Sa2ts extends SaDepthFirstVisitor<Void> {
             node.getVariable().accept(this);
         }
 
-        if (node.getCorps() != null) {
+        if (!node.getCorps().toString().contains("null")) {
             context = Context.LOCAL;
             node.getCorps().accept(this);
         }
@@ -101,7 +103,7 @@ public class Sa2ts extends SaDepthFirstVisitor<Void> {
                 break;
             case PARAM:
                 if (tableLocaleCourante.getVar(node.getNom()) != null) {
-                    throw new ErrorException(Error.TS, "Parameter " + node.getNom() + " existe deja");
+                    throw new ErrorException(Error.TS, "Parametre " + node.getNom() + " existe deja");
                 }
                 node.setTsItem(tableLocaleCourante.addParam(node.getNom(), node.getType()));
                 break;
@@ -138,19 +140,28 @@ public class Sa2ts extends SaDepthFirstVisitor<Void> {
     @Override
     public Void visit(SaAppel node) throws Exception {
         defaultIn(node);
-        if (tableGlobale.getFct(node.getNom()) == null)
+
+        System.out.println("HELLO");
+
+        if (tableGlobale.getFct(node.getNom()) == null){
             throw new ErrorException(Error.TS, "La fonction '" + node.getNom() + "' n'a pas été déclarée.");
+        }
+
         node.tsItem = tableGlobale.getFct(node.getNom());
+        System.out.println(node.tsItem.getNbArgs());
 
         int argCount = 0;
         if (node.getArguments() != null) {
             argCount = node.getArguments().length();
+
             context = Context.PARAM;
             node.getArguments().accept(this);
         }
-        if (argCount != node.tsItem.getNbArgs())
+
+        if (argCount != node.tsItem.getNbArgs()) {
             throw new ErrorException(Error.TS, argCount + " arguments ont été fournis au lieu de "
                     + node.tsItem.getNbArgs() + " lors de l'appel de la fonction '" + node.getNom() + "'.");
+        }
 
         context = Context.LOCAL;
         defaultOut(node);
@@ -164,7 +175,7 @@ public class Sa2ts extends SaDepthFirstVisitor<Void> {
             throw new ErrorException(Error.TS, "Le tableau '" + node.getNom() + "' n'a pas été déclaré.");
 
         try {
-            node.tsItem = tableGlobale.getVar(node.getNom());
+            node.tsItem = (TsItemVarTab) tableGlobale.getVar(node.getNom());
         } catch (ClassCastException e) {
             throw new ErrorException(Error.TS, "La variable '" + node.getNom() + "' n'est pas un tableau.");
         }
