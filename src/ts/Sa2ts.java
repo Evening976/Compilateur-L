@@ -54,7 +54,7 @@ public class Sa2ts extends SaDepthFirstVisitor<Void> {
     public Void visit(SaDecFonc node) throws Exception {
         defaultIn(node);
 
-        // System.out.println(node.getVariable());
+        //System.out.println(node.getCorps());
 
         // if(tableGlobale.getFct("main") == null ||
         // tableGlobale.getFct("main").getNbArgs() != 0)
@@ -66,6 +66,7 @@ public class Sa2ts extends SaDepthFirstVisitor<Void> {
         }
 
         tableLocaleCourante = new Ts();
+
         int argCount = 0;
         if (node.getParametres() != null) {
             argCount = node.getParametres().length();
@@ -80,7 +81,7 @@ public class Sa2ts extends SaDepthFirstVisitor<Void> {
             node.getVariable().accept(this);
         }
 
-        if (!node.getCorps().toString().contains("null")) {
+        if (!node.getCorps().toString().contains("SaInstBloc null")) {
             context = Context.LOCAL;
             node.getCorps().accept(this);
         }
@@ -124,13 +125,16 @@ public class Sa2ts extends SaDepthFirstVisitor<Void> {
     public Void visit(SaVarSimple node) throws Exception {
         defaultIn(node);
 
-        if (tableLocaleCourante.getVar(node.getNom()) == null && tableGlobale.getVar(node.getNom()) == null)
-            throw new ErrorException(Error.TS, "La variable '" + node.getNom() + "' n'a pas été déclarée.");
-
-        try {
-            node.tsItem = (TsItemVarSimple) tableLocaleCourante.getVar(node.getNom());
-        } catch (ClassCastException e) {
-            throw new ErrorException(Error.TS, "Le tableau '" + node.getNom() + "' n'est pas indicé.");
+		if(tableLocaleCourante.getVar(node.getNom()) == null) {
+			if (tableGlobale.getVar(node.getNom()) == null)
+				throw new ErrorException(Error.TS, "La variable '" + node.getNom() + "' n'a pas été déclarée.");
+			try {
+				node.tsItem = (TsItemVarSimple) tableGlobale.getVar(node.getNom());
+			} catch (ClassCastException e) {
+				throw new ErrorException(Error.TS, "Le tableau '" + node.getNom() + "' n'est pas indicé.");
+			}
+		} else {
+			node.tsItem = (TsItemVarSimple) tableLocaleCourante.getVar(node.getNom());
         }
 
         defaultOut(node);
@@ -181,6 +185,7 @@ public class Sa2ts extends SaDepthFirstVisitor<Void> {
         }
 
         node.getIndice().accept(this);
+
         defaultOut(node);
         return null;
     }
