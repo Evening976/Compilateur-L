@@ -1,5 +1,7 @@
-main()
+entier f(entier a, entier b)
 {
-tantque (1) faire {
 }
+
+main(){
+f(2);
 }

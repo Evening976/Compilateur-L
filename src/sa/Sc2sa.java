@@ -268,6 +268,7 @@ public class Sc2sa extends DepthFirstAdapter {
 
         node.getBlocInstruction().apply(this);
         SaInst faire = (SaInst) this.returnValue;
+
         this.returnValue = new SaInstTantQue(test, faire);
 
         outAFaireTantQueInstruction(node);
@@ -546,10 +547,15 @@ public class Sc2sa extends DepthFirstAdapter {
         inATantQueInstruction(node);
         SaExp test = null;
         SaInst faire = null;
+
         node.getExp().apply(this);
         test = (SaExp) this.returnValue;
+
         node.getBlocInstruction().apply(this);
         faire = (SaInst) this.returnValue;
+        if(faire.toString().contains("SaInstBloc null")) {
+            faire = null;
+        }
         this.returnValue = new SaInstTantQue(test, faire);
         outATantQueInstruction(node);
     }
