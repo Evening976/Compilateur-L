@@ -1,7 +1,5 @@
-entier f(entier a, entier b)
+bool a
+main()
 {
-}
-
-main(){
-f(2);
+a = 1;
 }
