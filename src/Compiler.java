@@ -32,10 +32,10 @@ public class Compiler {
 		buildSa();
 		System.out.println("[BUILD TS] ");
 		buildTs();
-		System.out.println("[TYPE CHECKING]");
-		typeCheck();
-		// System.out.println("[BUILD C3A] ");
-		// buildC3a();
+		// System.out.println("[TYPE CHECKING]");
+		// typeCheck();
+		System.out.println("[BUILD C3A] ");
+		buildC3a();
 		/*
 		 * System.out.println("[BUILD PRE NASM] ");
 		 * buildPreNasm();

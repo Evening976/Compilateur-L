@@ -1,19 +1,19 @@
 <Start>
  <AProgramme>
-  <AListeDeclarationVar>
-   <ADeclarationVar>
-    <ABoolType>
-    </ABoolType>
-   </ADeclarationVar>
-   <AVideListeDeclarationVarPrime>
-   </AVideListeDeclarationVarPrime>
-  </AListeDeclarationVar>
+  <AVideListeDeclarationVar>
+  </AVideListeDeclarationVar>
   <AListeDeclarationFonc>
    <ADeclarationFonc>
     <AVideTypeOptionnel>
     </AVideTypeOptionnel>
-    <AVideListeDeclarationVar>
-    </AVideListeDeclarationVar>
+    <AListeDeclarationVar>
+     <ADeclarationVar>
+      <AEntierType>
+      </AEntierType>
+     </ADeclarationVar>
+     <AVideListeDeclarationVarPrime>
+     </AVideListeDeclarationVarPrime>
+    </AListeDeclarationVar>
     <AVideListeDeclarationVar>
     </AVideListeDeclarationVar>
     <ABlocInstruction>
@@ -38,13 +38,79 @@
         </AExp2Exp1>
        </AExp1Exp>
       </AAffectationInstruction>
-      <AVideListeInstruction>
-      </AVideListeInstruction>
+      <AListeInstruction>
+       <AEcrireInstruction>
+        <AExp1Exp>
+         <AExp2Exp1>
+          <AExp3Exp2>
+           <AExp4Exp3>
+            <AExp5Exp4>
+             <AExp6Exp5>
+              <AExp7Exp6>
+               <AVariableExp7>
+                <AVar>
+                </AVar>
+               </AVariableExp7>
+              </AExp7Exp6>
+             </AExp6Exp5>
+            </AExp5Exp4>
+           </AExp4Exp3>
+          </AExp3Exp2>
+         </AExp2Exp1>
+        </AExp1Exp>
+       </AEcrireInstruction>
+       <AVideListeInstruction>
+       </AVideListeInstruction>
+      </AListeInstruction>
      </AListeInstruction>
     </ABlocInstruction>
    </ADeclarationFonc>
-   <AVideListeDeclarationFonc>
-   </AVideListeDeclarationFonc>
+   <AListeDeclarationFonc>
+    <ADeclarationFonc>
+     <AVideTypeOptionnel>
+     </AVideTypeOptionnel>
+     <AVideListeDeclarationVar>
+     </AVideListeDeclarationVar>
+     <AListeDeclarationVar>
+      <ADeclarationVar>
+       <AEntierType>
+       </AEntierType>
+      </ADeclarationVar>
+      <AVideListeDeclarationVarPrime>
+      </AVideListeDeclarationVarPrime>
+     </AListeDeclarationVar>
+     <ABlocInstruction>
+      <AListeInstruction>
+       <AAppelFonctionInstruction>
+        <AListeExp>
+         <AExp1Exp>
+          <AExp2Exp1>
+           <AExp3Exp2>
+            <AExp4Exp3>
+             <AExp5Exp4>
+              <AExp6Exp5>
+               <AExp7Exp6>
+                <ANombreExp7>
+                </ANombreExp7>
+               </AExp7Exp6>
+              </AExp6Exp5>
+             </AExp5Exp4>
+            </AExp4Exp3>
+           </AExp3Exp2>
+          </AExp2Exp1>
+         </AExp1Exp>
+         <AVideListeExpPrime>
+         </AVideListeExpPrime>
+        </AListeExp>
+       </AAppelFonctionInstruction>
+       <AVideListeInstruction>
+       </AVideListeInstruction>
+      </AListeInstruction>
+     </ABlocInstruction>
+    </ADeclarationFonc>
+    <AVideListeDeclarationFonc>
+    </AVideListeDeclarationFonc>
+   </AListeDeclarationFonc>
   </AListeDeclarationFonc>
  </AProgramme>
 </Start>
