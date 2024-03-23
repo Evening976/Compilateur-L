@@ -143,7 +143,7 @@ public class Sa2ts extends SaDepthFirstVisitor<Void> {
 			try {
 				node.tsItem = (TsItemVarSimple) tableGlobale.getVar(node.getNom());
 			} catch (ClassCastException e) {
-				throw new ErrorException(Error.TS, "Le tableau '" + node.getNom() + "' n'est pas indicé.");
+				throw new ErrorException(Error.TS, "Le variable '" + node.getNom() + "' n'est pas indicé.");
 			}
 		} else {
 			node.tsItem = (TsItemVarSimple) tableLocaleCourante.getVar(node.getNom());
