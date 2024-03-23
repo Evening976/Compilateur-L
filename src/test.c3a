@@ -2,8 +2,9 @@
 	stop @0
 f	fbegin	#entree fonction
 	a = 1
-	write a	
+	write a
 	fend
 main	fbegin	#entree fonction
+	param 3
 	@1 = call f
 	fend
