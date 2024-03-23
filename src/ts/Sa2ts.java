@@ -73,14 +73,14 @@ public class Sa2ts extends SaDepthFirstVisitor<Void> {
             argCount = node.getParametres().length();
             context = Context.PARAM;
             node.getParametres().accept(this);
-            System.out.println("Param : " + node.getParametres());
+            //System.out.println("Param : " + node.getParametres());
         }
 
         node.tsItem = tableGlobale.addFct(node.getNom(), node.getTypeRetour(), argCount, tableLocaleCourante, node);
 
         if (node.getVariable() != null) {
             context = Context.LOCAL;
-            System.out.println("Var : " + node.getVariable());
+            //System.out.println("Var : " + node.getVariable());
             node.getVariable().accept(this);
         }
 
@@ -156,7 +156,7 @@ public class Sa2ts extends SaDepthFirstVisitor<Void> {
         }
 
         node.tsItem = tableGlobale.getFct(node.getNom());
-        System.out.println(node.tsItem.getNbArgs());
+        //System.out.println(node.tsItem.getNbArgs());
 
         int argCount = 0;
         if (node.getArguments() != null) {

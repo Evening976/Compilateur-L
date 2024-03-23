@@ -44,6 +44,18 @@ public class Sa2c3a extends SaDepthFirstVisitor<C3aOperand> {
 		return result;
 	}
 
+
+	public C3aOperand visit(SaExpSub node) throws Exception {
+		defaultIn(node);
+		C3aOperand op1 = node.getOp1().accept(this);
+		C3aOperand op2 = node.getOp2().accept(this);
+		C3aOperand result = c3a.newTemp();
+
+		c3a.ajouteInst(new C3aInstSub(op1, op2, result, ""));
+		defaultOut(node);
+		return result;
+	}
+
 	public C3aOperand visit(SaExpMult node) throws Exception {
 		defaultIn(node);
 		C3aOperand op1 = node.getOp1().accept(this);
@@ -66,6 +78,68 @@ public class Sa2c3a extends SaDepthFirstVisitor<C3aOperand> {
 		return result;
 	}
 
+	@Override
+	public C3aOperand visit(SaExpEqual node) throws Exception {
+		defaultIn(node);
+
+		C3aLabel vrai = c3a.newAutoLabel(); // si la condition est vraie on saute ici
+		C3aTemp result = c3a.newTemp(); //le resultat de la condition
+
+		C3aOperand op1 = node.getOp1().accept(this);
+		C3aOperand op2 = node.getOp2().accept(this);
+
+		c3a.ajouteInst(new C3aInstAffect(c3a.True, result, ""));
+		c3a.ajouteInst(new C3aInstJumpIfEqual(op1, op2, vrai, ""));
+		c3a.ajouteInst(new C3aInstAffect(c3a.False, result, ""));
+		c3a.addLabelToNextInst(vrai);
+
+		defaultOut(node);
+		return result;
+	}
+
+	@Override
+	public C3aOperand visit(SaExpNot node) throws Exception{
+		defaultIn(node);
+		C3aLabel vrai = c3a.newAutoLabel(); // si la condition est vraie on saute ici
+		C3aTemp result = c3a.newTemp(); //le resultat de la condition
+
+		C3aOperand op1 = node.getOp1().accept(this);
+
+		c3a.ajouteInst(new C3aInstAffect(c3a.True, result, ""));
+		c3a.ajouteInst(new C3aInstJumpIfEqual(op1, c3a.False, vrai, ""));
+		c3a.ajouteInst(new C3aInstAffect(c3a.False, result, ""));
+		c3a.addLabelToNextInst(vrai);
+
+		defaultOut(node);
+		return result;
+	}
+
+	@Override
+	public C3aOperand visit(SaExpAnd node) throws Exception {
+		defaultIn(node);
+
+		C3aLabel suite = c3a.newAutoLabel(); // si la condition est vraie on saute ici
+		C3aLabel faux = c3a.newAutoLabel(); // si la condition est fausse on saute ici
+		C3aTemp result = c3a.newTemp(); //le resultat de la condition
+
+		C3aOperand op1 = node.getOp1().accept(this); // membre1 de la condition
+		C3aOperand op2 = node.getOp2().accept(this); // membre 2 de la condition --> op1 && op2
+
+
+
+		c3a.ajouteInst(new C3aInstJumpIfEqual(op1, c3a.False, faux, ""));
+		c3a.ajouteInst(new C3aInstJumpIfEqual(op2, c3a.False, faux, ""));
+
+		c3a.ajouteInst(new C3aInstAffect(c3a.True, result, ""));
+		c3a.ajouteInst(new C3aInstJump(suite, ""));
+		c3a.addLabelToNextInst(faux);
+		c3a.ajouteInst(new C3aInstAffect(c3a.False, result, ""));
+		c3a.addLabelToNextInst(suite);
+
+		defaultOut(node);
+		return result;
+	}
+
 	public C3aOperand visit(SaInstEcriture node) throws Exception {
 		defaultIn(node);
 		C3aOperand op1 = node.getArg().accept(this);
@@ -76,18 +150,6 @@ public class Sa2c3a extends SaDepthFirstVisitor<C3aOperand> {
 
 	public C3aOperand visit(SaExpInt node) {
 		return new C3aConstant(node.getVal());
-	}
-
-	@Override
-	public C3aOperand visit(SaExpEqual node) throws Exception {
-		defaultIn(node);
-		C3aOperand op1 = node.getOp1().accept(this);
-		C3aOperand op2 = node.getOp2().accept(this);
-
-		c3a.ajouteInst(new C3aInstAffect(op1, op2, ""));
-
-		defaultOut(node);
-		return op1;
 	}
 
 	public C3aOperand visit(SaExpVrai node) {
@@ -112,17 +174,6 @@ public class Sa2c3a extends SaDepthFirstVisitor<C3aOperand> {
 		return result;
 	}
 
-	public C3aOperand visit(SaExpSub node) throws Exception {
-		defaultIn(node);
-		C3aOperand op1 = node.getOp1().accept(this);
-		C3aOperand op2 = node.getOp2().accept(this);
-		C3aOperand result = c3a.newTemp();
-
-		c3a.ajouteInst(new C3aInstSub(op1, op2, result, ""));
-		defaultOut(node);
-		return result;
-	}
-
 	public C3aOperand visit(SaAppel node) throws Exception {
 		defaultIn(node);
 		if (node.getArguments() != null)
@@ -137,7 +188,6 @@ public class Sa2c3a extends SaDepthFirstVisitor<C3aOperand> {
 	public C3aOperand visit(SaDecFonc node) throws Exception {
 		defaultIn(node);
 		C3aFunction fct = new C3aFunction(node.tsItem);
-		c3a.addLabelToNextInst(c3a.newAutoLabel());
 		c3a.ajouteInst(new C3aInstFBegin(node.tsItem, "entree fonction"));
 		if (node.getCorps() != null) {
 			node.getCorps().accept(this);
