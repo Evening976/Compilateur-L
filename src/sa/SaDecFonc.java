@@ -26,7 +26,6 @@ public class SaDecFonc implements SaDec{
     public SaInst    getCorps(){return this.corps;}
 
     public <T> T accept(SaVisitor <T> visitor) throws Exception{
-        System.out.println("ICI?");
         return visitor.visit(this);
     }
     public String toString(){

@@ -64,7 +64,7 @@ public class SaTypeCheck extends SaDepthFirstVisitor <Void>{
 			defaultIn(node);
 
 			if(node.getTest().getType() != Type.BOOL){
-				throw new ErrorException(Error.TYPE, "Le test du si doit être de type booléen");
+				throw new ErrorException(Error.TYPE, "La condition doit être de type booléene");
 			}
 
 			node.getTest().accept(this);
@@ -90,6 +90,124 @@ public class SaTypeCheck extends SaDepthFirstVisitor <Void>{
 			return null;
 		}
 
+		@Override
+		public Void visit(SaExpAdd node) throws Exception {
+			defaultIn(node);
+			if(node.getOp1().getType() != Type.ENTIER || node.getOp2().getType() != Type.ENTIER){
+				throw new ErrorException(Error.TYPE, "Les opérandes de l'addition doivent être de type entier");
+			}
+			defaultOut(node);
+			return null;
+		}
+
+		@Override
+		public Void visit(SaAppel node) throws Exception {
+			defaultIn(node);
+			if(node.getArguments() != null){
+				//node.getArguments().getTete().getType() 
+			}
+			defaultOut(node);
+			return null;
+		}
+
+		@Override
+		public Void visit(SaLExp node) throws Exception {
+			defaultIn(node);
+			if(node.getTete() != null){
+				node.getTete().accept(this);
+			}
+			if(node.getQueue() != null){
+				node.getQueue().accept(this);
+			}
+			defaultOut(node);
+			return null;
+		}
+
+		@Override
+		public Void visit(SaExp node) throws Exception {
+			// TODO Auto-generated method stub
+			return super.visit(node);
+		}
+
+		@Override
+		public Void visit(SaExpEqual node) throws Exception {
+			defaultIn(node);
+			if(node.getOp1().getType() != node.getOp2().getType()){
+				throw new ErrorException(Error.TYPE, "Les 2 membres d'une égalité doivent être de même type");
+			}
+			defaultOut(node);
+			return null;
+		}
+
+		@Override
+		public Void visit(SaExpNot node) throws Exception 
+		{
+			defaultIn(node);
+			if(node.getOp1().getType() != Type.BOOL){
+				throw new ErrorException(Error.TYPE, "l'expression affectée par la négation doit être de type booléen");
+			}
+			defaultOut(node);
+			return null;
+		}
+
+		@Override
+		public Void visit(SaExpAnd node) throws Exception{
+			defaultIn(node);
+			if(node.getOp1().getType() != Type.BOOL || node.getOp2().getType() != Type.BOOL){
+				throw new ErrorException(Error.TYPE, "Les 2 membres doivent être de même type");
+			}
+			defaultOut(node);
+			return null;
+		}
 
 
+		@Override
+		public Void visit(SaExpSub node) throws Exception{
+			defaultIn(node);
+			if(node.getOp1().getType() != Type.ENTIER || node.getOp2().getType() != Type.ENTIER){
+				throw new ErrorException(Error.TYPE, "Les 2 membres doivent être de type entier");
+			}
+			defaultOut(node);
+			return null;
+		}
+
+		@Override
+		public Void visit(SaExpOr node) throws Exception{
+			defaultIn(node);
+			if(node.getOp1().getType() != Type.BOOL || node.getOp2().getType() != Type.BOOL){
+				throw new ErrorException(Error.TYPE, "Les 2 membres doivent être de type booléen");
+			}
+			defaultOut(node);
+			return null;
+		}
+
+		@Override
+		public Void visit(SaExpMult node) throws Exception{
+			defaultIn(node);
+			if(node.getOp1().getType() != Type.ENTIER || node.getOp2().getType() != Type.ENTIER){
+				throw new ErrorException(Error.TYPE, "Les 2 membres doivent être de type entier");
+			}
+			defaultOut(node);
+			return null;
+		}
+
+		@Override
+		public Void visit(SaExpInf node) throws Exception{
+			defaultIn(node);
+			if(node.getOp1().getType() != Type.ENTIER || node.getOp2().getType() != Type.ENTIER){
+				throw new ErrorException(Error.TYPE, "Les 2 membres doivent être de type entier");
+			}
+			defaultOut(node);
+			return null;
+		}
+
+		@Override
+		public Void visit(SaExpDiv node) throws Exception{
+			defaultIn(node);
+			if(node.getOp1().getType() != Type.ENTIER || node.getOp2().getType() != Type.ENTIER){
+				throw new ErrorException(Error.TYPE, "Les 2 membres doivent être de type entier");
+			}
+			defaultOut(node);
+			return null;
+		}
 }

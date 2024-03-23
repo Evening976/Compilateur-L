@@ -1,5 +1,11 @@
-main()
+f(entier a)
 {
-tantque (1) faire {
+a = 1;
+ecrire(a);
 }
+
+main()
+entier a
+{
+f(3);
 }
