@@ -205,12 +205,6 @@ public class Sa2c3a extends SaDepthFirstVisitor<C3aOperand> {
 	}
 
 	@Override
-	public C3aOperand visit(SaProg node) throws Exception {
-		// TODO Auto-generated method stub
-		return super.visit(node);
-	}
-
-	@Override
 	public C3aOperand visit(SaVarSimple node) throws Exception {
 		defaultIn(node);
 		C3aVar var = new C3aVar(node.tsItem, null);
