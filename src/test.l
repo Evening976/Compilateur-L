@@ -1,4 +1,14 @@
+entier f(entier a)
+{
+si (a = 1) alors {
+retour(1);
+}
+sinon{
+retour(1 + f(a-1));
+}
+}
+
 main()
 {
-ecrire(vrai & vrai);
+ecrire(f(100));
 }
