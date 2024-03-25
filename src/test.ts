@@ -1,6 +1,5 @@
 TABLE GLOBALE
-f	FCT	entier	1
+f	FCT	nul	0
 main	FCT	nul	0
 TABLE LOCALE : f
-a	PARAM	entier	0
 TABLE LOCALE : main

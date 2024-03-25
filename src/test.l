@@ -1,14 +1,9 @@
-entier f(entier a)
+f()
 {
-si (a = 1) alors {
-retour(1);
-}
-sinon{
-retour(1 + f(a-1));
-}
+ecrire(1);
 }
 
 main()
 {
-ecrire(f(100));
+f();
 }

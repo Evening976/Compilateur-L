@@ -4,23 +4,15 @@
   </AVideListeDeclarationVar>
   <AListeDeclarationFonc>
    <ADeclarationFonc>
-    <ATypeTypeOptionnel>
-     <AEntierType>
-     </AEntierType>
-    </ATypeTypeOptionnel>
-    <AListeDeclarationVar>
-     <ADeclarationVar>
-      <AEntierType>
-      </AEntierType>
-     </ADeclarationVar>
-     <AVideListeDeclarationVarPrime>
-     </AVideListeDeclarationVarPrime>
-    </AListeDeclarationVar>
+    <AVideTypeOptionnel>
+    </AVideTypeOptionnel>
+    <AVideListeDeclarationVar>
+    </AVideListeDeclarationVar>
     <AVideListeDeclarationVar>
     </AVideListeDeclarationVar>
     <ABlocInstruction>
      <AListeInstruction>
-      <ASiSinonInstruction>
+      <AEcrireInstruction>
        <AExp1Exp>
         <AExp2Exp1>
          <AExp3Exp2>
@@ -28,38 +20,8 @@
            <AExp5Exp4>
             <AExp6Exp5>
              <AExp7Exp6>
-              <AEntreParanthesesExp7>
-               <AExp1Exp>
-                <AExp2Exp1>
-                 <AEgalExp2>
-                  <AExp3Exp2>
-                   <AExp4Exp3>
-                    <AExp5Exp4>
-                     <AExp6Exp5>
-                      <AExp7Exp6>
-                       <AVariableExp7>
-                        <AVar>
-                        </AVar>
-                       </AVariableExp7>
-                      </AExp7Exp6>
-                     </AExp6Exp5>
-                    </AExp5Exp4>
-                   </AExp4Exp3>
-                  </AExp3Exp2>
-                  <AExp4Exp3>
-                   <AExp5Exp4>
-                    <AExp6Exp5>
-                     <AExp7Exp6>
-                      <ANombreExp7>
-                      </ANombreExp7>
-                     </AExp7Exp6>
-                    </AExp6Exp5>
-                   </AExp5Exp4>
-                  </AExp4Exp3>
-                 </AEgalExp2>
-                </AExp2Exp1>
-               </AExp1Exp>
-              </AEntreParanthesesExp7>
+              <ANombreExp7>
+              </ANombreExp7>
              </AExp7Exp6>
             </AExp6Exp5>
            </AExp5Exp4>
@@ -67,129 +29,7 @@
          </AExp3Exp2>
         </AExp2Exp1>
        </AExp1Exp>
-       <ABlocInstruction>
-        <AListeInstruction>
-         <ARetourInstruction>
-          <AExp1Exp>
-           <AExp2Exp1>
-            <AExp3Exp2>
-             <AExp4Exp3>
-              <AExp5Exp4>
-               <AExp6Exp5>
-                <AExp7Exp6>
-                 <AEntreParanthesesExp7>
-                  <AExp1Exp>
-                   <AExp2Exp1>
-                    <AExp3Exp2>
-                     <AExp4Exp3>
-                      <AExp5Exp4>
-                       <AExp6Exp5>
-                        <AExp7Exp6>
-                         <ANombreExp7>
-                         </ANombreExp7>
-                        </AExp7Exp6>
-                       </AExp6Exp5>
-                      </AExp5Exp4>
-                     </AExp4Exp3>
-                    </AExp3Exp2>
-                   </AExp2Exp1>
-                  </AExp1Exp>
-                 </AEntreParanthesesExp7>
-                </AExp7Exp6>
-               </AExp6Exp5>
-              </AExp5Exp4>
-             </AExp4Exp3>
-            </AExp3Exp2>
-           </AExp2Exp1>
-          </AExp1Exp>
-         </ARetourInstruction>
-         <AVideListeInstruction>
-         </AVideListeInstruction>
-        </AListeInstruction>
-       </ABlocInstruction>
-       <ABlocInstruction>
-        <AListeInstruction>
-         <ARetourInstruction>
-          <AExp1Exp>
-           <AExp2Exp1>
-            <AExp3Exp2>
-             <AExp4Exp3>
-              <AExp5Exp4>
-               <AExp6Exp5>
-                <AExp7Exp6>
-                 <AEntreParanthesesExp7>
-                  <AExp1Exp>
-                   <AExp2Exp1>
-                    <AExp3Exp2>
-                     <APlusExp3>
-                      <AExp4Exp3>
-                       <AExp5Exp4>
-                        <AExp6Exp5>
-                         <AExp7Exp6>
-                          <ANombreExp7>
-                          </ANombreExp7>
-                         </AExp7Exp6>
-                        </AExp6Exp5>
-                       </AExp5Exp4>
-                      </AExp4Exp3>
-                      <AExp5Exp4>
-                       <AExp6Exp5>
-                        <AExp7Exp6>
-                         <AAppelFonctionExp7>
-                          <AListeExp>
-                           <AExp1Exp>
-                            <AExp2Exp1>
-                             <AExp3Exp2>
-                              <AMoinsExp3>
-                               <AExp4Exp3>
-                                <AExp5Exp4>
-                                 <AExp6Exp5>
-                                  <AExp7Exp6>
-                                   <AVariableExp7>
-                                    <AVar>
-                                    </AVar>
-                                   </AVariableExp7>
-                                  </AExp7Exp6>
-                                 </AExp6Exp5>
-                                </AExp5Exp4>
-                               </AExp4Exp3>
-                               <AExp5Exp4>
-                                <AExp6Exp5>
-                                 <AExp7Exp6>
-                                  <ANombreExp7>
-                                  </ANombreExp7>
-                                 </AExp7Exp6>
-                                </AExp6Exp5>
-                               </AExp5Exp4>
-                              </AMoinsExp3>
-                             </AExp3Exp2>
-                            </AExp2Exp1>
-                           </AExp1Exp>
-                           <AVideListeExpPrime>
-                           </AVideListeExpPrime>
-                          </AListeExp>
-                         </AAppelFonctionExp7>
-                        </AExp7Exp6>
-                       </AExp6Exp5>
-                      </AExp5Exp4>
-                     </APlusExp3>
-                    </AExp3Exp2>
-                   </AExp2Exp1>
-                  </AExp1Exp>
-                 </AEntreParanthesesExp7>
-                </AExp7Exp6>
-               </AExp6Exp5>
-              </AExp5Exp4>
-             </AExp4Exp3>
-            </AExp3Exp2>
-           </AExp2Exp1>
-          </AExp1Exp>
-         </ARetourInstruction>
-         <AVideListeInstruction>
-         </AVideListeInstruction>
-        </AListeInstruction>
-       </ABlocInstruction>
-      </ASiSinonInstruction>
+      </AEcrireInstruction>
       <AVideListeInstruction>
       </AVideListeInstruction>
      </AListeInstruction>
@@ -205,44 +45,10 @@
      </AVideListeDeclarationVar>
      <ABlocInstruction>
       <AListeInstruction>
-       <AEcrireInstruction>
-        <AExp1Exp>
-         <AExp2Exp1>
-          <AExp3Exp2>
-           <AExp4Exp3>
-            <AExp5Exp4>
-             <AExp6Exp5>
-              <AExp7Exp6>
-               <AAppelFonctionExp7>
-                <AListeExp>
-                 <AExp1Exp>
-                  <AExp2Exp1>
-                   <AExp3Exp2>
-                    <AExp4Exp3>
-                     <AExp5Exp4>
-                      <AExp6Exp5>
-                       <AExp7Exp6>
-                        <ANombreExp7>
-                        </ANombreExp7>
-                       </AExp7Exp6>
-                      </AExp6Exp5>
-                     </AExp5Exp4>
-                    </AExp4Exp3>
-                   </AExp3Exp2>
-                  </AExp2Exp1>
-                 </AExp1Exp>
-                 <AVideListeExpPrime>
-                 </AVideListeExpPrime>
-                </AListeExp>
-               </AAppelFonctionExp7>
-              </AExp7Exp6>
-             </AExp6Exp5>
-            </AExp5Exp4>
-           </AExp4Exp3>
-          </AExp3Exp2>
-         </AExp2Exp1>
-        </AExp1Exp>
-       </AEcrireInstruction>
+       <AAppelFonctionInstruction>
+        <AVideListeExp>
+        </AVideListeExp>
+       </AAppelFonctionInstruction>
        <AVideListeInstruction>
        </AVideListeInstruction>
       </AListeInstruction>
