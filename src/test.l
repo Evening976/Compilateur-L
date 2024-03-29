@@ -1,9 +1,11 @@
-f()
+f(entier a)
 {
-ecrire(1);
+a = 1;
+ecrire(a);
 }
 
 main()
+entier a
 {
-f();
+f(3);
 }
