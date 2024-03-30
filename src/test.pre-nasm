@@ -19,8 +19,8 @@ f :	push	ebp	;sauvegarde la valeur de ebp
 	push	ecx	;sauvegarde de ecx
 	push	edx	;sauvegarde de edx
 	sub	esp,	0	;allocation des variables locales
-	mov	dword [ebp],	1	;Affect
-	mov	eax,	dword [ebp]	;Write 1
+	mov	dword [ebp+12],	1	;Affect
+	mov	eax,	dword [ebp+12]	;Write 1
 	call	iprintLF	;Write 2
 	add	esp,	4	;désallocation des arguments
 	add	esp,	0	;désallocation des variables locales

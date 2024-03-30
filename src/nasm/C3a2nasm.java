@@ -137,10 +137,10 @@ public class C3a2nasm implements C3aVisitor<NasmOperand> {
   public NasmOperand visit(C3aInstRead inst) {
     NasmRegister reg_eax = new NasmRegister(Nasm.REG_EAX);
     NasmOperand label = (inst.label != null) ? inst.label.accept(this) : null;
-    nasm.ajouteInst(new NasmMov(label,reg_eax,new NasmLabel("sinput"), ""));
+    nasm.ajouteInst(new NasmMov(label, reg_eax, new NasmLabel("sinput"), ""));
     nasm.ajouteInst(new NasmCall(null, new NasmLabel("readline"), ""));
     nasm.ajouteInst(new NasmCall(null, new NasmLabel("atoi"), ""));
-    nasm.ajouteInst(new NasmMov(null,inst.result.accept(this),reg_eax, ""));
+    nasm.ajouteInst(new NasmMov(null, inst.result.accept(this), reg_eax, ""));
     return null;
   }
 
@@ -159,6 +159,7 @@ public class C3a2nasm implements C3aVisitor<NasmOperand> {
     NasmOperand src = inst.op1.accept(this);
     NasmOperand dest = inst.result.accept(this);
     System.out.println(dest);
+    //desallocation des arguments ici?
     nasm.ajouteInst(new NasmMov(label, dest, src, "Affect"));
     return null;
   }
@@ -176,16 +177,15 @@ public class C3a2nasm implements C3aVisitor<NasmOperand> {
 
   public NasmOperand visit(C3aInstFEnd inst) {
     NasmOperand label = (inst.label != null) ? inst.label.accept(this) : null;
-    if(currentFct.saDecFonc.getParametres() != null){
+    if (currentFct.saDecFonc.getParametres() != null) {
       System.out.println("Allocation des arguments: " + currentFct.saDecFonc.getParametres().length() * 4 + " octets");
       nasm.ajouteInst(new NasmAdd(label, esp, new NasmConstant(currentFct.saDecFonc.getParametres().length() * 4),
           "désallocation des arguments"));
     }
 
-    if (currentFct.saDecFonc.getVariable() == null){
+    if (currentFct.saDecFonc.getVariable() == null) {
       nasm.ajouteInst(new NasmAdd(label, esp, new NasmConstant(0), "désallocation des variables locales"));
-    }
-    else{
+    } else {
       nasm.ajouteInst(new NasmAdd(label, esp, new NasmConstant(currentFct.saDecFonc.getVariable().length() * 4),
           "désallocation des variables locales"));
     }
@@ -264,25 +264,32 @@ public class C3a2nasm implements C3aVisitor<NasmOperand> {
     if (currentFct.getTable().getVar(oper.item.identif) != null) {
       TsItemVar var = currentFct.getTable().getVar(oper.item.identif);
       if (var.isParam) {
-        System.out.println("Adresse " + var.identif + " : " + var.taille);
-        System.out.println(var.identif + " : " + var.adresse);
-        System.out.println(var.type);
-        System.out.println(var.portee);
-        return new NasmAddress((NasmExp)ebp, NasmSize.DWORD);
+        return new NasmAddress(
+            (NasmExp) new NasmExpPlus(ebp, new NasmConstant(8 + currentFct.getNbArgs() * NasmSize.DWORD.getValue()
+                - var.adresse)),
+            NasmSize.DWORD);
       }
-      return new NasmAddress((NasmExp)new NasmExpMinus((NasmExp)ebp, 
-      (NasmExp) new NasmConstant(NasmSize.DWORD.getValue())), NasmSize.DWORD);
+      return new NasmAddress((NasmExp) new NasmExpMinus((NasmExp) ebp,
+          (NasmExp) new NasmConstant(NasmSize.DWORD.getValue() + var.adresse)), NasmSize.DWORD);
       // return new NasmAddress(new NasmExpPlus((NasmExp)ebp, ))); //ebp + 8 + 4 *
       // (numéro du paramètre)
       // else
       // return new NasmAdress() //ebp - (adresse de la variable + taille de la
       // variable(?))
     } else {
+      if(oper.index == null){
+        return new NasmAddress(new NasmLabel(oper.item.identif), NasmSize.DWORD);
+      }
+      else{
       TsItemVar var = tableGlobale.getVar(oper.item.identif);
+      NasmRegister r1 = nasm.newRegister();
+      nasm.ajouteInst(new NasmMov(null, r1, oper.index.accept(this), ""));
+      nasm.ajouteInst(new NasmMov(null, r1, new NasmConstant(4), ""));
       return new NasmAddress(new NasmLabel(var.identif), NasmSize.DWORD);
       // c'est une variable globale
+      }
     }
-    //return null;
+    // return null;
   }
 
   public NasmOperand visit(C3aFunction oper) {
