@@ -491,9 +491,11 @@
 	varloc4.c3aout         CORRECT
 	varloc5.c3aout         CORRECT
 Évaluation de Diff de pre-nasm :
-17/80 correct ( 21.25%)
+26/80 correct ( 32.50%)
 	add1.pre-nasm       CORRECT
 	add2.pre-nasm       CORRECT
+	affect1.pre-nasm    CORRECT
+	affect2.pre-nasm    CORRECT
 	appel1.pre-nasm     CORRECT
 	appel2.pre-nasm     CORRECT
 	appel3.pre-nasm     CORRECT
@@ -509,8 +511,13 @@
 	sub1.pre-nasm       CORRECT
 	sub2.pre-nasm       CORRECT
 	sub3.pre-nasm       CORRECT
-	affect1.pre-nasm         INCORRECT
-	affect2.pre-nasm         INCORRECT
+	varglob1.pre-nasm   CORRECT
+	varglob2.pre-nasm   CORRECT
+	varglob3.pre-nasm   CORRECT
+	varglob4.pre-nasm   CORRECT
+	varloc1.pre-nasm    CORRECT
+	varloc2.pre-nasm    CORRECT
+	varloc5.pre-nasm    CORRECT
 	affect3.pre-nasm         INCORRECT
 	and1.pre-nasm            INCORRECT
 	and2.pre-nasm            INCORRECT
@@ -563,19 +570,14 @@
 	tantque1.pre-nasm        INCORRECT
 	tantque2.pre-nasm        INCORRECT
 	tri.pre-nasm             INCORRECT
-	varglob1.pre-nasm        INCORRECT
-	varglob2.pre-nasm        INCORRECT
-	varglob3.pre-nasm        INCORRECT
-	varglob4.pre-nasm        INCORRECT
-	varloc1.pre-nasm         INCORRECT
-	varloc2.pre-nasm         INCORRECT
 	varloc3.pre-nasm         INCORRECT
 	varloc4.pre-nasm         INCORRECT
-	varloc5.pre-nasm         INCORRECT
 Évaluation de Execution du pre-nasm :
-17/80 correct ( 21.25%)
+26/80 correct ( 32.50%)
 	add1.pre-nasmout       CORRECT
 	add2.pre-nasmout       CORRECT
+	affect1.pre-nasmout    CORRECT
+	affect2.pre-nasmout    CORRECT
 	appel1.pre-nasmout     CORRECT
 	appel2.pre-nasmout     CORRECT
 	appel3.pre-nasmout     CORRECT
@@ -591,8 +593,13 @@
 	sub1.pre-nasmout       CORRECT
 	sub2.pre-nasmout       CORRECT
 	sub3.pre-nasmout       CORRECT
-	affect1.pre-nasmout         INCORRECT
-	affect2.pre-nasmout         INCORRECT
+	varglob1.pre-nasmout   CORRECT
+	varglob2.pre-nasmout   CORRECT
+	varglob3.pre-nasmout   CORRECT
+	varglob4.pre-nasmout   CORRECT
+	varloc1.pre-nasmout    CORRECT
+	varloc2.pre-nasmout    CORRECT
+	varloc5.pre-nasmout    CORRECT
 	affect3.pre-nasmout         INCORRECT
 	and1.pre-nasmout            INCORRECT
 	and2.pre-nasmout            INCORRECT
@@ -645,15 +652,8 @@
 	tantque1.pre-nasmout        INCORRECT
 	tantque2.pre-nasmout        INCORRECT
 	tri.pre-nasmout             INCORRECT
-	varglob1.pre-nasmout        INCORRECT
-	varglob2.pre-nasmout        INCORRECT
-	varglob3.pre-nasmout        INCORRECT
-	varglob4.pre-nasmout        INCORRECT
-	varloc1.pre-nasmout         INCORRECT
-	varloc2.pre-nasmout         INCORRECT
 	varloc3.pre-nasmout         INCORRECT
 	varloc4.pre-nasmout         INCORRECT
-	varloc5.pre-nasmout         INCORRECT
 Évaluation de Diff de nasm :
 0/80 correct (  0.00%)
 Évaluation de Execution du nasm :
@@ -717,32 +717,8 @@
 	retour2.l   INCORRECT
 	retour3.l   INCORRECT
 ------------------------------EVALUATION ERRORS------------------------------
-ERROR evaluatePreNasm for input affect1.l : 'syntax error
-nasmParser.parser.ParserException: [24,2] expecting: ','
-	at nasmParser.parser.Parser.parse(Parser.java:181)
-	at nasm.LoadNasm.<init>(LoadNasm.java:36)
-	at NasmVM.run(NasmVM.java:22)
-	at NasmVM.main(NasmVM.java:51)
-'
-
-ERROR evaluatePreNasm for input affect2.l : 'syntax error
-nasmParser.parser.ParserException: [23,2] expecting: ','
-	at nasmParser.parser.Parser.parse(Parser.java:181)
-	at nasm.LoadNasm.<init>(LoadNasm.java:36)
-	at NasmVM.run(NasmVM.java:22)
-	at NasmVM.main(NasmVM.java:51)
-'
-
-ERROR evaluatePreNasm for input affect3.l : 'syntax error
-nasmParser.parser.ParserException: [23,2] expecting: ','
-	at nasmParser.parser.Parser.parse(Parser.java:181)
-	at nasm.LoadNasm.<init>(LoadNasm.java:36)
-	at NasmVM.run(NasmVM.java:22)
-	at NasmVM.main(NasmVM.java:51)
-'
-
 ERROR evaluatePreNasm for input and1.l : 'syntax error
-nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
+nasmParser.parser.ParserException: [23,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
 	at nasmParser.parser.Parser.parse(Parser.java:181)
 	at nasm.LoadNasm.<init>(LoadNasm.java:36)
 	at NasmVM.run(NasmVM.java:22)
@@ -750,7 +726,7 @@ nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add'
 '
 
 ERROR evaluatePreNasm for input and2.l : 'syntax error
-nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
+nasmParser.parser.ParserException: [23,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
 	at nasmParser.parser.Parser.parse(Parser.java:181)
 	at nasm.LoadNasm.<init>(LoadNasm.java:36)
 	at NasmVM.run(NasmVM.java:22)
@@ -758,7 +734,7 @@ nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add'
 '
 
 ERROR evaluatePreNasm for input and3.l : 'syntax error
-nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
+nasmParser.parser.ParserException: [23,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
 	at nasmParser.parser.Parser.parse(Parser.java:181)
 	at nasm.LoadNasm.<init>(LoadNasm.java:36)
 	at NasmVM.run(NasmVM.java:22)
@@ -766,7 +742,7 @@ nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add'
 '
 
 ERROR evaluatePreNasm for input and4.l : 'syntax error
-nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
+nasmParser.parser.ParserException: [23,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
 	at nasmParser.parser.Parser.parse(Parser.java:181)
 	at nasm.LoadNasm.<init>(LoadNasm.java:36)
 	at NasmVM.run(NasmVM.java:22)
@@ -774,39 +750,7 @@ nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add'
 '
 
 ERROR evaluatePreNasm for input and5.l : 'syntax error
-nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
-	at nasmParser.parser.Parser.parse(Parser.java:181)
-	at nasm.LoadNasm.<init>(LoadNasm.java:36)
-	at NasmVM.run(NasmVM.java:22)
-	at NasmVM.main(NasmVM.java:51)
-'
-
-ERROR evaluatePreNasm for input appel-param1.l : 'syntax error
-nasmParser.parser.ParserException: [23,2] expecting: ','
-	at nasmParser.parser.Parser.parse(Parser.java:181)
-	at nasm.LoadNasm.<init>(LoadNasm.java:36)
-	at NasmVM.run(NasmVM.java:22)
-	at NasmVM.main(NasmVM.java:51)
-'
-
-ERROR evaluatePreNasm for input appel-param2.l : 'syntax error
-nasmParser.parser.ParserException: [23,2] expecting: ','
-	at nasmParser.parser.Parser.parse(Parser.java:181)
-	at nasm.LoadNasm.<init>(LoadNasm.java:36)
-	at NasmVM.run(NasmVM.java:22)
-	at NasmVM.main(NasmVM.java:51)
-'
-
-ERROR evaluatePreNasm for input appel-param3.l : 'syntax error
-nasmParser.parser.ParserException: [23,2] expecting: ','
-	at nasmParser.parser.Parser.parse(Parser.java:181)
-	at nasm.LoadNasm.<init>(LoadNasm.java:36)
-	at NasmVM.run(NasmVM.java:22)
-	at NasmVM.main(NasmVM.java:51)
-'
-
-ERROR evaluatePreNasm for input appel-retour1.l : 'syntax error
-nasmParser.parser.ParserException: [23,2] expecting: ','
+nasmParser.parser.ParserException: [23,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
 	at nasmParser.parser.Parser.parse(Parser.java:181)
 	at nasm.LoadNasm.<init>(LoadNasm.java:36)
 	at NasmVM.run(NasmVM.java:22)
@@ -846,7 +790,7 @@ nasmParser.parser.ParserException: [23,1] expecting: 'mov', 'push', 'pop', 'add'
 '
 
 ERROR evaluatePreNasm for input egal1.l : 'syntax error
-nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
+nasmParser.parser.ParserException: [24,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
 	at nasmParser.parser.Parser.parse(Parser.java:181)
 	at nasm.LoadNasm.<init>(LoadNasm.java:36)
 	at NasmVM.run(NasmVM.java:22)
@@ -854,7 +798,7 @@ nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add'
 '
 
 ERROR evaluatePreNasm for input egal2.l : 'syntax error
-nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
+nasmParser.parser.ParserException: [24,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
 	at nasmParser.parser.Parser.parse(Parser.java:181)
 	at nasm.LoadNasm.<init>(LoadNasm.java:36)
 	at NasmVM.run(NasmVM.java:22)
@@ -862,7 +806,7 @@ nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add'
 '
 
 ERROR evaluatePreNasm for input egal3.l : 'syntax error
-nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
+nasmParser.parser.ParserException: [24,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
 	at nasmParser.parser.Parser.parse(Parser.java:181)
 	at nasm.LoadNasm.<init>(LoadNasm.java:36)
 	at NasmVM.run(NasmVM.java:22)
@@ -870,7 +814,7 @@ nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add'
 '
 
 ERROR evaluatePreNasm for input fibo.l : 'syntax error
-nasmParser.parser.ParserException: [30,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
+nasmParser.parser.ParserException: [31,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
 	at nasmParser.parser.Parser.parse(Parser.java:181)
 	at nasm.LoadNasm.<init>(LoadNasm.java:36)
 	at NasmVM.run(NasmVM.java:22)
@@ -878,7 +822,7 @@ nasmParser.parser.ParserException: [30,1] expecting: 'mov', 'push', 'pop', 'add'
 '
 
 ERROR evaluatePreNasm for input inf1.l : 'syntax error
-nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
+nasmParser.parser.ParserException: [24,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
 	at nasmParser.parser.Parser.parse(Parser.java:181)
 	at nasm.LoadNasm.<init>(LoadNasm.java:36)
 	at NasmVM.run(NasmVM.java:22)
@@ -886,7 +830,7 @@ nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add'
 '
 
 ERROR evaluatePreNasm for input inf2.l : 'syntax error
-nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
+nasmParser.parser.ParserException: [24,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
 	at nasmParser.parser.Parser.parse(Parser.java:181)
 	at nasm.LoadNasm.<init>(LoadNasm.java:36)
 	at NasmVM.run(NasmVM.java:22)
@@ -894,7 +838,7 @@ nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add'
 '
 
 ERROR evaluatePreNasm for input inf3.l : 'syntax error
-nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
+nasmParser.parser.ParserException: [24,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
 	at nasmParser.parser.Parser.parse(Parser.java:181)
 	at nasm.LoadNasm.<init>(LoadNasm.java:36)
 	at NasmVM.run(NasmVM.java:22)
@@ -902,7 +846,7 @@ nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add'
 '
 
 ERROR evaluatePreNasm for input not1.l : 'syntax error
-nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
+nasmParser.parser.ParserException: [24,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
 	at nasmParser.parser.Parser.parse(Parser.java:181)
 	at nasm.LoadNasm.<init>(LoadNasm.java:36)
 	at NasmVM.run(NasmVM.java:22)
@@ -910,7 +854,7 @@ nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add'
 '
 
 ERROR evaluatePreNasm for input not2.l : 'syntax error
-nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
+nasmParser.parser.ParserException: [24,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
 	at nasmParser.parser.Parser.parse(Parser.java:181)
 	at nasm.LoadNasm.<init>(LoadNasm.java:36)
 	at NasmVM.run(NasmVM.java:22)
@@ -918,7 +862,7 @@ nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add'
 '
 
 ERROR evaluatePreNasm for input not3.l : 'syntax error
-nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
+nasmParser.parser.ParserException: [24,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
 	at nasmParser.parser.Parser.parse(Parser.java:181)
 	at nasm.LoadNasm.<init>(LoadNasm.java:36)
 	at NasmVM.run(NasmVM.java:22)
@@ -926,7 +870,7 @@ nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add'
 '
 
 ERROR evaluatePreNasm for input or1.l : 'syntax error
-nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
+nasmParser.parser.ParserException: [23,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
 	at nasmParser.parser.Parser.parse(Parser.java:181)
 	at nasm.LoadNasm.<init>(LoadNasm.java:36)
 	at NasmVM.run(NasmVM.java:22)
@@ -934,7 +878,7 @@ nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add'
 '
 
 ERROR evaluatePreNasm for input or2.l : 'syntax error
-nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
+nasmParser.parser.ParserException: [23,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
 	at nasmParser.parser.Parser.parse(Parser.java:181)
 	at nasm.LoadNasm.<init>(LoadNasm.java:36)
 	at NasmVM.run(NasmVM.java:22)
@@ -942,7 +886,7 @@ nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add'
 '
 
 ERROR evaluatePreNasm for input or3.l : 'syntax error
-nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
+nasmParser.parser.ParserException: [23,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
 	at nasmParser.parser.Parser.parse(Parser.java:181)
 	at nasm.LoadNasm.<init>(LoadNasm.java:36)
 	at NasmVM.run(NasmVM.java:22)
@@ -950,7 +894,7 @@ nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add'
 '
 
 ERROR evaluatePreNasm for input or4.l : 'syntax error
-nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
+nasmParser.parser.ParserException: [23,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
 	at nasmParser.parser.Parser.parse(Parser.java:181)
 	at nasm.LoadNasm.<init>(LoadNasm.java:36)
 	at NasmVM.run(NasmVM.java:22)
@@ -958,7 +902,7 @@ nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add'
 '
 
 ERROR evaluatePreNasm for input or5.l : 'syntax error
-nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
+nasmParser.parser.ParserException: [23,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
 	at nasmParser.parser.Parser.parse(Parser.java:181)
 	at nasm.LoadNasm.<init>(LoadNasm.java:36)
 	at NasmVM.run(NasmVM.java:22)
@@ -982,7 +926,7 @@ nasmParser.parser.ParserException: [23,1] expecting: 'mov', 'push', 'pop', 'add'
 '
 
 ERROR evaluatePreNasm for input prio45-1.l : 'syntax error
-nasmParser.parser.ParserException: [24,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
+nasmParser.parser.ParserException: [26,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
 	at nasmParser.parser.Parser.parse(Parser.java:181)
 	at nasm.LoadNasm.<init>(LoadNasm.java:36)
 	at NasmVM.run(NasmVM.java:22)
@@ -990,7 +934,7 @@ nasmParser.parser.ParserException: [24,1] expecting: 'mov', 'push', 'pop', 'add'
 '
 
 ERROR evaluatePreNasm for input prio45-2.l : 'syntax error
-nasmParser.parser.ParserException: [24,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
+nasmParser.parser.ParserException: [26,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
 	at nasmParser.parser.Parser.parse(Parser.java:181)
 	at nasm.LoadNasm.<init>(LoadNasm.java:36)
 	at NasmVM.run(NasmVM.java:22)
@@ -998,7 +942,7 @@ nasmParser.parser.ParserException: [24,1] expecting: 'mov', 'push', 'pop', 'add'
 '
 
 ERROR evaluatePreNasm for input prio45-3.l : 'syntax error
-nasmParser.parser.ParserException: [24,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
+nasmParser.parser.ParserException: [26,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
 	at nasmParser.parser.Parser.parse(Parser.java:181)
 	at nasm.LoadNasm.<init>(LoadNasm.java:36)
 	at NasmVM.run(NasmVM.java:22)
@@ -1006,7 +950,7 @@ nasmParser.parser.ParserException: [24,1] expecting: 'mov', 'push', 'pop', 'add'
 '
 
 ERROR evaluatePreNasm for input prio45-4.l : 'syntax error
-nasmParser.parser.ParserException: [24,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
+nasmParser.parser.ParserException: [26,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
 	at nasmParser.parser.Parser.parse(Parser.java:181)
 	at nasm.LoadNasm.<init>(LoadNasm.java:36)
 	at NasmVM.run(NasmVM.java:22)
@@ -1014,7 +958,7 @@ nasmParser.parser.ParserException: [24,1] expecting: 'mov', 'push', 'pop', 'add'
 '
 
 ERROR evaluatePreNasm for input prio56-1.l : 'syntax error
-nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
+nasmParser.parser.ParserException: [25,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
 	at nasmParser.parser.Parser.parse(Parser.java:181)
 	at nasm.LoadNasm.<init>(LoadNasm.java:36)
 	at NasmVM.run(NasmVM.java:22)
@@ -1022,7 +966,7 @@ nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add'
 '
 
 ERROR evaluatePreNasm for input prio56-2.l : 'syntax error
-nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
+nasmParser.parser.ParserException: [25,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
 	at nasmParser.parser.Parser.parse(Parser.java:181)
 	at nasm.LoadNasm.<init>(LoadNasm.java:36)
 	at NasmVM.run(NasmVM.java:22)
@@ -1030,7 +974,7 @@ nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add'
 '
 
 ERROR evaluatePreNasm for input prio67-1.l : 'syntax error
-nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
+nasmParser.parser.ParserException: [23,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
 	at nasmParser.parser.Parser.parse(Parser.java:181)
 	at nasm.LoadNasm.<init>(LoadNasm.java:36)
 	at NasmVM.run(NasmVM.java:22)
@@ -1038,7 +982,7 @@ nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add'
 '
 
 ERROR evaluatePreNasm for input prio67-2.l : 'syntax error
-nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
+nasmParser.parser.ParserException: [23,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
 	at nasmParser.parser.Parser.parse(Parser.java:181)
 	at nasm.LoadNasm.<init>(LoadNasm.java:36)
 	at NasmVM.run(NasmVM.java:22)
@@ -1046,7 +990,7 @@ nasmParser.parser.ParserException: [22,1] expecting: 'mov', 'push', 'pop', 'add'
 '
 
 ERROR evaluatePreNasm for input rec1.l : 'syntax error
-nasmParser.parser.ParserException: [30,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
+nasmParser.parser.ParserException: [31,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
 	at nasmParser.parser.Parser.parse(Parser.java:181)
 	at nasm.LoadNasm.<init>(LoadNasm.java:36)
 	at NasmVM.run(NasmVM.java:22)
@@ -1093,40 +1037,8 @@ nasmParser.parser.ParserException: [26,1] expecting: 'mov', 'push', 'pop', 'add'
 	at NasmVM.main(NasmVM.java:51)
 '
 
-ERROR evaluatePreNasm for input tab1.l : 'syntax error
-nasmParser.parser.ParserException: [24,2] expecting: ','
-	at nasmParser.parser.Parser.parse(Parser.java:181)
-	at nasm.LoadNasm.<init>(LoadNasm.java:36)
-	at NasmVM.run(NasmVM.java:22)
-	at NasmVM.main(NasmVM.java:51)
-'
-
-ERROR evaluatePreNasm for input tab2.l : 'syntax error
-nasmParser.parser.ParserException: [24,2] expecting: ','
-	at nasmParser.parser.Parser.parse(Parser.java:181)
-	at nasm.LoadNasm.<init>(LoadNasm.java:36)
-	at NasmVM.run(NasmVM.java:22)
-	at NasmVM.main(NasmVM.java:51)
-'
-
-ERROR evaluatePreNasm for input tab3.l : 'syntax error
-nasmParser.parser.ParserException: [24,2] expecting: ','
-	at nasmParser.parser.Parser.parse(Parser.java:181)
-	at nasm.LoadNasm.<init>(LoadNasm.java:36)
-	at NasmVM.run(NasmVM.java:22)
-	at NasmVM.main(NasmVM.java:51)
-'
-
-ERROR evaluatePreNasm for input tab4.l : 'syntax error
-nasmParser.parser.ParserException: [24,2] expecting: ','
-	at nasmParser.parser.Parser.parse(Parser.java:181)
-	at nasm.LoadNasm.<init>(LoadNasm.java:36)
-	at NasmVM.run(NasmVM.java:22)
-	at NasmVM.main(NasmVM.java:51)
-'
-
 ERROR evaluatePreNasm for input tantque1.l : 'syntax error
-nasmParser.parser.ParserException: [23,2] expecting: ','
+nasmParser.parser.ParserException: [23,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
 	at nasmParser.parser.Parser.parse(Parser.java:181)
 	at nasm.LoadNasm.<init>(LoadNasm.java:36)
 	at NasmVM.run(NasmVM.java:22)
@@ -1134,7 +1046,7 @@ nasmParser.parser.ParserException: [23,2] expecting: ','
 '
 
 ERROR evaluatePreNasm for input tantque2.l : 'syntax error
-nasmParser.parser.ParserException: [23,2] expecting: ','
+nasmParser.parser.ParserException: [23,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
 	at nasmParser.parser.Parser.parse(Parser.java:181)
 	at nasm.LoadNasm.<init>(LoadNasm.java:36)
 	at NasmVM.run(NasmVM.java:22)
@@ -1142,79 +1054,7 @@ nasmParser.parser.ParserException: [23,2] expecting: ','
 '
 
 ERROR evaluatePreNasm for input tri.l : 'syntax error
-nasmParser.parser.ParserException: [38,2] expecting: ','
-	at nasmParser.parser.Parser.parse(Parser.java:181)
-	at nasm.LoadNasm.<init>(LoadNasm.java:36)
-	at NasmVM.run(NasmVM.java:22)
-	at NasmVM.main(NasmVM.java:51)
-'
-
-ERROR evaluatePreNasm for input varglob1.l : 'syntax error
-nasmParser.parser.ParserException: [24,2] expecting: ','
-	at nasmParser.parser.Parser.parse(Parser.java:181)
-	at nasm.LoadNasm.<init>(LoadNasm.java:36)
-	at NasmVM.run(NasmVM.java:22)
-	at NasmVM.main(NasmVM.java:51)
-'
-
-ERROR evaluatePreNasm for input varglob2.l : 'syntax error
-nasmParser.parser.ParserException: [24,2] expecting: ','
-	at nasmParser.parser.Parser.parse(Parser.java:181)
-	at nasm.LoadNasm.<init>(LoadNasm.java:36)
-	at NasmVM.run(NasmVM.java:22)
-	at NasmVM.main(NasmVM.java:51)
-'
-
-ERROR evaluatePreNasm for input varglob3.l : 'syntax error
-nasmParser.parser.ParserException: [25,2] expecting: ','
-	at nasmParser.parser.Parser.parse(Parser.java:181)
-	at nasm.LoadNasm.<init>(LoadNasm.java:36)
-	at NasmVM.run(NasmVM.java:22)
-	at NasmVM.main(NasmVM.java:51)
-'
-
-ERROR evaluatePreNasm for input varglob4.l : 'syntax error
-nasmParser.parser.ParserException: [25,2] expecting: ','
-	at nasmParser.parser.Parser.parse(Parser.java:181)
-	at nasm.LoadNasm.<init>(LoadNasm.java:36)
-	at NasmVM.run(NasmVM.java:22)
-	at NasmVM.main(NasmVM.java:51)
-'
-
-ERROR evaluatePreNasm for input varloc1.l : 'syntax error
-nasmParser.parser.ParserException: [23,2] expecting: ','
-	at nasmParser.parser.Parser.parse(Parser.java:181)
-	at nasm.LoadNasm.<init>(LoadNasm.java:36)
-	at NasmVM.run(NasmVM.java:22)
-	at NasmVM.main(NasmVM.java:51)
-'
-
-ERROR evaluatePreNasm for input varloc2.l : 'syntax error
-nasmParser.parser.ParserException: [23,2] expecting: ','
-	at nasmParser.parser.Parser.parse(Parser.java:181)
-	at nasm.LoadNasm.<init>(LoadNasm.java:36)
-	at NasmVM.run(NasmVM.java:22)
-	at NasmVM.main(NasmVM.java:51)
-'
-
-ERROR evaluatePreNasm for input varloc3.l : 'syntax error
-nasmParser.parser.ParserException: [23,2] expecting: ','
-	at nasmParser.parser.Parser.parse(Parser.java:181)
-	at nasm.LoadNasm.<init>(LoadNasm.java:36)
-	at NasmVM.run(NasmVM.java:22)
-	at NasmVM.main(NasmVM.java:51)
-'
-
-ERROR evaluatePreNasm for input varloc4.l : 'syntax error
-nasmParser.parser.ParserException: [23,2] expecting: ','
-	at nasmParser.parser.Parser.parse(Parser.java:181)
-	at nasm.LoadNasm.<init>(LoadNasm.java:36)
-	at NasmVM.run(NasmVM.java:22)
-	at NasmVM.main(NasmVM.java:51)
-'
-
-ERROR evaluatePreNasm for input varloc5.l : 'syntax error
-nasmParser.parser.ParserException: [24,2] expecting: ','
+nasmParser.parser.ParserException: [48,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
 	at nasmParser.parser.Parser.parse(Parser.java:181)
 	at nasm.LoadNasm.<init>(LoadNasm.java:36)
 	at NasmVM.run(NasmVM.java:22)
