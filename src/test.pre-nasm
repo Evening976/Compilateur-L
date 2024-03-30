@@ -41,6 +41,7 @@ main :	push	ebp	;sauvegarde la valeur de ebp
 	sub	esp,	4	;allocation mémoire pour la valeur de retour
 	call	f
 	pop	@1	;récupération de la valeur de retour
+	add	esp,	4	;désallocation des arguments
 	add	esp,	4	;désallocation des variables locales
 	pop	edx	;restaure edx
 	pop	ecx	;restaure ecx

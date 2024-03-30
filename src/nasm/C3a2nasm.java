@@ -69,11 +69,17 @@ public class C3a2nasm implements C3aVisitor<NasmOperand> {
   }
 
   public NasmOperand visit(C3aInstCall inst) {
+    TsItemFct _currentFct = currentFct;
+    currentFct = inst.op1.val;
     NasmOperand label = inst.op1.accept(this);
     NasmOperand dest = inst.result.accept(this);
     nasm.ajouteInst(new NasmSub(null, esp, new NasmConstant(4), "allocation mémoire pour la valeur de retour"));
     nasm.ajouteInst(new NasmCall(null, label, ""));
     nasm.ajouteInst(new NasmPop(null, dest, "récupération de la valeur de retour"));
+    if(inst.op1.val.nbArgs != 0){
+      nasm.ajouteInst(new NasmAdd(null, esp, new NasmConstant(inst.op1.val.nbArgs * 4), "désallocation des arguments"));
+    }
+    currentFct = _currentFct;
 
     // nasm.ajouteInst(new NasmCall(label, dest, ""));
 
@@ -158,7 +164,7 @@ public class C3a2nasm implements C3aVisitor<NasmOperand> {
     NasmOperand label = (inst.label != null) ? inst.label.accept(this) : null;
     NasmOperand src = inst.op1.accept(this);
     NasmOperand dest = inst.result.accept(this);
-    System.out.println(dest);
+    //System.out.println(dest);
     //desallocation des arguments ici?
     nasm.ajouteInst(new NasmMov(label, dest, src, "Affect"));
     return null;

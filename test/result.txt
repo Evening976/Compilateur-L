@@ -491,7 +491,7 @@
 	varloc4.c3aout         CORRECT
 	varloc5.c3aout         CORRECT
 Évaluation de Diff de pre-nasm :
-26/80 correct ( 32.50%)
+28/80 correct ( 35.00%)
 	add1.pre-nasm       CORRECT
 	add2.pre-nasm       CORRECT
 	affect1.pre-nasm    CORRECT
@@ -517,6 +517,8 @@
 	varglob4.pre-nasm   CORRECT
 	varloc1.pre-nasm    CORRECT
 	varloc2.pre-nasm    CORRECT
+	varloc3.pre-nasm    CORRECT
+	varloc4.pre-nasm    CORRECT
 	varloc5.pre-nasm    CORRECT
 	affect3.pre-nasm         INCORRECT
 	and1.pre-nasm            INCORRECT
@@ -570,36 +572,38 @@
 	tantque1.pre-nasm        INCORRECT
 	tantque2.pre-nasm        INCORRECT
 	tri.pre-nasm             INCORRECT
-	varloc3.pre-nasm         INCORRECT
-	varloc4.pre-nasm         INCORRECT
 Évaluation de Execution du pre-nasm :
-26/80 correct ( 32.50%)
-	add1.pre-nasmout       CORRECT
-	add2.pre-nasmout       CORRECT
-	affect1.pre-nasmout    CORRECT
-	affect2.pre-nasmout    CORRECT
-	appel1.pre-nasmout     CORRECT
-	appel2.pre-nasmout     CORRECT
-	appel3.pre-nasmout     CORRECT
-	ecrire1.pre-nasmout    CORRECT
-	ecrire2.pre-nasmout    CORRECT
-	mult1.pre-nasmout      CORRECT
-	mult2.pre-nasmout      CORRECT
-	mult3.pre-nasmout      CORRECT
-	parenth1.pre-nasmout   CORRECT
-	parenth2.pre-nasmout   CORRECT
-	prio34-1.pre-nasmout   CORRECT
-	prio34-2.pre-nasmout   CORRECT
-	sub1.pre-nasmout       CORRECT
-	sub2.pre-nasmout       CORRECT
-	sub3.pre-nasmout       CORRECT
-	varglob1.pre-nasmout   CORRECT
-	varglob2.pre-nasmout   CORRECT
-	varglob3.pre-nasmout   CORRECT
-	varglob4.pre-nasmout   CORRECT
-	varloc1.pre-nasmout    CORRECT
-	varloc2.pre-nasmout    CORRECT
-	varloc5.pre-nasmout    CORRECT
+30/80 correct ( 37.50%)
+	add1.pre-nasmout           CORRECT
+	add2.pre-nasmout           CORRECT
+	affect1.pre-nasmout        CORRECT
+	affect2.pre-nasmout        CORRECT
+	appel-param2.pre-nasmout   CORRECT
+	appel-param3.pre-nasmout   CORRECT
+	appel1.pre-nasmout         CORRECT
+	appel2.pre-nasmout         CORRECT
+	appel3.pre-nasmout         CORRECT
+	ecrire1.pre-nasmout        CORRECT
+	ecrire2.pre-nasmout        CORRECT
+	mult1.pre-nasmout          CORRECT
+	mult2.pre-nasmout          CORRECT
+	mult3.pre-nasmout          CORRECT
+	parenth1.pre-nasmout       CORRECT
+	parenth2.pre-nasmout       CORRECT
+	prio34-1.pre-nasmout       CORRECT
+	prio34-2.pre-nasmout       CORRECT
+	sub1.pre-nasmout           CORRECT
+	sub2.pre-nasmout           CORRECT
+	sub3.pre-nasmout           CORRECT
+	varglob1.pre-nasmout       CORRECT
+	varglob2.pre-nasmout       CORRECT
+	varglob3.pre-nasmout       CORRECT
+	varglob4.pre-nasmout       CORRECT
+	varloc1.pre-nasmout        CORRECT
+	varloc2.pre-nasmout        CORRECT
+	varloc3.pre-nasmout        CORRECT
+	varloc4.pre-nasmout        CORRECT
+	varloc5.pre-nasmout        CORRECT
 	affect3.pre-nasmout         INCORRECT
 	and1.pre-nasmout            INCORRECT
 	and2.pre-nasmout            INCORRECT
@@ -607,8 +611,6 @@
 	and4.pre-nasmout            INCORRECT
 	and5.pre-nasmout            INCORRECT
 	appel-param1.pre-nasmout    INCORRECT
-	appel-param2.pre-nasmout    INCORRECT
-	appel-param3.pre-nasmout    INCORRECT
 	appel-retour1.pre-nasmout   INCORRECT
 	div1.pre-nasmout            INCORRECT
 	div2.pre-nasmout            INCORRECT
@@ -652,8 +654,6 @@
 	tantque1.pre-nasmout        INCORRECT
 	tantque2.pre-nasmout        INCORRECT
 	tri.pre-nasmout             INCORRECT
-	varloc3.pre-nasmout         INCORRECT
-	varloc4.pre-nasmout         INCORRECT
 Évaluation de Diff de nasm :
 0/80 correct (  0.00%)
 Évaluation de Execution du nasm :
@@ -717,6 +717,16 @@
 	retour2.l   INCORRECT
 	retour3.l   INCORRECT
 ------------------------------EVALUATION ERRORS------------------------------
+ERROR evaluatePreNasm for input affect3.l : 'Exception in thread "main" java.lang.RuntimeException: stack overflow
+	at util.Memory.pushInt(Memory.java:118)
+	at nasm.NasmEval.visit(NasmEval.java:343)
+	at nasm.NasmEval.visit(NasmEval.java:13)
+	at nasm.NasmPush.accept(NasmPush.java:13)
+	at nasm.NasmEval.<init>(NasmEval.java:76)
+	at NasmVM.run(NasmVM.java:28)
+	at NasmVM.main(NasmVM.java:51)
+'
+
 ERROR evaluatePreNasm for input and1.l : 'syntax error
 nasmParser.parser.ParserException: [23,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
 	at nasmParser.parser.Parser.parse(Parser.java:181)
@@ -754,6 +764,16 @@ nasmParser.parser.ParserException: [23,1] expecting: 'mov', 'push', 'pop', 'add'
 	at nasmParser.parser.Parser.parse(Parser.java:181)
 	at nasm.LoadNasm.<init>(LoadNasm.java:36)
 	at NasmVM.run(NasmVM.java:22)
+	at NasmVM.main(NasmVM.java:51)
+'
+
+ERROR evaluatePreNasm for input appel-param1.l : 'Exception in thread "main" java.lang.RuntimeException: stack overflow
+	at util.Memory.pushInt(Memory.java:118)
+	at nasm.NasmEval.visit(NasmEval.java:285)
+	at nasm.NasmEval.visit(NasmEval.java:13)
+	at nasm.NasmCall.accept(NasmCall.java:12)
+	at nasm.NasmEval.<init>(NasmEval.java:76)
+	at NasmVM.run(NasmVM.java:28)
 	at NasmVM.main(NasmVM.java:51)
 '
 
@@ -814,7 +834,7 @@ nasmParser.parser.ParserException: [24,1] expecting: 'mov', 'push', 'pop', 'add'
 '
 
 ERROR evaluatePreNasm for input fibo.l : 'syntax error
-nasmParser.parser.ParserException: [31,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
+nasmParser.parser.ParserException: [33,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
 	at nasmParser.parser.Parser.parse(Parser.java:181)
 	at nasm.LoadNasm.<init>(LoadNasm.java:36)
 	at NasmVM.run(NasmVM.java:22)
@@ -990,7 +1010,7 @@ nasmParser.parser.ParserException: [23,1] expecting: 'mov', 'push', 'pop', 'add'
 '
 
 ERROR evaluatePreNasm for input rec1.l : 'syntax error
-nasmParser.parser.ParserException: [31,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
+nasmParser.parser.ParserException: [33,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
 	at nasmParser.parser.Parser.parse(Parser.java:181)
 	at nasm.LoadNasm.<init>(LoadNasm.java:36)
 	at NasmVM.run(NasmVM.java:22)
@@ -1054,7 +1074,7 @@ nasmParser.parser.ParserException: [23,1] expecting: 'mov', 'push', 'pop', 'add'
 '
 
 ERROR evaluatePreNasm for input tri.l : 'syntax error
-nasmParser.parser.ParserException: [48,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
+nasmParser.parser.ParserException: [68,1] expecting: 'mov', 'push', 'pop', 'add', 'sub', 'imul', 'idiv', 'and', 'or', 'xor', 'not', 'cmp', 'jmp', 'je', 'jne', 'jg', 'jge', 'jl', 'call', 'ret', 'int 0x80'
 	at nasmParser.parser.Parser.parse(Parser.java:181)
 	at nasm.LoadNasm.<init>(LoadNasm.java:36)
 	at NasmVM.run(NasmVM.java:22)
