@@ -204,6 +204,9 @@ public class C3a2nasm implements C3aVisitor<NasmOperand> {
   }
 
   public NasmOperand visit(C3aInstReturn inst) {
+    NasmOperand label = (inst.label != null) ? inst.label.accept(this) : null;
+    nasm.ajouteInst(new NasmMov(label, new NasmAddress(new NasmExpPlus(ebp, new NasmConstant(8)), NasmSize.DWORD),
+        inst.op1.accept(this), "écriture de la valeur de retour"));
     return null;
   }
 
