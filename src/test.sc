@@ -1,7 +1,13 @@
 <Start>
  <AProgramme>
-  <AVideListeDeclarationVar>
-  </AVideListeDeclarationVar>
+  <AListeDeclarationVar>
+   <ATableauDeclarationVar>
+    <AEntierType>
+    </AEntierType>
+   </ATableauDeclarationVar>
+   <AVideListeDeclarationVarPrime>
+   </AVideListeDeclarationVarPrime>
+  </AListeDeclarationVar>
   <AListeDeclarationFonc>
    <ADeclarationFonc>
     <AVideTypeOptionnel>
@@ -12,8 +18,8 @@
     </AVideListeDeclarationVar>
     <ABlocInstruction>
      <AListeInstruction>
-      <AEcrireInstruction>
-       <AOuExp>
+      <AAffectationInstruction>
+       <ATableauVar>
         <AExp1Exp>
          <AExp2Exp1>
           <AExp3Exp2>
@@ -21,8 +27,8 @@
             <AExp5Exp4>
              <AExp6Exp5>
               <AExp7Exp6>
-               <AVraiExp7>
-               </AVraiExp7>
+               <ANombreExp7>
+               </ANombreExp7>
               </AExp7Exp6>
              </AExp6Exp5>
             </AExp5Exp4>
@@ -30,24 +36,216 @@
           </AExp3Exp2>
          </AExp2Exp1>
         </AExp1Exp>
+       </ATableauVar>
+       <AExp1Exp>
         <AExp2Exp1>
          <AExp3Exp2>
           <AExp4Exp3>
            <AExp5Exp4>
             <AExp6Exp5>
              <AExp7Exp6>
-              <AVraiExp7>
-              </AVraiExp7>
+              <ANombreExp7>
+              </ANombreExp7>
              </AExp7Exp6>
             </AExp6Exp5>
            </AExp5Exp4>
           </AExp4Exp3>
          </AExp3Exp2>
         </AExp2Exp1>
-       </AOuExp>
-      </AEcrireInstruction>
-      <AVideListeInstruction>
-      </AVideListeInstruction>
+       </AExp1Exp>
+      </AAffectationInstruction>
+      <AListeInstruction>
+       <AAffectationInstruction>
+        <ATableauVar>
+         <AExp1Exp>
+          <AExp2Exp1>
+           <AExp3Exp2>
+            <AExp4Exp3>
+             <AExp5Exp4>
+              <AExp6Exp5>
+               <AExp7Exp6>
+                <ANombreExp7>
+                </ANombreExp7>
+               </AExp7Exp6>
+              </AExp6Exp5>
+             </AExp5Exp4>
+            </AExp4Exp3>
+           </AExp3Exp2>
+          </AExp2Exp1>
+         </AExp1Exp>
+        </ATableauVar>
+        <AExp1Exp>
+         <AExp2Exp1>
+          <AExp3Exp2>
+           <AExp4Exp3>
+            <AExp5Exp4>
+             <AExp6Exp5>
+              <AExp7Exp6>
+               <ANombreExp7>
+               </ANombreExp7>
+              </AExp7Exp6>
+             </AExp6Exp5>
+            </AExp5Exp4>
+           </AExp4Exp3>
+          </AExp3Exp2>
+         </AExp2Exp1>
+        </AExp1Exp>
+       </AAffectationInstruction>
+       <AListeInstruction>
+        <AAffectationInstruction>
+         <ATableauVar>
+          <AExp1Exp>
+           <AExp2Exp1>
+            <AExp3Exp2>
+             <AExp4Exp3>
+              <AExp5Exp4>
+               <AExp6Exp5>
+                <AExp7Exp6>
+                 <ANombreExp7>
+                 </ANombreExp7>
+                </AExp7Exp6>
+               </AExp6Exp5>
+              </AExp5Exp4>
+             </AExp4Exp3>
+            </AExp3Exp2>
+           </AExp2Exp1>
+          </AExp1Exp>
+         </ATableauVar>
+         <AExp1Exp>
+          <AExp2Exp1>
+           <AExp3Exp2>
+            <AExp4Exp3>
+             <AExp5Exp4>
+              <AExp6Exp5>
+               <AExp7Exp6>
+                <ANombreExp7>
+                </ANombreExp7>
+               </AExp7Exp6>
+              </AExp6Exp5>
+             </AExp5Exp4>
+            </AExp4Exp3>
+           </AExp3Exp2>
+          </AExp2Exp1>
+         </AExp1Exp>
+        </AAffectationInstruction>
+        <AListeInstruction>
+         <AEcrireInstruction>
+          <AExp1Exp>
+           <AExp2Exp1>
+            <AExp3Exp2>
+             <AExp4Exp3>
+              <AExp5Exp4>
+               <AExp6Exp5>
+                <AExp7Exp6>
+                 <AVariableExp7>
+                  <ATableauVar>
+                   <AExp1Exp>
+                    <AExp2Exp1>
+                     <AExp3Exp2>
+                      <AExp4Exp3>
+                       <AExp5Exp4>
+                        <AExp6Exp5>
+                         <AExp7Exp6>
+                          <ANombreExp7>
+                          </ANombreExp7>
+                         </AExp7Exp6>
+                        </AExp6Exp5>
+                       </AExp5Exp4>
+                      </AExp4Exp3>
+                     </AExp3Exp2>
+                    </AExp2Exp1>
+                   </AExp1Exp>
+                  </ATableauVar>
+                 </AVariableExp7>
+                </AExp7Exp6>
+               </AExp6Exp5>
+              </AExp5Exp4>
+             </AExp4Exp3>
+            </AExp3Exp2>
+           </AExp2Exp1>
+          </AExp1Exp>
+         </AEcrireInstruction>
+         <AListeInstruction>
+          <AEcrireInstruction>
+           <AExp1Exp>
+            <AExp2Exp1>
+             <AExp3Exp2>
+              <AExp4Exp3>
+               <AExp5Exp4>
+                <AExp6Exp5>
+                 <AExp7Exp6>
+                  <AVariableExp7>
+                   <ATableauVar>
+                    <AExp1Exp>
+                     <AExp2Exp1>
+                      <AExp3Exp2>
+                       <AExp4Exp3>
+                        <AExp5Exp4>
+                         <AExp6Exp5>
+                          <AExp7Exp6>
+                           <ANombreExp7>
+                           </ANombreExp7>
+                          </AExp7Exp6>
+                         </AExp6Exp5>
+                        </AExp5Exp4>
+                       </AExp4Exp3>
+                      </AExp3Exp2>
+                     </AExp2Exp1>
+                    </AExp1Exp>
+                   </ATableauVar>
+                  </AVariableExp7>
+                 </AExp7Exp6>
+                </AExp6Exp5>
+               </AExp5Exp4>
+              </AExp4Exp3>
+             </AExp3Exp2>
+            </AExp2Exp1>
+           </AExp1Exp>
+          </AEcrireInstruction>
+          <AListeInstruction>
+           <AEcrireInstruction>
+            <AExp1Exp>
+             <AExp2Exp1>
+              <AExp3Exp2>
+               <AExp4Exp3>
+                <AExp5Exp4>
+                 <AExp6Exp5>
+                  <AExp7Exp6>
+                   <AVariableExp7>
+                    <ATableauVar>
+                     <AExp1Exp>
+                      <AExp2Exp1>
+                       <AExp3Exp2>
+                        <AExp4Exp3>
+                         <AExp5Exp4>
+                          <AExp6Exp5>
+                           <AExp7Exp6>
+                            <ANombreExp7>
+                            </ANombreExp7>
+                           </AExp7Exp6>
+                          </AExp6Exp5>
+                         </AExp5Exp4>
+                        </AExp4Exp3>
+                       </AExp3Exp2>
+                      </AExp2Exp1>
+                     </AExp1Exp>
+                    </ATableauVar>
+                   </AVariableExp7>
+                  </AExp7Exp6>
+                 </AExp6Exp5>
+                </AExp5Exp4>
+               </AExp4Exp3>
+              </AExp3Exp2>
+             </AExp2Exp1>
+            </AExp1Exp>
+           </AEcrireInstruction>
+           <AVideListeInstruction>
+           </AVideListeInstruction>
+          </AListeInstruction>
+         </AListeInstruction>
+        </AListeInstruction>
+       </AListeInstruction>
+      </AListeInstruction>
      </AListeInstruction>
     </ABlocInstruction>
    </ADeclarationFonc>

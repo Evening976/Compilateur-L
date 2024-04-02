@@ -55,6 +55,7 @@ public class C3a2nasm implements C3aVisitor<NasmOperand> {
     // sortie"));
     // nasm.ajouteInst(new NasmInt(null, ""));
       c3a.setTempCounter(7);
+      //System.out.println(c3a.getTempCounter());
     c3a.listeInst.forEach(inst -> inst.accept(this));
 
     return null;
@@ -180,7 +181,6 @@ public class C3a2nasm implements C3aVisitor<NasmOperand> {
     NasmOperand label = (inst.label != null) ? inst.label.accept(this) : null;
     NasmOperand src = inst.op1.accept(this);
     NasmOperand dest = inst.result.accept(this);
-    // System.out.println(dest);
     // desallocation des arguments ici?
     nasm.ajouteInst(new NasmMov(label, dest, src, "Affect"));
     return null;
@@ -191,8 +191,19 @@ public class C3a2nasm implements C3aVisitor<NasmOperand> {
     NasmOperand op1 = inst.op1.accept(this);
     NasmOperand op2 = inst.op2.accept(this);
     NasmOperand dest = inst.result.accept(this);
-    nasm.ajouteInst(new NasmMov(label, dest, op1, ""));
-    nasm.ajouteInst(new NasmDiv(dest, op2, ""));
+    NasmRegister reg_edx = new NasmRegister(Nasm.REG_EDX);
+    NasmRegister reg_eax = new NasmRegister(Nasm.REG_EAX);
+    NasmRegister temp = nasm.newRegister();
+    reg_edx.colorRegister(Nasm.REG_EDX);
+    reg_eax.colorRegister(Nasm.REG_EAX);
+
+
+    nasm.ajouteInst(new NasmMov(label, reg_edx, new NasmConstant(0), " mise à 0 des bits de poids fort du dividende"));
+    nasm.ajouteInst(new NasmMov(null, reg_eax, op1, "affectation des bits de poids faible du dividende"));
+    nasm.ajouteInst(new NasmMov(label, temp, op2, ""));
+    nasm.ajouteInst(new NasmDiv(null, temp, ""));
+    nasm.ajouteInst(new NasmMov(null, reg_edx, reg_edx, "rend explicite l'utilisation de edx pour ne pas que sa valeur soit modifiée"));
+    nasm.ajouteInst(new NasmMov(null, dest, reg_eax, ""));
 
     return null;
   }
@@ -249,12 +260,16 @@ public class C3a2nasm implements C3aVisitor<NasmOperand> {
     NasmOperand op1 = inst.op1.accept(this);
     NasmOperand op2 = inst.op2.accept(this);
 
-    System.out.println(op1);
-    System.out.println(op2);
+    //System.out.println(op1);
+    //System.out.println(op2);
 
     if (op1 instanceof NasmConstant || (op1 instanceof NasmAddress && op2 instanceof NasmAddress)) {
+      // int counter = nasm.getTempCounter();
+      // nasm.setTempCounter(8);
       NasmRegister r1 = nasm.newRegister();
-      nasm.ajouteInst(new NasmMov(label, r1, op1, "jumpIfNotEqual 1"));
+      NasmInst mov = new NasmMov(label, r1, op1, "jumpIfNotEqual 1");
+      System.out.println(mov);
+      nasm.ajouteInst(mov);
       nasm.ajouteInst(new NasmCmp(null, r1, op2, "on passe par un registre temporaire"));
       nasm.ajouteInst(new NasmJne(null, inst.result.accept(this), "jumpIfNotEqual 2"));
     } else {

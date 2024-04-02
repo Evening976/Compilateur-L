@@ -2,6 +2,7 @@
 
 section	.bss
 sinput :	resb	255	;reserve a 255 byte space in memory for the users input string
+tab :	resd	12	;variable globale
 
 section	.text
 global _start
@@ -19,16 +20,26 @@ main :	push	ebp	;sauvegarde la valeur de ebp
 	push	ecx	;sauvegarde de ecx
 	push	edx	;sauvegarde de edx
 	sub	esp,	0	;allocation des variables locales
-	mov	@4,	5	;jumpIfNotEqual 1
-	cmp	@4,	4	;on passe par un registre temporaire
-	jne	l1	;jumpIfNotEqual 2
-	mov	@5,	5	;jumpIfNotEqual 1
-	cmp	@5,	4	;on passe par un registre temporaire
-	jne	l1	;jumpIfNotEqual 2
-	mov	@1,	4	;Affect
-	jmp	l0	;Jump
-l1 :	mov	@1,	5	;Affect
-l0 :	mov	eax,	@1	;Write 1
+	mov	@3,	0
+	mov	@3,	4
+	mov	dword [tab],	0	;Affect
+	mov	@4,	1
+	mov	@4,	4
+	mov	dword [tab],	1	;Affect
+	mov	@5,	2
+	mov	@5,	4
+	mov	dword [tab],	2	;Affect
+	mov	@7,	0
+	mov	@7,	4
+	mov	eax,	dword [tab]	;Write 1
+	call	iprintLF	;Write 2
+	mov	@9,	1
+	mov	@9,	4
+	mov	eax,	dword [tab]	;Write 1
+	call	iprintLF	;Write 2
+	mov	@11,	2
+	mov	@11,	4
+	mov	eax,	dword [tab]	;Write 1
 	call	iprintLF	;Write 2
 	add	esp,	0	;désallocation des variables locales
 	pop	edx	;restaure edx
