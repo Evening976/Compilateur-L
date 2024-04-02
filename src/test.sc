@@ -4,74 +4,16 @@
   </AVideListeDeclarationVar>
   <AListeDeclarationFonc>
    <ADeclarationFonc>
-    <ATypeTypeOptionnel>
-     <AEntierType>
-     </AEntierType>
-    </ATypeTypeOptionnel>
-    <AListeDeclarationVar>
-     <ADeclarationVar>
-      <AEntierType>
-      </AEntierType>
-     </ADeclarationVar>
-     <AVideListeDeclarationVarPrime>
-     </AVideListeDeclarationVarPrime>
-    </AListeDeclarationVar>
+    <AVideTypeOptionnel>
+    </AVideTypeOptionnel>
+    <AVideListeDeclarationVar>
+    </AVideListeDeclarationVar>
     <AVideListeDeclarationVar>
     </AVideListeDeclarationVar>
     <ABlocInstruction>
      <AListeInstruction>
-      <ARetourInstruction>
-       <AExp1Exp>
-        <AExp2Exp1>
-         <AExp3Exp2>
-          <AExp4Exp3>
-           <AExp5Exp4>
-            <AExp6Exp5>
-             <AExp7Exp6>
-              <AEntreParanthesesExp7>
-               <AExp1Exp>
-                <AExp2Exp1>
-                 <AExp3Exp2>
-                  <AExp4Exp3>
-                   <AExp5Exp4>
-                    <AExp6Exp5>
-                     <AExp7Exp6>
-                      <AVariableExp7>
-                       <AVar>
-                       </AVar>
-                      </AVariableExp7>
-                     </AExp7Exp6>
-                    </AExp6Exp5>
-                   </AExp5Exp4>
-                  </AExp4Exp3>
-                 </AExp3Exp2>
-                </AExp2Exp1>
-               </AExp1Exp>
-              </AEntreParanthesesExp7>
-             </AExp7Exp6>
-            </AExp6Exp5>
-           </AExp5Exp4>
-          </AExp4Exp3>
-         </AExp3Exp2>
-        </AExp2Exp1>
-       </AExp1Exp>
-      </ARetourInstruction>
-      <AVideListeInstruction>
-      </AVideListeInstruction>
-     </AListeInstruction>
-    </ABlocInstruction>
-   </ADeclarationFonc>
-   <AListeDeclarationFonc>
-    <ADeclarationFonc>
-     <AVideTypeOptionnel>
-     </AVideTypeOptionnel>
-     <AVideListeDeclarationVar>
-     </AVideListeDeclarationVar>
-     <AVideListeDeclarationVar>
-     </AVideListeDeclarationVar>
-     <ABlocInstruction>
-      <AListeInstruction>
-       <AEcrireInstruction>
+      <AEcrireInstruction>
+       <AOuExp>
         <AExp1Exp>
          <AExp2Exp1>
           <AExp3Exp2>
@@ -79,28 +21,8 @@
             <AExp5Exp4>
              <AExp6Exp5>
               <AExp7Exp6>
-               <AAppelFonctionExp7>
-                <AListeExp>
-                 <AExp1Exp>
-                  <AExp2Exp1>
-                   <AExp3Exp2>
-                    <AExp4Exp3>
-                     <AExp5Exp4>
-                      <AExp6Exp5>
-                       <AExp7Exp6>
-                        <ANombreExp7>
-                        </ANombreExp7>
-                       </AExp7Exp6>
-                      </AExp6Exp5>
-                     </AExp5Exp4>
-                    </AExp4Exp3>
-                   </AExp3Exp2>
-                  </AExp2Exp1>
-                 </AExp1Exp>
-                 <AVideListeExpPrime>
-                 </AVideListeExpPrime>
-                </AListeExp>
-               </AAppelFonctionExp7>
+               <AVraiExp7>
+               </AVraiExp7>
               </AExp7Exp6>
              </AExp6Exp5>
             </AExp5Exp4>
@@ -108,15 +30,29 @@
           </AExp3Exp2>
          </AExp2Exp1>
         </AExp1Exp>
-       </AEcrireInstruction>
-       <AVideListeInstruction>
-       </AVideListeInstruction>
-      </AListeInstruction>
-     </ABlocInstruction>
-    </ADeclarationFonc>
-    <AVideListeDeclarationFonc>
-    </AVideListeDeclarationFonc>
-   </AListeDeclarationFonc>
+        <AExp2Exp1>
+         <AExp3Exp2>
+          <AExp4Exp3>
+           <AExp5Exp4>
+            <AExp6Exp5>
+             <AExp7Exp6>
+              <AVraiExp7>
+              </AVraiExp7>
+             </AExp7Exp6>
+            </AExp6Exp5>
+           </AExp5Exp4>
+          </AExp4Exp3>
+         </AExp3Exp2>
+        </AExp2Exp1>
+       </AOuExp>
+      </AEcrireInstruction>
+      <AVideListeInstruction>
+      </AVideListeInstruction>
+     </AListeInstruction>
+    </ABlocInstruction>
+   </ADeclarationFonc>
+   <AVideListeDeclarationFonc>
+   </AVideListeDeclarationFonc>
   </AListeDeclarationFonc>
  </AProgramme>
 </Start>
