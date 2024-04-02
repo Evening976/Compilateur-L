@@ -19,10 +19,15 @@ f :	push	ebp	;sauvegarde la valeur de ebp
 	push	ecx	;sauvegarde de ecx
 	push	edx	;sauvegarde de edx
 	sub	esp,	0	;allocation des variables locales
-	mov	dword [ebp+12],	1	;Affect
-	mov	eax,	dword [ebp+12]	;Write 1
-	call	iprintLF	;Write 2
-	add	esp,	4	;désallocation des arguments
+	mov	@4,	dword [ebp+12]	;écriture de la valeur de retour
+	mov	dword [ebp+8],	@4	;on passe par un registre temporaire
+	add	esp,	0	;désallocation des variables locales
+	pop	edx	;restaure edx
+	pop	ecx	;restaure ecx
+	pop	ebx	;restaure ebx
+	pop	eax	;restaure eax
+	pop	ebp	;restaure la valeur de ebp
+	ret
 	add	esp,	0	;désallocation des variables locales
 	pop	edx	;restaure edx
 	pop	ecx	;restaure ecx
@@ -36,13 +41,15 @@ main :	push	ebp	;sauvegarde la valeur de ebp
 	push	ebx	;sauvegarde de ebx
 	push	ecx	;sauvegarde de ecx
 	push	edx	;sauvegarde de edx
-	sub	esp,	4	;allocation des variables locales
-	push	3	;Param
+	sub	esp,	0	;allocation des variables locales
+	push	3712	;Param
 	sub	esp,	4	;allocation mémoire pour la valeur de retour
 	call	f
 	pop	@1	;récupération de la valeur de retour
 	add	esp,	4	;désallocation des arguments
-	add	esp,	4	;désallocation des variables locales
+	mov	eax,	@1	;Write 1
+	call	iprintLF	;Write 2
+	add	esp,	0	;désallocation des variables locales
 	pop	edx	;restaure edx
 	pop	ecx	;restaure ecx
 	pop	ebx	;restaure ebx
