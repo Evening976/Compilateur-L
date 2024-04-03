@@ -4,8 +4,6 @@ Participants:
 
 MESKINI Driss
 LEFEVRE Quentin
-SLAYBI Christopher
-
 
 ## Getting started
 
