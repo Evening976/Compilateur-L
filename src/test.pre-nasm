@@ -2,7 +2,6 @@
 
 section	.bss
 sinput :	resb	255	;reserve a 255 byte space in memory for the users input string
-tab :	resd	12	;variable globale
 
 section	.text
 global _start
@@ -13,6 +12,22 @@ _start:
 	mov	ebx,	0	; valeur de retour du programme
 	mov	eax,	1	; code de sortie
 	int 0x80
+f :	push	ebp	;sauvegarde la valeur de ebp
+	mov	ebp,	esp	;nouvelle valeur de ebp
+	push	eax	;sauvegarde de eax
+	push	ebx	;sauvegarde de ebx
+	push	ecx	;sauvegarde de ecx
+	push	edx	;sauvegarde de edx
+	sub	esp,	0	;allocation des variables locales
+	mov	eax,	1	;Write 1
+	call	iprintLF	;Write 2
+	add	esp,	0	;désallocation des variables locales
+	pop	edx	;restaure edx
+	pop	ecx	;restaure ecx
+	pop	ebx	;restaure ebx
+	pop	eax	;restaure eax
+	pop	ebp	;restaure la valeur de ebp
+	ret
 main :	push	ebp	;sauvegarde la valeur de ebp
 	mov	ebp,	esp	;nouvelle valeur de ebp
 	push	eax	;sauvegarde de eax
@@ -20,27 +35,9 @@ main :	push	ebp	;sauvegarde la valeur de ebp
 	push	ecx	;sauvegarde de ecx
 	push	edx	;sauvegarde de edx
 	sub	esp,	0	;allocation des variables locales
-	mov	@3,	0
-	mov	@3,	4
-	mov	dword [tab],	0	;Affect
-	mov	@4,	1
-	mov	@4,	4
-	mov	dword [tab],	1	;Affect
-	mov	@5,	2
-	mov	@5,	4
-	mov	dword [tab],	2	;Affect
-	mov	@7,	0
-	mov	@7,	4
-	mov	eax,	dword [tab]	;Write 1
-	call	iprintLF	;Write 2
-	mov	@9,	1
-	mov	@9,	4
-	mov	eax,	dword [tab]	;Write 1
-	call	iprintLF	;Write 2
-	mov	@11,	2
-	mov	@11,	4
-	mov	eax,	dword [tab]	;Write 1
-	call	iprintLF	;Write 2
+	sub	esp,	4	;allocation mémoire pour la valeur de retour
+	call	f
+	pop	@1	;récupération de la valeur de retour
 	add	esp,	0	;désallocation des variables locales
 	pop	edx	;restaure edx
 	pop	ecx	;restaure ecx

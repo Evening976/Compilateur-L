@@ -182,7 +182,8 @@ public class C3a2nasm implements C3aVisitor<NasmOperand> {
     NasmOperand src = inst.op1.accept(this);
     NasmOperand dest = inst.result.accept(this);
     // desallocation des arguments ici?
-    nasm.ajouteInst(new NasmMov(label, dest, src, "Affect"));
+      nasm.ajouteInst(new NasmMov(label, dest, src, "Affect"));
+    //nasm.ajouteInst(new NasmMov(label, dest, src, "Affect"));
     return null;
   }
 
@@ -362,11 +363,10 @@ public class C3a2nasm implements C3aVisitor<NasmOperand> {
       if (oper.index == null) {
         return new NasmAddress(new NasmLabel(oper.item.identif), NasmSize.DWORD);
       } else {
-        TsItemVar var = tableGlobale.getVar(oper.item.identif);
         NasmRegister r1 = nasm.newRegister();
         nasm.ajouteInst(new NasmMov(null, r1, oper.index.accept(this), ""));
-        nasm.ajouteInst(new NasmMov(null, r1, new NasmConstant(4), ""));
-        return new NasmAddress(new NasmLabel(var.identif), NasmSize.DWORD);
+        nasm.ajouteInst(new NasmMul(null, r1, new NasmConstant(4), ""));
+        return new NasmAddress(new NasmLabel(oper.item.identif + "+" + r1), NasmSize.DWORD);
         // c'est une variable globale
       }
     }

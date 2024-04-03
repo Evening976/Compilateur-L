@@ -573,7 +573,7 @@
 	tantque1.pre-nasm        INCORRECT
 	tri.pre-nasm             INCORRECT
 Évaluation de Execution du pre-nasm :
-75/80 correct ( 93.75%)
+80/80 correct (100.00%)
 	add1.pre-nasmout            CORRECT
 	add2.pre-nasmout            CORRECT
 	affect1.pre-nasmout         CORRECT
@@ -638,8 +638,13 @@
 	sub1.pre-nasmout            CORRECT
 	sub2.pre-nasmout            CORRECT
 	sub3.pre-nasmout            CORRECT
+	tab1.pre-nasmout            CORRECT
+	tab2.pre-nasmout            CORRECT
+	tab3.pre-nasmout            CORRECT
+	tab4.pre-nasmout            CORRECT
 	tantque1.pre-nasmout        CORRECT
 	tantque2.pre-nasmout        CORRECT
+	tri.pre-nasmout             CORRECT
 	varglob1.pre-nasmout        CORRECT
 	varglob2.pre-nasmout        CORRECT
 	varglob3.pre-nasmout        CORRECT
@@ -649,11 +654,6 @@
 	varloc3.pre-nasmout         CORRECT
 	varloc4.pre-nasmout         CORRECT
 	varloc5.pre-nasmout         CORRECT
-	tab1.pre-nasmout   INCORRECT
-	tab2.pre-nasmout   INCORRECT
-	tab3.pre-nasmout   INCORRECT
-	tab4.pre-nasmout   INCORRECT
-	tri.pre-nasmout    INCORRECT
 Évaluation de Diff de nasm :
 0/80 correct (  0.00%)
 Évaluation de Execution du nasm :
