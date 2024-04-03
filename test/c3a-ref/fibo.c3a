@@ -19,7 +19,7 @@ fibo	fbegin	#entree fonction
 	fend
 1	fend
 main	fbegin	#entree fonction
-	param 9
+	param 3
 	@7 = call fibo
-	write @7	
+	write @7
 	fend

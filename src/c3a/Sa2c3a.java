@@ -18,6 +18,7 @@ public class Sa2c3a extends SaDepthFirstVisitor<C3aOperand> {
 		c3a.ajouteInst(new C3aInstCall(fct, result, ""));
 		c3a.ajouteInst(new C3aInstStop(result, ""));
 		indentation = 0;
+		//c3a.setTempCounter(c3a.getTempCounter() + 5);
 	}
 
 	public void defaultIn(SaNode node) {

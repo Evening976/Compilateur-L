@@ -19,8 +19,10 @@ SC_COEFF = 4
 SA_DIFF_COEFF = 0
 TS_DIFF_COEFF = 0
 SA_COEFF = 3
+SA_COEFF = 4
 C3A_DIFF_COEFF = 0
 C3A_COEFF = 3
+C3A_COEFF = 4
 PRE_NASM_DIFF = 0
 PRE_NASM_COEFF = 3
 NASM_DIFF_COEFF = 0
@@ -28,6 +30,8 @@ NASM_COEFF = 3
 EXE_COEFF = 0
 ERR_TS_COEFF = 2
 ERR_TYPE_COEFF = 2
+ERR_TYPE_COEFF = 0
+
 
 # Paths relative to this file (evaluate.py)
 inputPath = "./input/"
@@ -79,7 +83,7 @@ def deleteClasses() :
     for filename in files :
       if os.path.splitext(filename)[1] == ".class" :
         os.remove(root+"/"+filename)
-        
+
   return classpath
 ################################################################################
 
@@ -199,7 +203,7 @@ def evaluateDiff(inputFiles, extension, extensionRef, path, name) :
     if not os.path.isfile(inputPath+producedFile) :
       evaluation[1]["notfound"].append(producedFile)
       continue
-    
+
     ref = refPath+path+changeExtension(producedFile, extensionRef)
     if not os.path.isfile(ref) :
       print("ATTENTION : Fichier non trouvé : %s"%ref, file=sys.stderr)
@@ -409,7 +413,7 @@ if __name__ == "__main__" :
   dfNasm = lambda files : (evaluateDiff(inputFiles, ".nasm", ".nasm", "nasm-ref/", msg%"nasm"), [])
 
   # Evaluation of normal (working) examples
-  for evalTarget in [ 
+  for evalTarget in [
                      ("SA-DIFF      ", dfSa),
                      ("TS-DIFF      ", dfTs),
                      ("SA           ", evaluateSa),
@@ -452,7 +456,7 @@ if __name__ == "__main__" :
 
   for i in range(len(scores)):
     print(names[i], "\t", scores[i])
-  
+
   print("Copy-pastable scores :", file=outScore)
   print("\t".join(names), file=outScore)
   print("\t".join(["%6.2f"%scores[i] for i in range(len(scores))]), file=outScore)

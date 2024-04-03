@@ -2,11 +2,11 @@ package nasm;
 import java.util.*;
 import java.io.*;
 import ts.*;
-    
+
 public class Nasm{
     public List<NasmInst> sectionText;
     public List<NasmPseudoInst> sectionBss;
-    protected int tempCounter = 0;
+    protected int tempCounter = 6;
     Ts tableGlobale;
     public static int REG_EAX = 0;
     public static int REG_EBX = 1;
@@ -32,48 +32,48 @@ public class Nasm{
 
     public int getTempCounter(){return this.tempCounter;}
     public int setTempCounter(int c){return this.tempCounter = c;}
-    
+
     public void ajoutePseudoInst(NasmPseudoInst pseudoInst){
 	this.sectionBss.add(pseudoInst);
     }
-    
+
     public void ajouteInst(NasmInst inst){
 	if(inst instanceof NasmMov && inst.destination instanceof NasmAddress && inst.source instanceof NasmAddress){
 	    NasmRegister newReg = newRegister();
-	    this.sectionText.add(new NasmMov(inst.label, newReg, inst.source, inst.comment)); 
+	    this.sectionText.add(new NasmMov(inst.label, newReg, inst.source, inst.comment));
 	    this.sectionText.add(new NasmMov(null, inst.destination, newReg, "on passe par un registre temporaire"));
 	    return;
 	}
 	if(inst instanceof NasmAdd && inst.destination instanceof NasmAddress && inst.source instanceof NasmAddress){
 	    NasmRegister newReg = newRegister();
-	    this.sectionText.add(new NasmMov(inst.label, newReg, inst.source, inst.comment)); 
+	    this.sectionText.add(new NasmMov(inst.label, newReg, inst.source, inst.comment));
 	    this.sectionText.add(new NasmAdd(null, inst.destination, newReg, "on passe par un registre temporaire"));
 	    return;
 	}
 	if(inst instanceof NasmSub && inst.destination instanceof NasmAddress && inst.source instanceof NasmAddress){
 	    NasmRegister newReg = newRegister();
-	    this.sectionText.add(new NasmMov(inst.label, newReg, inst.source, inst.comment)); 
+	    this.sectionText.add(new NasmMov(inst.label, newReg, inst.source, inst.comment));
 	    this.sectionText.add(new NasmSub(null, inst.destination, newReg, "on passe par un registre temporaire"));
 	    return;
 	}
 	if(inst instanceof NasmMul && inst.destination instanceof NasmAddress && inst.source instanceof NasmAddress){
 	    NasmRegister newReg = newRegister();
-	    this.sectionText.add(new NasmMov(inst.label, newReg, inst.source, inst.comment)); 
+	    this.sectionText.add(new NasmMov(inst.label, newReg, inst.source, inst.comment));
 	    this.sectionText.add(new NasmMul(null, inst.destination, newReg, "on passe par un registre temporaire"));
 	    return;
 	}
 
-	
+
 	//	if(inst instanceof NasmCmp && inst.destination instanceof NasmConstant && inst.source instanceof NasmConstant){
 	if(inst instanceof NasmCmp
 	   && (inst.destination instanceof NasmConstant
 	       || (inst.destination instanceof NasmAddress && inst.source instanceof NasmAddress))){
 		NasmRegister newReg = newRegister();
-		this.sectionText.add(new NasmMov(inst.label, newReg, inst.destination, inst.comment)); 
+		this.sectionText.add(new NasmMov(inst.label, newReg, inst.destination, inst.comment));
 		this.sectionText.add(new NasmCmp(null, newReg, inst.source, "on passe par un registre temporaire"));
 		return;
 	    }
-	
+
 	this.sectionText.add(inst);
     }
 
@@ -83,9 +83,9 @@ public class Nasm{
 
     public void populateSectionBss(Ts tableGlobale){
 	ajoutePseudoInst(new NasmResb(new NasmLabel("sinput"), 255, "reserve a 255 byte space in memory for the users input string"));
-	Set< Map.Entry< String, TsItemVar> > st = tableGlobale.variables.entrySet();    
+	Set< Map.Entry< String, TsItemVar> > st = tableGlobale.variables.entrySet();
 	for (Map.Entry< String, TsItemVar> me:st){
-	    TsItemVar tsItem = me.getValue(); 
+	    TsItemVar tsItem = me.getValue();
 	    String identif = me.getKey();
 	    if(tsItem instanceof TsItemVarSimple)
 		ajoutePseudoInst(new NasmResd(new NasmLabel(identif), tsItem.type.taille(), "variable globale"));
@@ -106,7 +106,7 @@ public class Nasm{
 		fileName = baseFileName + ".pre-nasm";
 		out = new PrintStream(fileName);
 	    }
-	    
+
 	    catch (IOException e) {
 		System.err.println("Error: " + e.getMessage());
 	    }
@@ -124,7 +124,7 @@ public class Nasm{
 		fileName = baseFileName + ".nasm";
 		out = new PrintStream(fileName);
 	    }
-	    
+
 	    catch (IOException e) {
 		System.err.println("Error: " + e.getMessage());
 	    }
@@ -139,7 +139,7 @@ public class Nasm{
     	while(iter.hasNext()){
     	    out.println(iter.next());
     	}
-	
+
 	out.println("\nsection\t.text");
 	out.println("global _start");
 	out.println("_start:");
@@ -157,9 +157,9 @@ public class Nasm{
 	out.println("sinput:\tresb\t255\t;reserve a 255 byte space in memory for the users input string");
 
 
-	Set< Map.Entry< String, TsItemVar> > st = tableGlobale.variables.entrySet();    
+	Set< Map.Entry< String, TsItemVar> > st = tableGlobale.variables.entrySet();
 	for (Map.Entry< String, TsItemVar> me:st){
-	    TsItemVar tsItem = me.getValue(); 
+	    TsItemVar tsItem = me.getValue();
 	    String identif = me.getKey();
 	    out.println(identif + " :\tresd\t" + tsItem.taille * 4);
 	}

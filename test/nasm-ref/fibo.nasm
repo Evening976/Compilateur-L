@@ -72,7 +72,7 @@ main :	push	ebp	;sauvegarde la valeur de ebp
 	push	ecx	;sauvegarde de ecx
 	push	edx	;sauvegarde de edx
 	sub	esp,	0	;allocation des variables locales
-	push	9	;Param
+	push	3	;Param
 	sub	esp,	4	;allocation mémoire pour la valeur de retour
 	call	fibo
 	pop	eax	;récupération de la valeur de retour
