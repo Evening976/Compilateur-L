@@ -482,6 +482,39 @@ public class DepthFirstAdapter extends AnalysisAdapter
         outAAffectationInstruction(node);
     }
 
+    public void inAIncrInstruction(AIncrInstruction node)
+    {
+        defaultIn(node);
+    }
+
+    public void outAIncrInstruction(AIncrInstruction node)
+    {
+        defaultOut(node);
+    }
+
+    @Override
+    public void caseAIncrInstruction(AIncrInstruction node)
+    {
+        inAIncrInstruction(node);
+        if(node.getVar() != null)
+        {
+            node.getVar().apply(this);
+        }
+        if(node.getPlusegal() != null)
+        {
+            node.getPlusegal().apply(this);
+        }
+        if(node.getExp() != null)
+        {
+            node.getExp().apply(this);
+        }
+        if(node.getPointVirgule() != null)
+        {
+            node.getPointVirgule().apply(this);
+        }
+        outAIncrInstruction(node);
+    }
+
     public void inASiInstruction(ASiInstruction node)
     {
         defaultIn(node);
@@ -1152,6 +1185,35 @@ public class DepthFirstAdapter extends AnalysisAdapter
             node.getExp5().apply(this);
         }
         outAMultExp4(node);
+    }
+
+    public void inAModuloExp4(AModuloExp4 node)
+    {
+        defaultIn(node);
+    }
+
+    public void outAModuloExp4(AModuloExp4 node)
+    {
+        defaultOut(node);
+    }
+
+    @Override
+    public void caseAModuloExp4(AModuloExp4 node)
+    {
+        inAModuloExp4(node);
+        if(node.getExp4() != null)
+        {
+            node.getExp4().apply(this);
+        }
+        if(node.getModulo() != null)
+        {
+            node.getModulo().apply(this);
+        }
+        if(node.getExp5() != null)
+        {
+            node.getExp5().apply(this);
+        }
+        outAModuloExp4(node);
     }
 
     public void inADivExp4(ADivExp4 node)

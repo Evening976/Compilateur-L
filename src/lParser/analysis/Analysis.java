@@ -30,6 +30,7 @@ public interface Analysis extends Switch
     void caseAListeInstruction(AListeInstruction node);
     void caseAVideListeInstruction(AVideListeInstruction node);
     void caseAAffectationInstruction(AAffectationInstruction node);
+    void caseAIncrInstruction(AIncrInstruction node);
     void caseASiInstruction(ASiInstruction node);
     void caseASiSinonInstruction(ASiSinonInstruction node);
     void caseATantQueInstruction(ATantQueInstruction node);
@@ -54,6 +55,7 @@ public interface Analysis extends Switch
     void caseAMoinsExp3(AMoinsExp3 node);
     void caseAExp4Exp3(AExp4Exp3 node);
     void caseAMultExp4(AMultExp4 node);
+    void caseAModuloExp4(AModuloExp4 node);
     void caseADivExp4(ADivExp4 node);
     void caseAExp5Exp4(AExp5Exp4 node);
     void caseANonExp5(ANonExp5 node);
@@ -85,6 +87,8 @@ public interface Analysis extends Switch
     void caseTOu(TOu node);
     void caseTEt(TEt node);
     void caseTEgal(TEgal node);
+    void caseTPlusegal(TPlusegal node);
+    void caseTModulo(TModulo node);
     void caseTInf(TInf node);
     void caseTPlus(TPlus node);
     void caseTMoins(TMoins node);

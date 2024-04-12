@@ -641,4 +641,32 @@ public class Sc2sa extends DepthFirstAdapter {
         this.returnValue = new SaExpVrai();
         outAVraiExp7(node);
     }
+
+    @Override
+    public void caseAIncrInstruction(AIncrInstruction node){
+        //inAPlusegalInstruction(node);
+
+        node.getVar().apply(this);
+        SaVar op1 = (SaVar) this.returnValue;
+
+        node.getExp().apply(this);
+        SaExp op2 = (SaExp) this.returnValue;
+
+        this.returnValue = new SaIncr(op1, op2);
+        //outAPlusegalInstruction(node);
+    }
+
+    @Override
+    public void caseAModuloExp4(AModuloExp4 node){
+        inAModuloExp4(node);
+
+        node.getExp4().apply(this);
+        SaExp op1 = (SaExp) this.returnValue;
+
+        node.getExp5().apply(this);
+        SaExp op2 = (SaExp) this.returnValue;
+
+        this.returnValue = new SaExpModulo(op1, op2);
+        outAModuloExp4(node);
+    }
 }

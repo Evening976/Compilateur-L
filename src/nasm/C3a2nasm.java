@@ -376,5 +376,4 @@ public class C3a2nasm implements C3aVisitor<NasmOperand> {
   public NasmOperand visit(C3aFunction oper) {
     return new NasmLabel(oper.val.identif);
   }
-
 }

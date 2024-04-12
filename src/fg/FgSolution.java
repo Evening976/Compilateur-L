@@ -16,42 +16,8 @@ public class FgSolution {
 	public Map<NasmInst, IntSet> out;
 
 	public FgSolution(Nasm nasm, Fg fg) {
-		this.nasm = nasm;
-		this.fg = fg;
-		this.use = new HashMap<NasmInst, IntSet>();
-		this.def = new HashMap<NasmInst, IntSet>();
-		this.in = new HashMap<NasmInst, IntSet>();
-		this.out = new HashMap<NasmInst, IntSet>();
 	}
 
-	public void solve(){
-		boolean change = true;
-		while(change){
-			change = false;
-			for(NasmInst nasmInst : this.nasm.sectionText){
-				IntSet in = new IntSet(this.nasm.getTempCounter());
-				IntSet out = new IntSet(this.nasm.getTempCounter());
-				IntSet use = new IntSet(this.nasm.getTempCounter());
-				IntSet def = new IntSet(this.nasm.getTempCounter());
-				use = fg.use.get(nasmInst);
-				def = fg.def.get(nasmInst);
-				for(Node pred : fg.graph.pred(fg.inst2Node.get(nasmInst))){
-					out = out.union(this.in.get(fg.node2Inst.get(pred)));
-				}
-				in = use.union(out.minus(def));
-				if(!in.equals(this.in.get(nasmInst))){
-					change = true;
-					this.in.put(nasmInst, in);
-				}
-				if(!out.equals(this.out.get(nasmInst))){
-					change = true;
-					this.out.put(nasmInst, out);
-				}
-			}
-			iterNum++;
-		}
-
-	}
 
 	public void affiche(String baseFileName) {
 		String fileName;
@@ -76,5 +42,4 @@ public class FgSolution {
 		}
 
 	}
-
 }

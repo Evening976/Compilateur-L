@@ -19,6 +19,7 @@ public interface Analysis extends Switch
     void caseAEqualExp(AEqualExp node);
     void caseAInfExp(AInfExp node);
     void caseAMultExp(AMultExp node);
+    void caseAModuloExp(AModuloExp node);
     void caseAOrExp(AOrExp node);
     void caseASubExp(ASubExp node);
     void caseANotExp(ANotExp node);
@@ -29,6 +30,7 @@ public interface Analysis extends Switch
     void caseAIntExp(AIntExp node);
     void caseALireExp(ALireExp node);
     void caseAAffectInst(AAffectInst node);
+    void caseAIncrInst(AIncrInst node);
     void caseABlocInst(ABlocInst node);
     void caseAEcritureInst(AEcritureInst node);
     void caseARetourInst(ARetourInst node);
@@ -73,12 +75,14 @@ public interface Analysis extends Switch
     void caseTSaexpint(TSaexpint node);
     void caseTSaexplire(TSaexplire node);
     void caseTSaexpmult(TSaexpmult node);
+    void caseTSaexpmodulo(TSaexpmodulo node);
     void caseTSaexpnot(TSaexpnot node);
     void caseTSaexpor(TSaexpor node);
     void caseTSaexpsub(TSaexpsub node);
     void caseTSaexpvar(TSaexpvar node);
     void caseTSaexpvrai(TSaexpvrai node);
     void caseTSainstaffect(TSainstaffect node);
+    void caseTSaincr(TSaincr node);
     void caseTSainstbloc(TSainstbloc node);
     void caseTSainstecriture(TSainstecriture node);
     void caseTSainstretour(TSainstretour node);

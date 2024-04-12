@@ -117,6 +117,12 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
+    public void caseAModuloExp(AModuloExp node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
     public void caseAOrExp(AOrExp node)
     {
         defaultCase(node);
@@ -172,6 +178,12 @@ public class AnalysisAdapter implements Analysis
 
     @Override
     public void caseAAffectInst(AAffectInst node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAIncrInst(AIncrInst node)
     {
         defaultCase(node);
     }
@@ -435,6 +447,12 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
+    public void caseTSaexpmodulo(TSaexpmodulo node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
     public void caseTSaexpnot(TSaexpnot node)
     {
         defaultCase(node);
@@ -466,6 +484,12 @@ public class AnalysisAdapter implements Analysis
 
     @Override
     public void caseTSainstaffect(TSainstaffect node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseTSaincr(TSaincr node)
     {
         defaultCase(node);
     }

@@ -1,0 +1,34 @@
+iter num = 40
+use = () def = ()	in = (12 )	 	out = (12 )	 		sub	esp,	4	;allocation mémoire pour la valeur de retour
+use = () def = ()	in = (12 )	 	out = (12 )	 		call	main
+use = () def = (0 )	in = (12 )	 	out = (12 )	 		pop	@0	;récupération de la valeur de retour
+use = () def = (4 )	in = (12 )	 	out = (12 )	 		mov	ebx,	0	; valeur de retour du programme
+use = () def = (5 )	in = (12 )	 	out = (12 )	 		mov	eax,	1	; code de sortie
+use = () def = ()	in = (12 )	 	out = (12 )	 		int 0x80
+use = () def = ()	in = (12 )	 	out = (12 )	 	main :	push	ebp	;sauvegarde la valeur de ebp
+use = () def = ()	in = (12 )	 	out = (12 )	 		mov	ebp,	esp	;nouvelle valeur de ebp
+use = () def = ()	in = (12 )	 	out = (12 )	 		push	eax	;sauvegarde de eax
+use = () def = ()	in = (12 )	 	out = (12 )	 		push	ebx	;sauvegarde de ebx
+use = () def = ()	in = (12 )	 	out = (12 )	 		push	ecx	;sauvegarde de ecx
+use = () def = ()	in = (12 )	 	out = (12 )	 		push	edx	;sauvegarde de edx
+use = () def = ()	in = (12 )	 	out = (12 )	 		sub	esp,	0	;allocation des variables locales
+use = () def = ()	in = (12 )	 	out = (12 )	 		mov	dword [a],	12	;Affect
+use = () def = ()	in = (12 )	 	out = (12 )	 		mov	dword [b],	5	;Affect
+use = () def = (10 )	in = (12 )	 	out = (10 12 )	 		mov	edx,	0	;mise à 0 des bits de poids fort du dividende
+use = () def = (11 )	in = (10 12 )	 	out = (10 12 )	 		mov	eax,	dword [a]	;affectation des bits de poids faible du dividende
+use = () def = ()	in = (10 12 )	 	out = (10 12 )	 		idiv	dword [b]
+use = (10 ) def = (10 )	in = (10 12 )	 	out = (12 )	 		mov	edx,	edx	;rend explicite l'utilisation de edx pour ne pas que sa valeur soit modifiée
+use = (12 ) def = (1 )	in = (12 )	 	out = (1 )	 		mov	@1,	eax
+use = () def = (2 )	in = (1 )	 	out = (1 2 )	 		mov	@2,	dword [b]
+use = (1 2 ) def = (2 )	in = (1 2 )	 	out = (2 )	 		imul	@2,	@1
+use = () def = (3 )	in = (2 )	 	out = (2 3 )	 		mov	@3,	dword [a]
+use = (2 3 ) def = (3 )	in = (2 3 )	 	out = (3 )	 		sub	@3,	@2
+use = (3 ) def = (13 )	in = (3 )	 	out = ()	 		mov	eax,	@3	;Write 1
+use = () def = ()	in = ()	 	out = ()	 		call	iprintLF	;Write 2
+use = () def = ()	in = ()	 	out = ()	 		add	esp,	0	;désallocation des variables locales
+use = () def = (14 )	in = ()	 	out = ()	 		pop	edx	;restaure edx
+use = () def = (15 )	in = ()	 	out = ()	 		pop	ecx	;restaure ecx
+use = () def = (16 )	in = ()	 	out = ()	 		pop	ebx	;restaure ebx
+use = () def = (17 )	in = ()	 	out = ()	 		pop	eax	;restaure eax
+use = () def = ()	in = ()	 	out = ()	 		pop	ebp	;restaure la valeur de ebp
+use = () def = ()	in = ()	 	out = ()	 		ret

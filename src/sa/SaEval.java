@@ -230,9 +230,9 @@ public class SaEval extends SaDepthFirstVisitor <TypeVal> {
 		defaultOut(node);
 		return null;
     }
-    
-    public TypeVal visit(SaInstAffect node) throws Exception
-    {
+
+	public TypeVal visit(SaInstAffect node) throws Exception
+	{
 		defaultIn(node);
 		TypeVal typeVal = node.getRhs().accept(this);
 		if(node.getLhs() instanceof SaVarIndicee){ // c'est une case de tableau, donc forcément globale
@@ -245,9 +245,24 @@ public class SaEval extends SaDepthFirstVisitor <TypeVal> {
 
 		defaultOut(node);
 		return null;
-    }
-    
-    // LDEC -> DEC LDEC 
+	}
+	public TypeVal visit(SaIncr node) throws Exception
+	{
+		defaultIn(node);
+		TypeVal incr = node.getRhs().accept(this);
+
+		if(node.getLhs() instanceof SaVarIndicee){ // c'est une case de tableau, donc forcément globale
+			SaVarIndicee lhsIndicee = (SaVarIndicee) node.getLhs();
+			TypeVal indice = lhsIndicee.getIndice().accept(this);
+			setVarGlobIndicee(lhsIndicee, indice, new TypeVal(getVarGlobIndicee(lhsIndicee, indice).valInt + incr.valInt));
+		} else{
+			setVar((SaVarSimple) node.getLhs(), new TypeVal(getVar((SaVarSimple) node.getLhs()).valInt + incr.valInt));
+		}
+		defaultOut(node);
+		return null;
+	}
+
+	// LDEC -> DEC LDEC
     // LDEC -> null 
     /*    public TypeVal visit(SaLDec node) throws Exception
     {
@@ -333,16 +348,25 @@ public class SaEval extends SaDepthFirstVisitor <TypeVal> {
     }
 
     // EXP -> mult EXP EXP
-    public TypeVal visit(SaExpMult node) throws Exception
-    {
+	public TypeVal visit(SaExpMult node) throws Exception
+	{
 		defaultIn(node);
 		TypeVal op1 = node.getOp1().accept(this);
 		TypeVal op2 = node.getOp2().accept(this);
 		defaultOut(node);
 		return new TypeVal(op1.valInt * op2.valInt);
-    }
+	}
 
-    // EXP -> div EXP EXP
+	public TypeVal visit(SaExpModulo node) throws Exception
+	{
+		defaultIn(node);
+		TypeVal op1 = node.getOp1().accept(this);
+		TypeVal op2 = node.getOp2().accept(this);
+		defaultOut(node);
+		return new TypeVal(op1.valInt % op2.valInt);
+	}
+
+	// EXP -> div EXP EXP
     public TypeVal visit(SaExpDiv node) throws Exception
     {
 		defaultIn(node);

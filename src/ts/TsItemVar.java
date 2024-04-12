@@ -14,6 +14,7 @@ public abstract class TsItemVar {
     public Ts     getPortee() {return this.portee;}
     public Type   getType()   {return this.type;}
     public int    getTaille(){return this.taille;}
-
-
+    
+    
 }
+

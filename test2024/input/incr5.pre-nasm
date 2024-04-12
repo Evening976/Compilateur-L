@@ -1,0 +1,55 @@
+%include	'io.asm'
+
+section	.bss
+sinput :	resb	255	;reserve a 255 byte space in memory for the users input string
+t :	resd	40	;variable globale
+
+section	.text
+global _start
+_start:
+	sub	esp,	4	;allocation mémoire pour la valeur de retour
+	call	main
+	pop	@0	;récupération de la valeur de retour
+	mov	ebx,	0	; valeur de retour du programme
+	mov	eax,	1	; code de sortie
+	int 0x80
+main :	push	ebp	;sauvegarde la valeur de ebp
+	mov	ebp,	esp	;nouvelle valeur de ebp
+	push	eax	;sauvegarde de eax
+	push	ebx	;sauvegarde de ebx
+	push	ecx	;sauvegarde de ecx
+	push	edx	;sauvegarde de edx
+	sub	esp,	0	;allocation des variables locales
+	mov	@5,	1
+	imul	@5,	4
+	mov	dword [t+@5],	2	;Affect
+	mov	@6,	2
+	imul	@6,	4
+	mov	dword [t+@6],	3	;Affect
+	mov	@7,	3
+	imul	@7,	4
+	mov	dword [t+@7],	1	;Affect
+	mov	@8,	1
+	imul	@8,	4
+	mov	@9,	2
+	imul	@9,	4
+	mov	@1,	dword [t+@8]
+	imul	@1,	dword [t+@9]
+	mov	@10,	3
+	imul	@10,	4
+	mov	@2,	dword [t+@10]
+	add	@2,	@1
+	mov	@11,	3
+	imul	@11,	4
+	mov	dword [t+@11],	@2	;Affect
+	mov	@13,	3
+	imul	@13,	4
+	mov	eax,	dword [t+@13]	;Write 1
+	call	iprintLF	;Write 2
+	add	esp,	0	;désallocation des variables locales
+	pop	edx	;restaure edx
+	pop	ecx	;restaure ecx
+	pop	ebx	;restaure ebx
+	pop	eax	;restaure eax
+	pop	ebp	;restaure la valeur de ebp
+	ret

@@ -24,7 +24,7 @@ public class SaDecFonc implements SaDec{
     public SaLDecVar getParametres(){return this.parametres;}
     public SaLDecVar getVariable(){return this.variables;}
     public SaInst    getCorps(){return this.corps;}
-
+    
     public <T> T accept(SaVisitor <T> visitor) throws Exception{
         return visitor.visit(this);
     }

@@ -20,7 +20,7 @@ public class TsParser {
     public TsParser(){
 
     }
-
+    
     public Ts parse(String filePath){
         try {
             Files.lines(Paths.get(filePath)).forEachOrdered(this::processLine);;

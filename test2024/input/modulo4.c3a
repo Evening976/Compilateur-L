@@ -1,0 +1,10 @@
+	@0 = call main
+	stop @0
+main	fbegin	#entree fonction
+	a = 12
+	b = 5
+	@1 = a / b
+	@2 = b * @1
+	@3 = a - @2
+	write @3	
+	fend

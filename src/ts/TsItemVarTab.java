@@ -14,5 +14,6 @@ public class TsItemVarTab  extends TsItemVar{
     public String toString(){
 	    return this.identif + "\tTAB  \t" + this.type + "\t" + this.adresse + "\t" + this.taille;
     }
-
+    
 }
+

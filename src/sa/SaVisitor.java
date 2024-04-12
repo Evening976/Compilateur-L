@@ -28,6 +28,7 @@ interface SaVisitor <T> {
     public T visit(SaExpAdd node) throws Exception;
     public T visit(SaExpSub node) throws Exception;
     public T visit(SaExpMult node) throws Exception;
+    public T visit(SaExpModulo node) throws Exception;
     public T visit(SaExpDiv node) throws Exception;
     public T visit(SaExpInf node) throws Exception;
     public T visit(SaExpEqual node) throws Exception;
@@ -35,4 +36,6 @@ interface SaVisitor <T> {
     public T visit(SaExpOr node) throws Exception;
     public T visit(SaExpNot node) throws Exception;
     public T visit(SaLExp node) throws Exception;
+    public T visit(SaIncr node) throws Exception;
+
 }

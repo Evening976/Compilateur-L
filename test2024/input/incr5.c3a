@@ -1,0 +1,11 @@
+	@0 = call main
+	stop @0
+main	fbegin	#entree fonction
+	t[1] = 2
+	t[2] = 3
+	t[3] = 1
+	@1 = t[1] * t[2]
+	@2 = t[3] + @1
+	t[3] = @2
+	write t[3]	
+	fend

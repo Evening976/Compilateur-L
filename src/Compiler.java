@@ -39,19 +39,20 @@ public class Compiler {
 		System.out.println("[BUILD PRE NASM] ");
 		buildPreNasm();
 		System.out.println("[BUILD FLOW GRAPH] ");
-		buildFg();
+		//buildFg();
 		System.out.println("[SOLVE FLOW GRAPH]");
-		solveFg();
+		//solveFg();
 
 		/*
 		 * System.out.println("[BUILD INTERFERENCE GRAPH] ");
-		 * buildIg();
-		 * System.out.println("[ALLOCATE REGISTERS]");
-		 * interferenceGraph.allocateRegisters();
-		 * System.out.println("[PRINT NASM]");
-		 * nasm.afficheNasm(baseName);
-		 * System.exit(Error.NOERROR.code());
+		 buildIg();
+		 System.out.println("[ALLOCATE REGISTERS]");
+		 interferenceGraph.allocateRegisters();
+		 System.out.println("[PRINT NASM]");
+		 nasm.afficheNasm(baseName);
+		 System.exit(Error.NOERROR.code());
 		 */
+		 
 	}
 
 	private static void processCommandLine(String[] args) {

@@ -183,6 +183,12 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
+    public void caseAIncrInstruction(AIncrInstruction node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
     public void caseASiInstruction(ASiInstruction node)
     {
         defaultCase(node);
@@ -322,6 +328,12 @@ public class AnalysisAdapter implements Analysis
 
     @Override
     public void caseAMultExp4(AMultExp4 node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAModuloExp4(AModuloExp4 node)
     {
         defaultCase(node);
     }
@@ -502,6 +514,18 @@ public class AnalysisAdapter implements Analysis
 
     @Override
     public void caseTEgal(TEgal node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseTPlusegal(TPlusegal node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseTModulo(TModulo node)
     {
         defaultCase(node);
     }
