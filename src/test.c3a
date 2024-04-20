@@ -1,8 +1,0 @@
-	@0 = call main
-	stop @0
-main	fbegin	#entree fonction
-	@1 = 5 / 3
-	@2 = 3 * @1
-	@3 = 5 - @2
-	write @3	
-	fend
