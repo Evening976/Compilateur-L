@@ -1,9 +1,0 @@
-	@0 = call main
-	stop @0
-main	fbegin	#entree fonction
-	@1 = 12 / 7
-	@2 = 7 * @1
-	@3 = 12 - @2
-	@4 = @3 + 5
-	write @4	
-	fend

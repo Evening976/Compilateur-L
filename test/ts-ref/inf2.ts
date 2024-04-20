@@ -1,3 +1,0 @@
-TABLE GLOBALE
-main	FCT	nul	0
-TABLE LOCALE : main
